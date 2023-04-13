@@ -11,8 +11,6 @@ use EmptyIterator;
 class Secretaria{
 
     private  $secretaria;
-    
- 
 
     public function index(){
 

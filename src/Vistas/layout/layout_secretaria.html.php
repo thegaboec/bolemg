@@ -24,6 +24,16 @@
                  
                  <li class="nav-item dropdown">
                      <a class="nav-item nav-link dropdown-toggle " href="#" id="bd-versions" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: aliceblue;">
+                       Presidente
+                     </a>
+                     <div class="dropdown-menu dropdown-menu-right mr-md-0 " aria-labelledby="bd-versions">
+                       <a class="dropdown-item " href="/secretaria/registrar/presidente">Registrar</a>
+                       <a class="dropdown-item" href="/secretaria/modificarinhabilitar/presidente">Modificar-Inhabilitar</a>
+                     </div>
+                 </li>
+                 
+                 <li class="nav-item dropdown">
+                     <a class="nav-item nav-link dropdown-toggle " href="#" id="bd-versions" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: aliceblue;">
                        Artesanado
                      </a>
                      <div class="dropdown-menu dropdown-menu-right mr-md-0 " aria-labelledby="bd-versions">

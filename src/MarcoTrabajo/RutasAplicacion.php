@@ -6,7 +6,7 @@ use App\Controladores\Artesano\InicioArtesano;
 use App\Controladores\Artesano\Perfil;
 use App\Controladores\Presidente\Secretaria;
 use App\Controladores\Inicio;
-use App\Controladores\Presidente\Delegar;
+use App\Controladores\Secretaria\RegistrarPresidente;
 use App\Controladores\Presidente\Inicio as PresidenteInicio;
 use App\Controladores\Secretaria\InicioSecretaria;
 use App\Controladores\Secretaria\ModificarArtesanado;
@@ -32,10 +32,10 @@ class RutasAplicacion{
 
     public function getRoutes(){
        
-       $inicio = new Inicio();
+        $inicio = new Inicio();
         $inicioPresidente = new PresidenteInicio;
         $agregarSecretaria= new Secretaria($this ->usuarios);
-        $delegarfunciones = new Delegar;
+        $registrarPresidente = new RegistrarPresidente($this ->usuarios);
         $inicioSecretaria = new InicioSecretaria;
         $registrarArtesano= new RegistrarArtesano;
         $modificarArtesano = new ModificarArtesano;
@@ -93,7 +93,9 @@ class RutasAplicacion{
                     //restrinciones para acceder a esta ruta
                     'login' => true, // loguedo
                     'rol' => Usuarios::PRESIDENTE //rol
-                ],                
+                ],  
+                
+                
                 'presidente/agregar/secretaria' =>[
                     "GET"=>[
                         "controlador"=> $agregarSecretaria,
@@ -108,12 +110,8 @@ class RutasAplicacion{
                     'rol' => Usuarios::PRESIDENTE //rol
             
                 ],
-                'presidente/delegar/funciones' =>[
-                    "GET"=>[
-                        "controlador"=> $delegarfunciones,
-                        "accion"=>'funciones'
-                    ],
-                ],
+
+
 
 
 //Secretaria
@@ -124,6 +122,21 @@ class RutasAplicacion{
                     ],
                     'login' => true, // loguedo
                     'rol' => Usuarios::SECRETARIA //ro
+                ],
+
+                
+                'secretaria/registrar/presidente' =>[
+                    "GET"=>[
+                        "controlador"=> $registrarPresidente,
+                        "accion"=>'index'
+                    ],
+                "POST"=>[
+                    "controlador"=> $registrarPresidente,
+                    "accion"=>'delegarF'
+                ],
+                
+                'login' => true, // loguedo
+                'rol' => Usuarios::SECRETARIA //rol
                 ],
 
                 'secretaria/registrar/artesano' =>[
