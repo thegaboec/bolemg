@@ -26,7 +26,7 @@
               <li><a href="/artesano/cambiarcontraseña" class="nav-link px-2 text-white">Cambiar Contraseña</a></li>
           </ul>                
             <div class="text-end">
-                <a href='/cerrar_cesion' class="btn btn-outline-danger me-2">Cerrar Sesión</a>
+                <a href='/logout' class="btn btn-outline-danger me-2">Cerrar Sesión</a>
             </div>
       </div>
         </header>

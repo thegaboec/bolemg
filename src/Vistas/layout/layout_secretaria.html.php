@@ -28,7 +28,7 @@
                      </a>
                      <div class="dropdown-menu dropdown-menu-right mr-md-0 " aria-labelledby="bd-versions">
                        <a class="dropdown-item " href="/secretaria/registrar/presidente">Registrar</a>
-                       <a class="dropdown-item" href="/secretaria/modificarinhabilitar/presidente">Modificar-Inhabilitar</a>
+                       <a class="dropdown-item" href="/secretaria/modificar/presidente">Modificar-Inhabilitar</a>
                      </div>
                  </li>
                  
@@ -59,7 +59,7 @@
              </ul>  
                 
         <div class="text-end">
-        <a href='/cerrar_cesion' class="btn btn-outline-danger me-2">Cerrar Sesión</a>
+        <a href='/logout' class="btn btn-outline-danger me-2">Cerrar Sesión</a>
             </div>
         </div>
         </div>

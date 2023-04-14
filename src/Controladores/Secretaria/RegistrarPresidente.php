@@ -12,9 +12,9 @@ class RegistrarPresidente{
 
         return[
 
-            'titulo'=>'Delegar Funciones',
+            'titulo'=>'Agregar Presidente',
 
-            'template'=>'presidente/delegar_funciones.html.php'
+            'template'=>'secretaria/agregar_presidente.html.php'
         ];
 
     }
@@ -29,7 +29,7 @@ class RegistrarPresidente{
     }
 
 
-    public function delegarF(){
+    public function add(){
 
         $data = [
             'idusuarios' => $_POST['id'],

@@ -24,7 +24,7 @@
     
     
             <div class="text-end">
-              <a href='/cerrar_cesion' class="btn btn-outline-danger me-2">Cerrar Seción</a>
+              <a href='/logout' class="btn btn-outline-danger me-2">Cerrar Seción</a>
            
             </div>
           </div>

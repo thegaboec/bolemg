@@ -7,6 +7,7 @@ use App\Controladores\Artesano\Perfil;
 use App\Controladores\Presidente\Secretaria;
 use App\Controladores\Inicio;
 use App\Controladores\Secretaria\RegistrarPresidente;
+use App\Controladores\Secretaria\ModificarPresidente;
 use App\Controladores\Presidente\Inicio as PresidenteInicio;
 use App\Controladores\Secretaria\InicioSecretaria;
 use App\Controladores\Secretaria\ModificarArtesanado;
@@ -17,6 +18,7 @@ use App\Controladores\Secretaria\RegistrarArtesano;
 use App\Controladores\Web\Login;
 use App\Modelos\Artesanos;
 use App\Modelos\Usuarios;
+
 
 class RutasAplicacion{
     private $autenttificacion;
@@ -36,6 +38,7 @@ class RutasAplicacion{
         $inicioPresidente = new PresidenteInicio;
         $agregarSecretaria= new Secretaria($this ->usuarios);
         $registrarPresidente = new RegistrarPresidente($this ->usuarios);
+        $modificarPresidente= new ModificarPresidente($this ->usuarios);
         $inicioSecretaria = new InicioSecretaria;
         $registrarArtesano= new RegistrarArtesano;
         $modificarArtesano = new ModificarArtesano;
@@ -132,11 +135,25 @@ class RutasAplicacion{
                     ],
                 "POST"=>[
                     "controlador"=> $registrarPresidente,
-                    "accion"=>'delegarF'
+                    "accion"=>'add'
                 ],
                 
                 'login' => true, // loguedo
                 'rol' => Usuarios::SECRETARIA //rol
+                ],
+
+
+                'secretaria/modificar/presidente' =>[
+                    "GET"=>[
+                        "controlador"=> $modificarPresidente,
+                        "accion"=>'removePresidente'
+                    ],
+                    "POST"=>[
+                        "controlador"=> $modificarPresidente,
+                        "accion"=>'saveRemovePresidente'
+                    ],
+                    'login' => true, // loguedo
+                    'rol' => Usuarios::SECRETARIA //ro
                 ],
 
                 'secretaria/registrar/artesano' =>[
@@ -191,6 +208,17 @@ class RutasAplicacion{
                 ],
 
 //Empleador
+
+
+
+//Salir 
+
+                'logout' => [
+                    'GET' => [
+                        "controlador" => $iniciarSession,
+                        "accion" => 'logOut'
+                    ]
+                    ],
 
 
         ];

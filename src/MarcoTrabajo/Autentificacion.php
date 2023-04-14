@@ -28,9 +28,10 @@ class Autentificacion {
 
     public function verificacion($usuario, $password) {
         $usuarioV = $this->modelo[0]->selectFromColumn($this->column[0],$usuario);
+
         $usuarioV = $usuarioV ? $usuarioV : $this->modelo[1]->selectFromColumn($this->column[1],$usuario);
         // select where cedula = '025018665'
-        if($usuarioV && password_verify($password, $usuarioV[0]->{$this->password})){
+        if($usuarioV && password_verify($password, $usuarioV[0]->{$this->password})&& $usuarioV[0]->estado !== 'inactivo'){
             session_regenerate_id();
             $_SESSION['usuario'] = $usuario;
             $_SESSION['password'] = $usuarioV[0]->{$this->password};
