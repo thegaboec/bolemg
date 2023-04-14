@@ -36,7 +36,7 @@ class RegistrarPresidente{
             'nombres' => $_POST['nombres'],
             'apellidos' => $_POST['apellidos'],
            'correo' => $_POST['email'],
-            'clave' => $_POST['id'],
+            'clave' => password_hash($_POST['id'],PASSWORD_DEFAULT),
             'estado' => Usuarios::ESTADO_ACTIVO,
             'rol' => Usuarios::PRESIDENTE
         ];
