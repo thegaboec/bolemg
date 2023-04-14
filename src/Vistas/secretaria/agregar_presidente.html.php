@@ -1,3 +1,15 @@
+<?php if(isset($error)): ?>
+        <p class text="error">
+            <?= $error ?>
+        </p>
+<?php endif; ?>    
+<?php if(isset($exito)): ?>
+        <p class="success">
+            <?= $exito ?>
+        </p>
+<?php endif; ?> 
+
+
 <div class="container">
   <main>
     <div class="py-5 text-center">

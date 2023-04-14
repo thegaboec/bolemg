@@ -47,11 +47,11 @@ class RegistrarPresidente{
             $this->funciones->insert($data);
 
         return [
-            'titulo'=>'Login',
+            'titulo'=>'Agregar Presidente',
 
-            'template'=>'front/login.html.php',
+            'template'=>'secretaria/agregar_presidente.html.php',
             'variables' => [
-                'exito' => 'Acaba de darse de baja con éxito'
+                'exito' => 'Acaba de registrarse correctamente'
             ]
         ];
 
@@ -59,9 +59,9 @@ class RegistrarPresidente{
         } catch (\PDOException $e) {
             //throw $th;
             return [
-                'titulo'=>'Delegar Funciones',
+                'titulo'=>'Agregar Presidente',
     
-                'template'=>'presidente/delegar_funciones.html.php',
+                'template'=>'secretaria/agregar_presidente.html.php',
                 'variables' => [
                     'error' => 'Los campos no fueron llenados correctamente'
                 ]
@@ -71,9 +71,5 @@ class RegistrarPresidente{
     }
 
 
-    public function cambiarEstado(){
-
-
-
-    }
+    
 }
