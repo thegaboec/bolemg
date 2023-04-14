@@ -27,8 +27,8 @@ class RegistrarPresidente{
     {
         $this->funciones=$funciones;
     }
-
-
+    public function agregar5(){}
+    
     public function add(){
 
         $data = [
@@ -51,7 +51,7 @@ class RegistrarPresidente{
 
             'template'=>'secretaria/agregar_presidente.html.php',
             'variables' => [
-                'exito' => 'Acaba de registrarse correctamente'
+                'exito' => 'Se registro la información correctamente'
             ]
         ];
 
@@ -71,5 +71,9 @@ class RegistrarPresidente{
     }
 
 
+<<<<<<< HEAD
+   
+=======
     
+>>>>>>> 3c823ead88a911ba97c5d5c924d9829d54df753d
 }
