@@ -23,7 +23,7 @@
           <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
               <li><a href="/artesano/inicio" class="nav-link px-2 text-white">Inicio</a></li>             
               <li><a href="/artesano/perfil" class="nav-link px-2 text-start active ">Perfil Laboral</a></li>
-              <li><a href="/artesano/cambiarcontraseña" class="nav-link px-2 text-white">Cambiar Contraseña</a></li>
+              <li><a href="/cambio/clave" class="nav-link px-2 text-white">Cambiar Contraseña</a></li>
           </ul>                
             <div class="text-end">
                 <a href='/logout' class="btn btn-outline-danger me-2">Cerrar Sesión</a>

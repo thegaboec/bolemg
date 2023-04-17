@@ -19,7 +19,7 @@
                 <img src="/assets/img/logo_jnda.png" alt = "bootstrap" windth="30" height="55">
               <li><a href="/empleador/artesanadoslogueado" class="nav-link px-2 text-start">Artesanados</a></li>
               <li><a href="/empleador/listado_artesanos" class="nav-link px-2 text-white">Listado de artesanos</a></li>
-              <li><a href="/empleador/cambiarcontraseña_empleador" class="nav-link px-2 text-white">Cambiar contraseña</a></li>
+              <li><a href="/cambio/clave" class="nav-link px-2 text-white">Cambiar contraseña</a></li>
             </ul>
     
     

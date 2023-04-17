@@ -13,7 +13,7 @@
                 </thead>
                 <tbody>
                     <?php $count = 0;
-                    foreach($presidentes as $personal): ?>
+                    foreach($secretaria as $personal): ?>
                             <tr class="<?php
                                           if(isset($personal->estado) && $personal->estado === 'inactivo'){
                                              echo 'remove-agentente';

@@ -17,7 +17,7 @@ class Usuarios extends DatabaseTable{
     public $apellido;
     public $email;
     public $estado;
-    public $password;
+    public $clave;
 
     public function __construct()
     {

@@ -12,6 +12,12 @@ class Secretaria{
 
     private  $secretaria;
 
+    public function __construct(  Usuarios $secretaria )
+    {
+        $this->secretaria = $secretaria;
+        
+    }
+
     public function index(){
 
         return[
@@ -22,17 +28,6 @@ class Secretaria{
         ];
 
     }
-
-    public function __construct(
-        Usuarios $secretaria
-        
-    )
-    {
-        $this->secretaria = $secretaria;
-        
-    }
-
-
 
     public function add(){
 
@@ -54,7 +49,7 @@ class Secretaria{
 
 
         return [
-            'titulo'=>'Agregar Secretaria',
+            'titulo'=>'Registrar Secretaria',
 
             'template'=>'presidente/agregar_secretaria.html.php',
             'variables' => [
@@ -76,5 +71,6 @@ class Secretaria{
         }
         
     }
+
     
 }

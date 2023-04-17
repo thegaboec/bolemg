@@ -1,10 +1,11 @@
 <?php if(isset($error)): ?>
-        <p class text="error">
+  <div class="mt-4">  <p class=" text-center error bg-danger text-white p-4 text-center w-50 m-auto">
+
             <?= $error ?>
         </p>
 <?php endif; ?>    
 <?php if(isset($exito)): ?>
-        <p class="success">
+  <div class="mt-4">  <p class=" text-center bg-danger text-white p-4 text-center w-50 m-auto">
             <?= $exito ?>
         </p>
 <?php endif; ?> 
@@ -58,11 +59,6 @@
               <label id="rol"  class="ms-TextField-field fw-bold" name="rol">Secretaria</label>
             </div>
 
-
-            <div class="col-6">
-              <label for="estado" class="form-label">Estado: </label>
-              <label id="rol"  class="ms-TextField-field fw-bold" name="estado">Secretaria</label>
-            </div>
 
 
             <div class="text-center">

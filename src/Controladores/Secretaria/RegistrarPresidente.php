@@ -71,9 +71,5 @@ class RegistrarPresidente{
     }
 
 
-<<<<<<< HEAD
-   
-=======
     
->>>>>>> 3c823ead88a911ba97c5d5c924d9829d54df753d
 }

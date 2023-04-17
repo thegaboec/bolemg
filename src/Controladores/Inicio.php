@@ -30,7 +30,7 @@ class Inicio {
     public function listarArtesanados(){
 
 
-        $artesanados=$this->artesanados->select();
+        $artesanados=$this->artesanados->selectFromColumn('estado',Artesanados::ESTADO_ACTIVO);
   
         return[
 

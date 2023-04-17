@@ -1,10 +1,10 @@
 <?php if(isset($error)): ?>
-        <p class text="error">
+  <div class="mt-4">  <p class=" text-center error bg-danger text-white p-4 text-center w-50 m-auto">
             <?= $error ?>
         </p>
 <?php endif; ?>    
 <?php if(isset($exito)): ?>
-        <p class="success">
+  <div class="mt-4">  <p class=" text-center error bg-danger text-white p-4 text-center w-50 m-auto">
             <?= $exito ?>
         </p>
 <?php endif; ?> 
@@ -14,7 +14,7 @@
   <main>
     <div class="py-5 text-center">
       <img class="d-block mx-auto mb-4" src="/assets/img/delegar.png" alt="" width="120" height="150">
-      <h2>Delegar funciones</h2>
+      <h2>Nuevo Presidente</h2>
       <p class="lead"> Ingrese los datos del nuevo presidente de la Junta Provincial de Defensa del Artesano en el siguiente formulario</p>
     </div>
 
@@ -64,7 +64,7 @@
 
 
             <div class="text-center">
-                <button class="col-sm-4 btn btn-primary btn-lg  " type="submit">Registrar</button>
+                <button class="col-sm-4 btn btn-dark btn-lg  " type="submit">Registrar</button>
             </div>
           
         </form>

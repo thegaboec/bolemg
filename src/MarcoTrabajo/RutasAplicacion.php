@@ -4,11 +4,14 @@ namespace App\MarcoTrabajo;
 
 use App\Controladores\Artesano\InicioArtesano;
 use App\Controladores\Artesano\Perfil;
+use App\Controladores\Clave;
 use App\Controladores\Presidente\Secretaria;
 use App\Controladores\Inicio;
 use App\Controladores\Secretaria\RegistrarPresidente;
 use App\Controladores\Secretaria\ModificarPresidente;
 use App\Controladores\Presidente\Inicio as PresidenteInicio;
+use App\Controladores\Presidente\Modificar;
+use App\Controladores\Secretaria\ActualizarArtesanado;
 use App\Controladores\Secretaria\InicioSecretaria;
 use App\Controladores\Secretaria\ModificarArtesanado;
 use App\Controladores\Secretaria\ModificarArtesano;
@@ -16,19 +19,23 @@ use App\Controladores\Secretaria\Publicar;
 use App\Controladores\Secretaria\RegistrarArtesanado;
 use App\Controladores\Secretaria\RegistrarArtesano;
 use App\Controladores\Web\Login;
+
 use App\Modelos\Artesanos;
 use App\Modelos\Usuarios;
+use App\Modelos\Artesanados;
 
 
 class RutasAplicacion{
     private $autenttificacion;
     private $usuarios;
     private $artesanos;
+    private $artesanados;
 
     public function __construct()
     {
         $this->usuarios = new Usuarios;
         $this->artesanos = new Artesanos;
+        $this->artesanados = new Artesanados;
         $this->autenttificacion = new Autentificacion([$this->usuarios,$this->artesanos],['idusuarios','idartesano'],'clave');
     }
 
@@ -37,17 +44,20 @@ class RutasAplicacion{
         $inicio = new Inicio();
         $inicioPresidente = new PresidenteInicio;
         $agregarSecretaria= new Secretaria($this ->usuarios);
+        $modificarSecretaria= new Modificar($this ->usuarios);
         $registrarPresidente = new RegistrarPresidente($this ->usuarios);
         $modificarPresidente= new ModificarPresidente($this ->usuarios);
         $inicioSecretaria = new InicioSecretaria;
         $registrarArtesano= new RegistrarArtesano;
         $modificarArtesano = new ModificarArtesano;
-        $registrarArtesanado = new RegistrarArtesanado;
-        $modificarArtesanado = new ModificarArtesanado;
+        $registrarArtesanado = new RegistrarArtesanado ($this-> artesanados);
+        $modificarArtesanado = new ModificarArtesanado ($this->artesanados);
+        $actualizarArtesanado = new ActualizarArtesanado ($this-> artesanados);
         $publicar = new Publicar;
         $perfilLaboral = new Perfil;
         $inicioArtesano = new InicioArtesano;
         $iniciarSession = new Login($this->autenttificacion);
+        $nuevaClave = new Clave($this ->usuarios, $this->autenttificacion);
 
       
         return [
@@ -88,6 +98,18 @@ class RutasAplicacion{
                     ],
                 ],
 //Presidente
+                'presidente/cambio/clave' =>[
+                    'GET' => [
+                        'controlador' => $nuevaClave,
+                        'accion' => 'cambiClave'
+                    ],
+                    'POST' => [
+                        'controlador' => $nuevaClave,
+                        'accion' => 'saveCambioClave'
+                    ],
+                    'login' => true
+                    
+                ],
                 'presidente' =>[
                     "GET"=>[
                         "controlador"=> $inicioPresidente,
@@ -99,7 +121,7 @@ class RutasAplicacion{
                 ],  
                 
                 
-                'presidente/agregar/secretaria' =>[
+                'presidente/registrar/secretaria' =>[
                     "GET"=>[
                         "controlador"=> $agregarSecretaria,
                         "accion"=>'index'
@@ -114,10 +136,34 @@ class RutasAplicacion{
             
                 ],
 
-
+                'presidente/modificar/secretaria' =>[
+                    "GET"=>[
+                        "controlador"=> $modificarSecretaria,
+                        "accion"=>'view'
+                    ],
+                    "POST"=>[
+                        "controlador"=> $modificarSecretaria,
+                        "accion"=>'saveRemoveSecretaria'
+                    ],
+                    'login' => true, // loguedo
+                    'rol' => Usuarios::PRESIDENTE//ro
+                ],
 
 
 //Secretaria
+                'secretaria/cambio/clave' =>[
+                    'GET' => [
+                        'controlador' => $nuevaClave,
+                        'accion' => 'cambioClave'
+                    ],
+                    'POST' => [
+                        'controlador' => $nuevaClave,
+                        'accion' => 'saveCambioClave'
+                    ],
+                    'login' => true
+                    
+                ],
+
                 'secretaria/inicio' =>[
                     "GET"=>[
                         "controlador"=> $inicioSecretaria,
@@ -177,21 +223,46 @@ class RutasAplicacion{
                         "controlador"=> $registrarArtesanado,
                         "accion"=>'registrarArt'
                     ],
+                    "POST"=>[
+                        "controlador"=> $registrarArtesanado,
+                        "accion"=>'nuevoArtesanados'
+                    ],
+                    
+                    'login' => true, // loguedo
+                    'rol' => Usuarios::SECRETARIA //rol
+            
                 ],
                                 
-                'secretaria/modificarinhabilitar/artesanado' =>[
+                'secretaria/habilitar-deshabilitar/artesanado' =>[
                     "GET"=>[
                         "controlador"=> $modificarArtesanado,
-                        "accion"=>'modificarArt'
+                        "accion"=>'darbajaArt'
                     ],
+                    "POST"=>[
+                        "controlador"=> $modificarArtesanado,
+                        "accion"=>'bajaArtesanados'
+                    ],
+                    'login' => true, // loguedo
+                    'rol' => Usuarios::SECRETARIA //rol
+            
+                ],
+                'secretaria/actualizar/artesanado' =>[
+                    'GET' => [
+                        'controlador' => $actualizarArtesanado,
+                        'accion' => 'view'
+                    ],
+                    'login' => true,
+                    'permission' =>Usuarios::SECRETARIA
+                ],
+                'secretaria/editar/artesanado' =>[
+                    'GET' => [
+                        'controlador' => $actualizarArtesanado,
+                        'accion' => 'edit'
+                    ],
+                    'login' => true,
+                    'permission' =>Usuarios::SECRETARIA
                 ],
 
-                'secretaria/publicar/anuncio' =>[
-                    "GET"=>[
-                        "controlador"=> $publicar,
-                        "accion"=>'publicarAnuncio'
-                    ],
-                ],
 
 //Artesano
                 'artesano/inicio' =>[
