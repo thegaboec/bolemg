@@ -19,7 +19,7 @@
     
        <h2 class="mb-3 "><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> Registro de Artesanado</font></font></h2>
        <p class="lead"> Ingrese los datos del nuevo artesanado en el siguiente formulario</p>
-       <form action="" method="post">
+       <form action="" method="post" enctype="multipart/form-data">
          <div class="row g-3 col-md-6">
 
            <div class="col-sm-6">
@@ -38,13 +38,21 @@
              </div>
            </div>
            
-           <div class="col-sm-6">
-             <label for="lastName" class="form-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Foto del Artesanado </font></font></label>
-             <input name="url_foto" type="url" class="form-control" id="lastName" placeholder="URL de la foto" value="" required="">
-             <div class="invalid-feedback">
-               Se requiere un Nombre valido 
-             </div>
-           </div> 
+
+           <div class="form-group col-md-6">
+                    <div class=" col-md-6">
+                        <label for="trabajos">foto</label>
+                        <br> 
+                        <div class="input-group">
+                            <label class="input-group-btn">
+                                <span class="">
+                                    <input accept=".jpg,.png,.jpeg,.gif" class="hidden" name="url_foto" type="file" id="foto">
+                                </span>
+                            </label>  
+                        </div>
+                    </div>
+                </div>
+          
          
          </div>
 
