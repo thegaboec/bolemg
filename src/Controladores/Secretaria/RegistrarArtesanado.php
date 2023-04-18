@@ -41,6 +41,7 @@ class RegistrarArtesanado{
         $direccionJson = './src/Includes/imgartesanado.json';
         $DirecionImage = './assets/img/';
         $outputImage = $DirecionImage . $name;
+        
 
         $add =[
             'idartesanado' => trim($_POST['idartesanado']),
