@@ -29,18 +29,68 @@
               </div>
           </div>
       </div>
+      <br>
+     <center>
+    <div class="contenedor3  col-sm-9">
+      <p><strong> <h2>PROVINCIAL DE DEFENSA DEL ARTESANO</h2></strong>  </p>
+    </div></center>
+    <br>
+    </div> <center>
+    <div class="contenedor3  col-sm-9">
+       
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+            <a class="nav-link active show" id="mision-tab" data-toggle="tab" href="#mision-" role="tab" aria-controls="mision-" aria-selected="true">MISIÓN</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" id="vision-tab" data-toggle="tab" href="#vision" role="tab" aria-controls="vision" aria-selected="false">VISIÓN</a>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade active show" id="mision-" role="tabpanel" aria-labelledby="mision--tab">
+            <p>La JNDA tiene la mission de liderar el fortalecimiento, profesionalizacion y desarrllo del sector artesanal, mediante el impulso de una politica...</p>
+            </div>
+            <div class="tab-pane fade" id="vision" role="tabpanel" aria-labelledby="vision-tab">
+            <p>La JNDA tiene la mission de liderar el fortalecimiento, profesionalizacion y desarrllo del sector artesanal, mediante el impulso de una politica...</p>
+            </div>
+        </div>
+   
+    </div> </center>
+    <br>
+     <center>
+    <div class="contenedor4  col-sm-9 text-info ">
+      <p><strong> <h3>PUBLICACIONES</h3></strong>  </p>
+    </div></center>
+    <br>
+    
+<center>
+    
+        <div class="row mb-1 justify-content-center"> 
+            <?php foreach ($publicaciones as $publicacion): ?>
+            <div class="col-md-5">
+                 
+                    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                        <div class="col p-4 d-flex flex-column position-static">
+                        
+                            <h4 class="mb-0  text-uppercase"><?=$publicacion->idpublicacion?></h4>
+                           <small> <div class="mb-1 text-secondary"><?=$publicacion->fecha?></div></small>
+                            <p class="card-text mb-auto text-body-secondary"><?=$publicacion->publicacion?></p>
+                        
+                        </div>
+                            <div class="col-auto d-none d-lg-block">
+                                <img src="/<?=$publicacion->foto_publicacion?>" alt = "img" windth="100" height="250">
+                            </div>
+                        
+                    </div>
+                
+            </div>
+            <?php endforeach;?>    
+
+            
+        </div>
+
+  </center>
+    <br>
 
 
-
-
-    </div>
-    <div class="contenedor2">
-        <br><br>
-        <p class="fs-3 fw-semibold lh-base text-break text-center">Mision</p> 
-        <p class="fs-6 fst-italic lh-base text-break text-center">La JNDA tiene la mission de liderar el fortalecimiento, profesionalizacion y desarrllo del sector artesanal, mediante el impulso de una politica...</h3></center>
-        </p>
-        
-        <p class="fs-3 fw-semibold lh-base text-break text-center">Vision</p> 
-        <p class="fs-6 fst-italic lh-base text-break text-center">La JNDA tiene la mission de liderar el fortalecimiento, profesionalizacion y desarrllo del sector artesanal, mediante el impulso de una politica...</h3></center></p>
-        <br><br>
-    </div>
+  
