@@ -18,11 +18,11 @@ class RegistrarArtesanado{
     }
 
     
-    public function registrarArt($variables=[]){
+    public function registrarArt(){
         return [
             'titulo' => 'Registrar Artesanado',
             'template' => 'secretaria/registrarArtesanado.html.php',
-            'variables'=> $variables
+            
             
         ];
     }
@@ -76,7 +76,7 @@ class RegistrarArtesanado{
             
         }catch(\PDOException $e){
                 return [
-                    'titulo'=>'Agregar Secretaria',
+                    'titulo'=>'Registrar Artesanado',
                     'template'=>'secretaria/registrarArtesanado.html.php',
                     'variables' => [
                         

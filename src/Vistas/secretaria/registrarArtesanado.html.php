@@ -41,7 +41,7 @@
 
            <div class="form-group col-md-6">
                     <div class=" col-md-6">
-                        <label for="trabajos">foto</label>
+                        <label for="trabajos">Foto</label>
                         <br> 
                         <div class="input-group">
                             <label class="input-group-btn">
