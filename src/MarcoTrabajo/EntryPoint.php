@@ -50,7 +50,7 @@ class EntryPoint{
         'presidente' => 'layout_presidente.html.php',
         'secretaria' => 'layout_secretaria.html.php',
         'artesano' => 'layout_artesano.html.php',
-        'empleador' => 'layout_empelador.html.php'
+        'empleador' => 'layout_empleador.html.php'
        ];
        $rutaT= preg_split('/\//',$this->ruta)[0];
        $templateRes = $usuariosTemplate[$rutaT] ?? $usuariosTemplate['default'];

@@ -19,7 +19,9 @@ use App\Controladores\Secretaria\Publicar;
 use App\Controladores\Secretaria\RegistrarArtesanado;
 use App\Controladores\Secretaria\RegistrarArtesano;
 use App\Controladores\Web\Login;
-
+use App\Controladores\Empleador\InicioEmpleador as EmpleadorInicio;
+use App\Controladores\Empleador\ListaArtesanos;
+use App\Controladores\Empleador\VerArtesanados;
 use App\Modelos\Artesanos;
 use App\Modelos\Usuarios;
 use App\Modelos\Artesanados;
@@ -48,7 +50,7 @@ class RutasAplicacion{
         $registrarPresidente = new RegistrarPresidente($this ->usuarios);
         $modificarPresidente= new ModificarPresidente($this ->usuarios);
         $inicioSecretaria = new InicioSecretaria;
-        $registrarArtesano= new RegistrarArtesano;
+        $registrarArtesano= new RegistrarArtesano($this ->artesanos);
         $modificarArtesano = new ModificarArtesano;
         $registrarArtesanado = new RegistrarArtesanado ($this-> artesanados);
         $modificarArtesanado = new ModificarArtesanado ($this->artesanados);
@@ -58,6 +60,9 @@ class RutasAplicacion{
         $inicioArtesano = new InicioArtesano;
         $iniciarSession = new Login($this->autenttificacion);
         $nuevaClave = new Clave($this ->usuarios, $this->autenttificacion);
+        $inicioEmpleador=new EmpleadorInicio();
+        $verArtesanados=new VerArtesanados($this->artesanados);
+        $listaArtesanos= new ListaArtesanos($this->artesanos);
 
       
         return [
@@ -207,6 +212,13 @@ class RutasAplicacion{
                         "controlador"=> $registrarArtesano,
                         "accion"=>'registrarA'
                     ],
+                    "POST"=>[
+                        "controlador"=> $registrarArtesano,
+                        "accion"=>'agregar'
+                    ],
+                    
+                    'login' => true, // loguedo
+                    'rol' => Usuarios::SECRETARIA //rol
                 ],
 
                 
@@ -215,6 +227,7 @@ class RutasAplicacion{
                         "controlador"=> $modificarArtesano,
                         "accion"=>'modificarA'
                     ],
+                    
                 ],
 
                 
@@ -279,6 +292,37 @@ class RutasAplicacion{
                 ],
 
 //Empleador
+
+
+                'empleador' =>[
+                    "GET"=>[
+                        "controlador"=> $inicioEmpleador,
+                        "accion"=>'index'
+                    ],
+                    //restrinciones para acceder a esta ruta
+                    'login' => true, // loguedo
+                    'rol' => Usuarios::EMPLEADOR //rol
+                ],  
+
+                'empleador/visualizar/artesanados'=>[
+                    "GET"=>[
+                        "controlador"=> $verArtesanados,
+                        "accion"=>'listarArtesanados'
+                    ],
+
+                    'login' => true, // loguedo
+                    'rol' => Usuarios::EMPLEADOR //rol
+                ],
+
+                'empleador/lista/artesanos'=>[
+                    "GET"=>[
+                        "controlador"=> $listaArtesanos,
+                        "accion"=>'listar'
+                    ],
+
+                    'login' => true, // loguedo
+                    'rol' => Usuarios::EMPLEADOR //rol
+                ],
 
 
 

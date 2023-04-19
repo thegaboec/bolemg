@@ -1,4 +1,18 @@
      
+<?php
+
+use App\Modelos\Artesanados;
+
+ if(isset($error)): ?>
+  <div class="mt-4">  <p class="bg-danger text-white p-4 text-center w-50 m-auto">
+            <?= $error ?>
+        </p>
+<?php endif; ?>    
+<?php if(isset($success)): ?>
+  <div class="mt-4">  <p class="bg-danger text-white p-4 text-center w-50 m-auto">
+            <?= $success ?>
+        </p>
+<?php endif; ?> 
 <div class ="container" style="background-color: hsl(0, 0%, 100%);  background-size: auto;">
      <center>
         <img src="/assets/img/adduser.png" class= class="bi me-2" alt="" width="120" height="150">
@@ -6,7 +20,7 @@
         <div class=" py-5">
             <h2 class="mb-3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nuevo Artesano</font></font></h2>
             <p class="lead"> Ingrese los datos del nuevo artesano en el siguiente formulario</p>
-            <form class="needs-validation" novalidate="">
+            <form class="needs-validation" novalidate="" method="post" enctype="multipart/form-data">
             <div class="row g-3 col-md-8">
 
                 <div class="form-group col-md-12">
@@ -15,8 +29,8 @@
                         <div class="input-group">
                             <label class="input-group-btn "> 
                                 <span class="">
-                                    <input type="image" src="/assets/img/foto.png" style="border: dodgerblue" height="90" width="100">
-                                    <input accept=".jpg,.png,.jpeg,.gif" class="hidden" name="foto" type="file" id="foto"  height="90" width="100">
+                                    
+                                    <input accept=".jpg,.png,.jpeg,.gif" class="hidden" name="foto" type="file" id="foto"  >
                                 </span>
                             </label>  
                         </div>
@@ -25,7 +39,7 @@
 
                 <div class="col-sm-6">
                     <label for="nombre_arte" class="form-label"><font style="vertical-align: inherit;">Nombres</font></font></label>
-                    <input type="text" class="form-control" id="nombre_arte" placeholder="Alex Fernando" value="" required="">
+                    <input type="text" class="form-control" id="nombre_arte" placeholder="Alex Fernando" value="" required="" name="nombres">
                     <div class="invalid-feedback">
                         Se requiere Nombres valido
                     </div>
@@ -33,7 +47,7 @@
     
                 <div class="col-sm-6">
                     <label for="apellido_arte" class="form-label"><font style="vertical-align: inherit;">Apellidos</font></font></label>
-                    <input type="text" class="form-control" id="apellido_arte" placeholder="Sanchez  Velazco" value="" required="">
+                    <input type="text" class="form-control" id="apellido_arte" placeholder="Sanchez  Velazco" value="" required="" name="apellidos">
                     <div class="invalid-feedback">
                         Se requiere Apellidos valido 
                     </div>
@@ -41,7 +55,7 @@
                
                 <div class="col-sm-6">
                     <label for="cedula" class="form-label text-left"><font style="vertical-align: inherit;">Cédula</font></font></label>
-                    <input type="number" class="form-control" id="cedula" placeholder="0202655878" value="" required="">
+                    <input type="number" class="form-control" id="cedula" placeholder="0202655878" value="" required="" name="idartesano">
                     <div class="invalid-feedback">
                         Se requiere una Cédula valida 
                     </div>
@@ -49,7 +63,7 @@
                  
                 <div class="col-sm-6">
                     <label for="telefono" class="form-label"><font style="vertical-align: inherit;">Télefono</font></font></label>
-                    <input type="number" class="form-control" id="telefono" placeholder="0969874902" value="" required="">
+                    <input type="number" class="form-control" id="telefono" placeholder="0969874902" value="" required="" name="telefono">
                     <div class="invalid-feedback">
                         Se requiere un Teléfono valido 
                     </div>
@@ -57,43 +71,90 @@
 
                 <div class="col-sm-6">
                     <label for="artesanado" class="form-label">Artesanado</label>
-                    <select id="artesanado" class="form-select">
-                        <option><?=$artesanado->categoria?> </option>
-                  
+                    <select id="artesanado" class="form-select" name="artesanado">
+
+                    <?php foreach ($artesanados as $artesanado): ?>
+                        <option value="<?=$artesanado->idartesanado?>"><?=$artesanado->categoria?></option>
+                    <?php endforeach;?>
                     </select>
                 </div>
         
                 <div class="col-sm-6">
                     <label for="correo_electronico" class="form-label">Correo Electronico</label>
-                    <input type="email" class="form-control" id="correo_electronico" placeholder="juanito@gmail.com">
+                    <input type="email" class="form-control" id="correo_electronico" placeholder="juanito@gmail.com" name="correo">
                 </div>
 
                 <div class="col-sm-6">
                     <label for="direccion" class="form-label">Dirección</label>
-                    <input type="text" class="form-control" id="direccion" placeholder="Panamericana Sur">
+                    <input type="text" class="form-control" id="direccion" placeholder="Panamericana Sur" name="direccion">
                 </div>
+
+                <div class="form-group col-md-6">
+                    <div class="col-6 ">
+                        <label for="rol" class="form-label">Calificación: </label>
+                        <input type="number" class="form-control" id="cédula" name="calificacion">
+                    </div>
+                </div>
+
+                <p class="lead"> Trabajos realizados</p>
                             
                <div class="form-group col-md-6">
                     <div class=" col-md-6">
-                        <label for="trabajos">Trabajos Realizados</label>
-                        <br> 
                         <div class="input-group">
                             <label class="input-group-btn">
                                 <span class="">
-                                    <input accept=".jpg,.png,.jpeg,.gif" class="hidden" name="trabajos" type="file" id="trabajos">
+                                    <input accept=".jpg,.png,.jpeg,.gif" class="hidden" name="trabajoUno" type="file" id="trabajos">
+                                    
                                 </span>
                             </label>  
                         </div>
                     </div>
-                </div>
 
-
-                <div class="form-group col-md-6">
-                    <div class="col-6">
-                        <label for="rol" class="form-label">Rol: </label>
-                        <label id="rol"  class="ms-TextField-field fw-bold">Artesano</label>
+                    <div class=" col-md-6">
+                        
+                        <div class="input-group">
+                            <label class="input-group-btn">
+                                <span class="">
+                                    <input accept=".jpg,.png,.jpeg,.gif" class="hidden" name="trabajoDos" type="file" id="trabajos">
+                                    
+                                    
+                                </span>
+                            </label>  
+                        </div>
                     </div>
+
+                    <div class=" col-md-6">
+                        
+                        <div class="input-group">
+                            <label class="input-group-btn">
+                                <span class="">
+                                    <input accept=".jpg,.png,.jpeg,.gif" class="hidden" name="trabajoTres" type="file" id="trabajos">
+                                    
+                                    
+                                </span>
+                            </label>  
+                        </div>
+                    </div>
+
+                    <div class=" col-md-6">
+                        
+                        <div class="input-group">
+                            <label class="input-group-btn">
+                                <span class="">
+                                    <input accept=".jpg,.png,.jpeg,.gif" class="hidden" name="trabajoCuatro" type="file" id="trabajos" placeholder="opcional">
+                                    
+                                    
+                                </span>
+                            </label>  
+                        </div>
+                    </div>
+
                 </div>
+
+               
+
+
+                
 
             </div>
             <br>
