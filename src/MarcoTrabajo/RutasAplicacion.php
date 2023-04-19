@@ -25,6 +25,7 @@ use App\Controladores\Empleador\VerArtesanados;
 use App\Modelos\Artesanos;
 use App\Modelos\Usuarios;
 use App\Modelos\Artesanados;
+use App\Modelos\Publicaciones;
 
 
 class RutasAplicacion{
@@ -32,12 +33,14 @@ class RutasAplicacion{
     private $usuarios;
     private $artesanos;
     private $artesanados;
+    private $publicaciones;
 
     public function __construct()
     {
         $this->usuarios = new Usuarios;
         $this->artesanos = new Artesanos;
         $this->artesanados = new Artesanados;
+        $this->publicaciones = new Publicaciones;
         $this->autenttificacion = new Autentificacion([$this->usuarios,$this->artesanos],['idusuarios','idartesano'],'clave');
     }
 
@@ -55,7 +58,7 @@ class RutasAplicacion{
         $registrarArtesanado = new RegistrarArtesanado ($this-> artesanados);
         $modificarArtesanado = new ModificarArtesanado ($this->artesanados);
         $actualizarArtesanado = new ActualizarArtesanado ($this-> artesanados);
-        $publicar = new Publicar;
+        $publicar = new Publicar ($this->publicaciones);
         $perfilLaboral = new Perfil;
         $inicioArtesano = new InicioArtesano;
         $iniciarSession = new Login($this->autenttificacion);
@@ -275,6 +278,38 @@ class RutasAplicacion{
                     'login' => true,
                     'permission' =>Usuarios::SECRETARIA
                 ],
+
+                'secretaria/publicar/anuncio' =>[
+                    "GET"=>[
+                        "controlador"=> $publicar,
+                        "accion"=>'publicarAnuncio'
+                    ],
+                    "POST"=>[
+                        "controlador"=> $publicar,
+                        "accion"=>'anuncio'
+                    ],
+                    
+                    'login' => true, // loguedo
+                    'rol' => Usuarios::SECRETARIA //rol
+            
+                ],
+
+                'secretaria/listado/anuncio' =>[
+                    "GET"=>[
+                        "controlador"=> $publicar,
+                        "accion"=>'listadoPublicacion'
+                    ],
+                    "POST"=>[
+                        "controlador"=> $publicar,
+                        "accion"=>'publica'
+                    ],
+                    
+                    'login' => true, // loguedo
+                    'rol' => Usuarios::SECRETARIA //rol
+            
+                ],
+
+                
 
 
 //Artesano

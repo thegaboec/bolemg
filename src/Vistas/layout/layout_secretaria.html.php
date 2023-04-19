@@ -57,8 +57,15 @@
                        <a class="dropdown-item" href="/secretaria/modificarinhabilitar/artesano">Modificar-Inhabilitar</a>
                      </div>
                  </li>
-                 
-                 <li><a href="/secretaria/publicar/anuncio" class="nav-link px-2 text-white ">Publicar Anuncio</a></li>
+                 <li class="nav-item dropdown">
+                     <a class="nav-item nav-link dropdown-toggle " href="#" id="bd-versions" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: aliceblue;">
+                      Anuncios
+                     </a>
+                     <div class="dropdown-menu dropdown-menu-right mr-md-0 " aria-labelledby="bd-versions">
+                          <a class="dropdown-item " href="/secretaria/publicar/anuncio">Publicar</a>
+                          <a class="dropdown-item" href="/secretaria/listado/anuncio">Listado</a>
+                      </div>
+                 </li>
                  <li><a href="/secretaria/cambio/clave" class="nav-link px-2 text-white">Cambiar Contraseña</a></li>
                  
            
