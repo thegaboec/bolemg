@@ -51,6 +51,10 @@ class RegistrarArtesano{
         $DirecionImage = './assets/fotosartesanos/';
         $outputImage = $DirecionImage . $name;
 
+        //Imagenes de trabajos 
+
+        
+
         
 
         $data=[
