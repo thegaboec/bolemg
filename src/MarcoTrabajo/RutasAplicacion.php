@@ -22,6 +22,7 @@ use App\Controladores\Web\Login;
 use App\Controladores\Empleador\InicioEmpleador as EmpleadorInicio;
 use App\Controladores\Empleador\ListaArtesanos;
 use App\Controladores\Empleador\VerArtesanados;
+use App\Controladores\Web\RegistrarEmpleador;
 use App\Modelos\Artesanos;
 use App\Modelos\Usuarios;
 use App\Modelos\Artesanados;
@@ -34,6 +35,7 @@ class RutasAplicacion{
     private $artesanos;
     private $artesanados;
     private $publicaciones;
+
 
     public function __construct()
     {
@@ -54,7 +56,7 @@ class RutasAplicacion{
         $modificarPresidente= new ModificarPresidente($this ->usuarios);
         $inicioSecretaria = new InicioSecretaria;
         $registrarArtesano= new RegistrarArtesano($this ->artesanos);
-        $modificarArtesano = new ModificarArtesano;
+        $modificarArtesano = new ModificarArtesano($this->artesanos);
         $registrarArtesanado = new RegistrarArtesanado ($this-> artesanados);
         $modificarArtesanado = new ModificarArtesanado ($this->artesanados);
         $actualizarArtesanado = new ActualizarArtesanado ($this-> artesanados);
@@ -66,6 +68,7 @@ class RutasAplicacion{
         $inicioEmpleador=new EmpleadorInicio();
         $verArtesanados=new VerArtesanados($this->artesanados);
         $listaArtesanos= new ListaArtesanos($this->artesanos);
+        $registroEmpleador= new RegistrarEmpleador($this->usuarios);
 
       
         return [
@@ -83,19 +86,19 @@ class RutasAplicacion{
                         "accion"=>'start'
                     ],
                 ],
-                'artesanados'=>[
+            'artesanados'=>[
                     "GET"=>[
                         "controlador"=> $inicio,
                         "accion"=>'listarArtesanados'
                     ],
                 ],
-                'contactos'=>[
+            'contactos'=>[
                     "GET"=>[
                         "controlador"=> $inicio,
                         "accion"=>'contactos'
                     ],
                 ],
-                'login'=>[
+            'login'=>[
                     "GET"=>[
                         "controlador"=> $iniciarSession,
                         "accion"=>'logueo'
@@ -104,6 +107,18 @@ class RutasAplicacion{
                         "controlador"=> $iniciarSession,
                         "accion"=>'autentificacion'
                     ],
+                ],
+
+                'registro' =>[
+                    "GET"=>[
+                        "controlador"=> $registroEmpleador,
+                        "accion"=>'registroE'
+                    ],
+                    "POST"=>[
+                        "controlador"=> $registroEmpleador,
+                        "accion"=>'add'
+                    ],
+                
                 ],
 //Presidente
                 'presidente/cambio/clave' =>[
@@ -225,11 +240,18 @@ class RutasAplicacion{
                 ],
 
                 
-                'secretaria/modificarinhabilitar/artesano' =>[
+                'secretaria/habilitar-deshabilitar/artesano' =>[
                     "GET"=>[
                         "controlador"=> $modificarArtesano,
                         "accion"=>'modificarA'
                     ],
+                      "POST"=>[
+                        "controlador"=> $modificarArtesano,
+                        "accion"=>'bajaArtesano'
+                    ],
+                    'login' => true, // loguedo
+                    'rol' => Usuarios::SECRETARIA //rol
+            
                     
                 ],
 

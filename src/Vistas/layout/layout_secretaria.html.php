@@ -54,7 +54,7 @@
                      </a>
                      <div class="dropdown-menu dropdown-menu-right mr-md-0 " aria-labelledby="bd-versions">
                        <a class="dropdown-item " href="/secretaria/registrar/artesano">Registrar</a>
-                       <a class="dropdown-item" href="/secretaria/modificarinhabilitar/artesano">Modificar-Inhabilitar</a>
+                       <a class="dropdown-item" href="/secretaria/habilitar-deshabilitar/artesano">Modificar-Inhabilitar</a>
                      </div>
                  </li>
                  <li class="nav-item dropdown">

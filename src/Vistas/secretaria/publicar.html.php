@@ -24,7 +24,7 @@
             <div class="">
                 <div class="col-sm-4">
                   <label for="anuncio" class="form-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Titulo de la Publicación</font></label>
-                  <input type="text" name="idpublicacion" class="form-control" id="anuncio" placeholder="" value="" required="">
+                  <input type="text" name="titulo" class="form-control" id="anuncio" placeholder="" value="" required="">
                   <div class="invalid-feedback">
                         Se requiere ingresar una publicación
                   </div>

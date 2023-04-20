@@ -7,7 +7,7 @@
                 <thead class="thead-light">
                     <th>ID</th>
                     <th>Nombre</th>
-                    <th>URL de Imagen</th>
+                    
                     <th>Estado Actual</th>
                     <th>Habilitar/Deshabilitar</th>
                 </thead>
@@ -21,7 +21,7 @@
                                     ?>">
                                 <td><?= $artesanado->idartesanado?? 'desconocido'; ?></td>
                                 <td><?= $artesanado->categoria ?? 'desconocido'; ?></td>
-                                <td><?= $artesanado->url_foto ?? 'desconocido'; ?></td>
+                                
                                 <td><?= $artesanado->estado ?? 'desconocido'; ?></td>
                                 <td>
                                     <input class="text-center" type="checkbox" name="artesanado<?= $count;?>[estado]" id="">
