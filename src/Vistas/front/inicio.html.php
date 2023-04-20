@@ -72,13 +72,14 @@
                     <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                         <div class="col p-4 d-flex flex-column position-static">
                         
-                            <h4 class="mb-0  text-uppercase"><?=$publicacion->idpublicacion?></h4>
+                            <h4 class="mb-0  text-uppercase"><?=$publicacion->titulo?></h4>
                            <small> <div class="mb-1 text-secondary"><?=$publicacion->fecha?></div></small>
                             <p class="card-text mb-auto text-body-secondary"><?=$publicacion->publicacion?></p>
                         
                         </div>
                             <div class="col-auto d-none d-lg-block">
-                                <img src="/<?=$publicacion->foto_publicacion?>" alt = "img" windth="100" height="250">
+                                
+                                <img src="/<?=$publicacion->foto_publicacion?>" alt = "bootstrap" windth="100%" height="225">
                             </div>
                         
                     </div>

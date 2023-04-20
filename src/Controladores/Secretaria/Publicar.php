@@ -29,15 +29,15 @@ class Publicar{
 
         $tmp = $_FILES['foto_publicacion']['tmp_name'];
         $name = $_FILES['foto_publicacion']['name'];
-        $direccionJson = './src/Includes/imgpublicacion.json';
+       
         $DirecionImage = './assets/img/';
         $outputImage = $DirecionImage . $name;
         
 
         $agr =[
-            'idpublicacion' => trim($_POST['idpublicacion']),
-            'publicacion' => trim($_POST['publicacion']), 
-            'fecha' => trim($_POST['fecha']),
+            'titulo' => ($_POST['titulo']),
+            'publicacion' => ($_POST['publicacion']), 
+            'fecha' => ($_POST['fecha']),
             'foto_publicacion' => trim($outputImage),
             'estado' => Publicaciones::ESTADO_ACTIVO
             
@@ -45,35 +45,19 @@ class Publicar{
 
         try{
 
-            if(move_uploaded_file($tmp,$outputImage)){ // mueve la imagen guardada en el espacio temporal hacia la carpeta img permanentemente
-                $jsonImage = file_get_contents($direccionJson);// traemos el archivo json que contien la url de la imagen del logo
-                $dataImage = json_decode($jsonImage,true);
-                $dataImage['img'] = ltrim($outputImage,'.'); // le damos la nueva direccion del logo
-                file_put_contents($direccionJson,json_encode($dataImage)); 
-    
+            if(!move_uploaded_file($tmp,$outputImage)){ // mueve la imagen guardada en el espacio temporal hacia la carpeta img permanentemente
+                  
             }
 
             $this ->publicaciones->insert($agr);
             
-
-                return[
-                    'titulo' => 'Publicar Anuncio',
-                    'template' => 'secretaria/publicar.html.php',
-                    'variables' => [
-                        'success' => 'Se registro correctamente el nuevo artesanado'
-                    ]
-                    ];
+            return $this->publicarAnuncio(['success'=>"Se ingreso correctamente los datos"]);
                 
               
             
         }catch(\PDOException $e){
-                return [
-                    'titulo'=>'Publicar Anuncio',
-                    'template'=>'secretaria/publicar.html.php',
-                    'variables' => [ 
-                        'error' => 'No se pudo registrar'
-                        ] 
-                     ];
+                
+            return $this->publicarAnuncio(['error' => 'No se pudo registrar']);
         }
         
     }

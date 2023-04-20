@@ -8,8 +8,9 @@
                     <th>Fecha</th>
                     <th>Titulo</th>
                     <th>Anuncio</th>
-                    <th>Foto</th>
+    
                     <th>Estado</th>
+                    <th>Habilitar/Deshabilitar</th>
                 </thead>
                 <tbody>
                     <?php $count = 0;
@@ -20,9 +21,9 @@
                                           }              
                                     ?>">
                                 <td><?= $publicacion->fecha ?? 'desconocido'; ?></td>
-                                <td><?= $publicacion->idpublicacion ?? 'desconocido'; ?></td>
+                                <td><?= $publicacion->titulo ?? 'desconocido'; ?></td>
                                 <td><?= $publicacion->publicacion ?? 'desconocido'; ?></td>
-                                <td><?= $publicacion->foto_publicacion ?? 'desconocido'; ?></td>
+                                
                                 <td><?= $publicacion->estado ?? 'desconocido'; ?></td>
                                 
                                 <td>

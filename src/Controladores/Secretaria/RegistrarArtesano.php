@@ -59,7 +59,7 @@ class RegistrarArtesano{
 
         $data=[
             'idartesano' => $_POST['idartesano'],
-            'foto' => ltrim($outputImage,'.'),
+            'foto' => trim($outputImage),
             'nombres' => $_POST['nombres'],
             'apellidos' => $_POST['apellidos'],
             'telefono' => $_POST['telefono'],

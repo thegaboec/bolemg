@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -27,15 +27,17 @@
             </a>
             
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                <li><a href="/inicio" class="nav-link px-2 text-white">Inicio</a></li>
+                <li><a href="/inicio" class="nav-link px-2 text-white" >Inicio</a></li>
                 <li><a href="/artesanados" class="nav-link px-2 text-white">Artesanados</a></li>
                 <li><a href="/contactos" class="nav-link px-2 text-white">Contactos</a></li>
-                </ul>
+            </ul>
                 
         <div class="text-end">
         <a href='/login' class="btn btn-outline-light me-2">Iniciar Sesión</a>
         <a href='/registro' class="btn btn-warning">Registrarse</a>
         </div>
+
+
         </div>
         </div>
     </header>
