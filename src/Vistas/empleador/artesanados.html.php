@@ -22,15 +22,14 @@
               <img src="/<?=$artesanado->url_foto?>" alt = "bootstrap" windth="100%" height="225">
              
               <div class="card-body">
-                <p class=" text-center" ><?=
-                
-                $valordebusqueda=$artesanado->categoria;
+                <p class=" text-center" ><?=   
+                $artesanado->categoria
                 
                 ?> </p>
                 <div class="text-center">
                   <div class="btn-group" >
                       
-                      <a href='/empleador/lista/artesanos?id=<?=$artesanado->idartesanado?>' class="btn btn-outline-warning ">Lista de Artesanos</a>
+                      <a href='/empleador/lista/artesanos?idartesanado=<?=$artesanado->idartesanado?>' class="btn btn-outline-info ">Lista de Artesanos</a>
                   </div>
                 </div>
               </div>

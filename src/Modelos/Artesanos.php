@@ -36,4 +36,18 @@ class Artesanos extends DatabaseTable{
 
 
     }
+
+
+    public function desplegarPerfil($idartesano){
+
+        $consulta1='SELECT *FROM artesanos WHERE estado =:estado'. 
+
+        ' AND  idartesano =:idartesano';
+
+       $result1=$this->runQuery($consulta1,['estado'=>self::ESTADO_ACTIVO,'idartesano'=>$idartesano]);
+
+       return $result1->fetchAll(\PDO::FETCH_CLASS,\stdClass::class);
+
+
+    }
 }

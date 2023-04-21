@@ -1,6 +1,8 @@
 <?php if(isset($error)): ?>
-  <div class="mt-4">  <p class="bg-danger text-white p-4 text-center w-50 m-auto"> <?= $error ?> </p>
+  <div class="mt-4">  <p class="alert alert-danger  p-4 text-center w-50 m-auto" role="alert"> <?= $error ?> </p>
   </div>
+
+
 
 <?php endif; ?>
 

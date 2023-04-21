@@ -5,6 +5,7 @@ namespace App\MarcoTrabajo;
 use App\Controladores\Artesano\InicioArtesano;
 use App\Controladores\Artesano\Perfil;
 use App\Controladores\Clave;
+use App\Controladores\Empleador\DesplegarPerfil;
 use App\Controladores\Presidente\Secretaria;
 use App\Controladores\Inicio;
 use App\Controladores\Secretaria\RegistrarPresidente;
@@ -68,6 +69,7 @@ class RutasAplicacion{
         $inicioEmpleador=new EmpleadorInicio();
         $verArtesanados=new VerArtesanados($this->artesanados);
         $listaArtesanos= new ListaArtesanos($this->artesanos);
+        $desplegarPerfil= new DesplegarPerfil($this->artesanos);
         $registroEmpleador= new RegistrarEmpleador($this->usuarios);
 
       
@@ -375,6 +377,16 @@ class RutasAplicacion{
                     "GET"=>[
                         "controlador"=> $listaArtesanos,
                         "accion"=>'listar'
+                    ],
+
+                    'login' => true, // loguedo
+                    'rol' => Usuarios::EMPLEADOR //rol
+                ],
+
+                'empleador/perfil'=>[
+                    "GET"=>[
+                        "controlador"=> $desplegarPerfil,
+                        "accion"=>'desplegar'
                     ],
 
                     'login' => true, // loguedo

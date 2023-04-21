@@ -42,7 +42,7 @@ class Login {
             'titulo' => 'Login',
             'template' => 'front/login.html.php',
             'variables' => [
-                'error' => 'Eroor'
+                'error' => 'Usuario o contraseña incorrectos'
             ]
         ];
         
