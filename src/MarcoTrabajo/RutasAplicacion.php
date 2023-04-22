@@ -155,7 +155,7 @@ class RutasAplicacion{
                     'login' => true
                     
                 ],
-                'presidente' =>[
+                'presidente/inicio' =>[
                     "GET"=>[
                         "controlador"=> $inicioPresidente,
                         "accion"=>'index'

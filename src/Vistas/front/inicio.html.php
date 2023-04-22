@@ -4,8 +4,8 @@
               <img src="/assets/img/BOLEMG.png"  width="480" height="300" class="" ></center></div>
       <div class="row py-lg-5" style="background-color:#F3F5F8">
       <div class="col-lg-6 col-md-8 mx-5">
-        <h1 class="fw-light">Si buscas Artesanos acreditados en diferentes areas !BOLEMG es tu mejor opción¡</h1>
-        <p class="lead text-body-secondary">Contrata artesanos diferentes ramas artesanales con acreditados por la Junta Provincial de Defensa del Artesano de Bolivar <p>
+        <h1 class="fw-light">Si buscas Artesanos acreditados en diferentes areas ¡BOLEMG es tu mejor opción!</h1>
+        <p class="lead text-body-secondary">Contrata artesanos diferentes ramas artesanales acreditados por la Junta Provincial de Defensa del Artesano de Bolivar <p>
         </p>
         
       </div>

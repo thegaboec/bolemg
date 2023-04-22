@@ -26,7 +26,7 @@ class Login {
         $clave = $_POST['password'];
         $comprobacion =  $this->autentificacion->verificacion($usuario, $clave);
         $rolesRedirecionamientos = [
-            Usuarios::PRESIDENTE => '/presidente',
+            Usuarios::PRESIDENTE => '/presidente/inicio',
             Usuarios::SECRETARIA => '/secretaria/inicio',
             Usuarios::ARTESANO => '/artesano/inicio',
             Usuarios::EMPLEADOR => '/empleador'

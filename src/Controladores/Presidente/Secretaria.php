@@ -53,7 +53,7 @@ class Secretaria{
 
             'template'=>'presidente/agregar_secretaria.html.php',
             'variables' => [
-                'exito' => 'Se agregaron los datos con exito'
+                'exito' => 'Se registró correctamente a la nueva secretaria'
             ]
         ];
 
