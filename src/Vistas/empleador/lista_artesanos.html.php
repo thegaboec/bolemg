@@ -27,7 +27,7 @@
                 <div class="text-center">
                   <div class="btn-group" >
                       
-                      <a href='/empleador/lista/artesanos' class="btn btn-outline-warning ">Perfil laboral</a>
+                      <a href='/empleador/perfil?idartesano=<?=$artesano->idartesano?>' class="btn btn-outline-warning ">Perfil laboral</a>
                   </div>
                 </div>
               </div>

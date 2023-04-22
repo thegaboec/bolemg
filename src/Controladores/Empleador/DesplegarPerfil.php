@@ -1,38 +1,42 @@
 <?php
+
 namespace App\Controladores\Empleador;
 
 use App\Modelos\Artesanos;
 
-class ListaArtesanos{
-
+class DesplegarPerfil{
 
     private $artesanos;
 
     public function __construct(
+
         Artesanos $artesanos
     )
     {
         $this->artesanos=$artesanos;
+
     }
 
-    public function listar(){
 
-        $idartesanado= $_GET['idartesanado'];
 
-        $artesanos=$this->artesanos->verArtesanado($idartesanado );
-        
+
+    public function desplegar(){
+
+        $idartesano= $_GET['idartesano'];
+        $artesanos=$this->artesanos->desplegarPerfil($idartesano );
+
         //var_dump($artesanos);
         //die;
-        return[
 
-            'template'=>'empleador/lista_artesanos.html.php',
-            'titulo'=>'Artesanos',
+        return[
+            'template'=>'empleador/perfillaboral.html.php',
+            'titulo'=>'Perfil Laboral',
             'variables'=>[
                 'artesanos'=>$artesanos
             ]
 
         ];
 
-
     }
+
 }
