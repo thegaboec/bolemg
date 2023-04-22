@@ -98,6 +98,26 @@ class RutasAplicacion{
                         "accion"=>'contactos'
                     ],
                 ],
+
+            'publicaciones'=>[
+                    "GET"=>[
+                        "controlador"=> $inicio,
+                        "accion"=>'publicaG'
+                    ],
+                ],
+            
+            'publicacion'=>[
+                    "GET"=>[
+                        "controlador"=> $inicio,
+                        "accion"=>'listarpublica'
+                    ],
+                ],
+            'institucion'=>[
+                    "GET"=>[
+                        "controlador"=> $inicio,
+                        "accion"=>'institucion'
+                    ],
+                ],
             'login'=>[
                     "GET"=>[
                         "controlador"=> $iniciarSession,

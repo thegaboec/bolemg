@@ -1,96 +1,61 @@
-<div class="container">
-          <div class="row">
-              <div class="col-sm-12">
-                  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                      <div class="carousel-inner">
-                          <div class="carousel-item active">
-                              <img src="assets/img/fondo1.jpg" class="d-block w-100" alt="bootstrap" 
-                              width="620px" height="450px">
-                          </div>
-                          <div class="carousel-item">
-                              <img src="assets/img/logo_jnda.png" class="d-block w-100" alt="..." 
-                              width="620px" height="450px">
-                          </div>
-                          <div class="carousel-item">
-                            <img src="assets/img/fondo1.jpg" class="d-block w-100" alt="..." 
-                            width="620px" height="450px">
-                        </div>
 
-                      </div>
-                      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                          <span class="sr-only">Previous</span>
-                      </a>
-                      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                          <span class="sr-only">Next</span>
-                      </a>
-                  </div>
-              </div>
+      <br>
+     <div class=" p-5 rounded float-end">
+              <img src="/assets/img/BOLEMG.png"  width="480" height="300" class="" ></center></div>
+      <div class="row py-lg-5" style="background-color:#F3F5F8">
+      <div class="col-lg-6 col-md-8 mx-5">
+        <h1 class="fw-light">Si buscas Artesanos acreditados en diferentes areas !BOLEMG es tu mejor opción¡</h1>
+        <p class="lead text-body-secondary">Contrata artesanos diferentes ramas artesanales con acreditados por la Junta Provincial de Defensa del Artesano de Bolivar <p>
+        </p>
+        
+      </div>
+      
+    </div>
+    </div>
+    <br>
+    <center>
+      <div class=" pt-5 col-md-12 py-lg-5 rounded-2 p-3 mb-2 bg-primary-subtle text-dark">
+      
+      <div class="col-lg-6 col-md-8 mx-auto" style="color:#F3F5F8">
+        <h1 class="fw-light text-dark">¿Quienes Somos?</h1>
+        <p class="lead text-dark " ">Revisa el apartado INSTITUCIÓN</p>
+        <p class="lead  text-dark" ">Y conoce nuestros compromiso con la sociedad y los Artesanos afiliados a nuestra Junta. Además, revisa la  Misión y Visión que tenemos al 2030 que nos identifica como Institución <p>
+        </p>
+      </div>
+      
+    </div>
+   </center>
+ <br>
+ <center> <div class="  justify-content-center row align-items-md-stretch">
+      <div class="p-5 col-md-5">
+        <div class="h-100 p-5 text-white rounded-3 p-3 mb-2 bg-primary-subtle text-dark" >
+          <h2 class="fw-light text-dark ">Artesanados</h2>
+          <p class="lead text-dark "> Visualiza todas las categorias Artesanales que disponemos en nuestra Institución con una pequeña descripcion de lo que se trata cada una de ellas  <p>
+        
+        </div>
+      </div>
+      <div class="p-5 col-md-6">
+        <div class="h-100 p-5 bg-light border rounded-3">
+          <h2 class="fw-light">Publicaciones</h2>
+          <p class="lead ">No te quedes sin estar actualizado constantemente. Enterate de todas las novedades de la Junta Provicial de Defensa del Artesano, semana a semana subiremos  todas las nuevas publicaciones o novedade de nuestra institucions como: Cursos, Inscripciones, Casas Abiertas, entre otros.<p>
           </div>
       </div>
-      <br>
-     <center>
-    <div class="contenedor3  col-sm-9">
-      <p><strong> <h2>PROVINCIAL DE DEFENSA DEL ARTESANO</h2></strong>  </p>
     </div></center>
     <br>
-    </div> <center>
-    <div class="contenedor3  col-sm-9">
-       
-            <ul class="nav nav-tabs" id="myTab" role="tablist">
-            <li class="nav-item">
-            <a class="nav-link active show" id="mision-tab" data-toggle="tab" href="#mision-" role="tab" aria-controls="mision-" aria-selected="true">MISIÓN</a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link" id="vision-tab" data-toggle="tab" href="#vision" role="tab" aria-controls="vision" aria-selected="false">VISIÓN</a>
-            </li>
-        </ul>
-        <div class="tab-content" id="myTabContent">
-            <div class="tab-pane fade active show" id="mision-" role="tabpanel" aria-labelledby="mision--tab">
-            <p>La JNDA tiene la mission de liderar el fortalecimiento, profesionalizacion y desarrllo del sector artesanal, mediante el impulso de una politica...</p>
-            </div>
-            <div class="tab-pane fade" id="vision" role="tabpanel" aria-labelledby="vision-tab">
-            <p>La JNDA tiene la mission de liderar el fortalecimiento, profesionalizacion y desarrllo del sector artesanal, mediante el impulso de una politica...</p>
-            </div>
-        </div>
-   
-    </div> </center>
-    <br>
-     <center>
-    <div class="contenedor4  col-sm-9 text-info ">
-      <p><strong> <h3>PUBLICACIONES</h3></strong>  </p>
-    </div></center>
-    <br>
-    
-<center>
-    
-        <div class="row mb-1 justify-content-center"> 
-            <?php foreach ($publicaciones as $publicacion): ?>
-            <div class="col-md-5">
-                 
-                    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                        <div class="col p-4 d-flex flex-column position-static">
-                        
-                            <h4 class="mb-0  text-uppercase"><?=$publicacion->titulo?></h4>
-                           <small> <div class="mb-1 text-secondary"><?=$publicacion->fecha?></div></small>
-                            <p class="card-text mb-auto text-body-secondary"><?=$publicacion->publicacion?></p>
-                        
-                        </div>
-                            <div class="col-auto d-none d-lg-block">
-                                
-                                <img src="/<?=$publicacion->foto_publicacion?>" alt = "bootstrap" windth="100%" height="225">
-                            </div>
-                        
-                    </div>
-                
-            </div>
-            <?php endforeach;?>    
+    <div class=" p-5  rounded float-start">
+              <img src="/assets/img/reg.png"  width="480" height="300" class="" ></center></div>
+      <div class="row py-lg-5" style="background-color:#F3F5F8">
+      <div class="col-lg-6 col-md-8 mx-5">
+        <h1 class="fw-light" >¡Registrate Ya!</h1>
+        <p class="lead text-body-secondary" >Registrate y podras acceder a más funcionabilidades en nuestro sistema BOLEMG, como: Vizualizar los Artesanos afiliados a la Junta, Consultar el Perfil laboral de cada Artesano, 
+          asi como una calificación realizada por parte de otros Empleadores de los servicios prestados y imagenes de los trabajos realizados  </p>
+        
+      </div>
 
-            
-        </div>
 
-  </center>
+      </div> 
+
+    </div> 
     <br>
 
 

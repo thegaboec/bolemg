@@ -19,16 +19,13 @@ class Inicio {
     }
 
     public function start(){
-        $publicaciones=$this->publicaciones->selectFromColumn('estado',Publicaciones::ESTADO_ACTIVO);
-  
+        
 
         return [
 
             'template'=>'front/inicio.html.php',
             'titulo'=>'Bolem-Guaranda',
-            'variables'=>[
-                'publicaciones'=>$publicaciones
-            ]
+
         ];
 
     }
@@ -59,6 +56,52 @@ class Inicio {
             'titulo'=>'Contactos'
         ];
 
+
+
+    }
+
+    
+    public function institucion(){
+        return[
+
+            'template'=>'front/institucion.html.php',
+            'titulo'=>'Institucion'
+        ];
+
+
+
+    }
+    
+    public function publicaG(){
+        $publicaciones=$this->publicaciones->selectFromColumn('estado',Publicaciones::ESTADO_ACTIVO);
+  
+        return[
+
+            'template'=>'front/publicaciones.html.php',
+            'titulo'=>'Publicaciones',
+            'variables'=>[
+                'publicaciones'=>$publicaciones
+            ]
+        ];
+    }
+
+    public function listarpublica(){
+
+        $idpublicaciones= $_GET['idpublicaciones'];
+
+        $publicaciones=$this->publicaciones->verPublicacion($idpublicaciones);
+        
+        //var_dump($publicaciones);
+        //die;
+        return[
+
+            'template'=>'front/publicacion.html.php',
+            'titulo'=>'Publicación',
+            'variables'=>[
+                'publicaciones'=>$publicaciones
+            ]
+
+        ];
 
 
     }

@@ -12,7 +12,7 @@
       </div>
     </section>
   
-    <div class="album py-5 bg-light">
+    <div class="album py-5" style="background-color:#F3F5F8">
       <div class="container">
   
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
