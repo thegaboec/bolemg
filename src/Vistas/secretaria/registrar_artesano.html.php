@@ -103,7 +103,7 @@ use App\Modelos\Artesanados;
                         <div class="input-group">
                             <label class="input-group-btn">
                                 <span class="">
-                                    <input accept=".jpg,.png,.jpeg,.gif" class="hidden" name="trabajoUno" type="file" id="trabajos">
+                                    <input accept=".jpg,.png,.jpeg,.gif" class="hidden" name="imagen1" type="file" id="trabajos">
                                     
                                 </span>
                             </label>  
@@ -115,20 +115,7 @@ use App\Modelos\Artesanados;
                         <div class="input-group">
                             <label class="input-group-btn">
                                 <span class="">
-                                    <input accept=".jpg,.png,.jpeg,.gif" class="hidden" name="trabajoDos" type="file" id="trabajos">
-                                    
-                                    
-                                </span>
-                            </label>  
-                        </div>
-                    </div>
-
-                    <div class=" col-md-6">
-                        
-                        <div class="input-group">
-                            <label class="input-group-btn">
-                                <span class="">
-                                    <input accept=".jpg,.png,.jpeg,.gif" class="hidden" name="trabajoTres" type="file" id="trabajos">
+                                    <input accept=".jpg,.png,.jpeg,.gif" class="hidden" name="imagen2" type="file" id="trabajos">
                                     
                                     
                                 </span>
@@ -141,7 +128,20 @@ use App\Modelos\Artesanados;
                         <div class="input-group">
                             <label class="input-group-btn">
                                 <span class="">
-                                    <input accept=".jpg,.png,.jpeg,.gif" class="hidden" name="trabajoCuatro" type="file" id="trabajos" placeholder="opcional">
+                                    <input accept=".jpg,.png,.jpeg,.gif" class="hidden" name="imagen3" type="file" id="trabajos">
+                                    
+                                    
+                                </span>
+                            </label>  
+                        </div>
+                    </div>
+
+                    <div class=" col-md-6">
+                        
+                        <div class="input-group">
+                            <label class="input-group-btn">
+                                <span class="">
+                                    <input accept=".jpg,.png,.jpeg,.gif" class="hidden" name="imagen4" type="file" id="trabajos" placeholder="opcional">
                                     
                                     
                                 </span>

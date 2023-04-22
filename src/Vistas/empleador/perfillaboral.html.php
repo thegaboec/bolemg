@@ -12,48 +12,95 @@
 
 
   
-    <div class="album py-5 bg-dark" >
+    <div class="album py-5 bg-primary-subtle" width="200px" >
       <div class="container">
   
-         
-            <?php foreach ($artesanos as $artesano): ?>
-          
-            <div class="card shadow-sm">
-              <img src="/<?=$artesano->foto?>" alt = "bootstrap" >
-             
-              <div class="card-body">
+        
 
-              <ul class="list-group list-group-flush">
-             <li class="list-group-item"><?=$artesano->nombres?></li>
-                <li class="list-group-item">A second item</li>
-             <li class="list-group-item">A third item</li>
-            </ul>
+          <?php foreach ($artesanos as $artesano): ?>
 
-                <p class=" text-center" ><?=$artesano->nombres?> </p>
-                <p class=" text-center" ><?=$artesano->apellidos?> </p>
-                <p class=" text-center" > Calificación: <?=$artesano->calificacion?> </p>
-                <p class=" text-center" > Contacto: <?=$artesano->telefono?></p>
-                <p class=" text-center" > Correo Electrónico: <?=$artesano->correo?></p>
-                <p class=" text-center" > Dirección: <?=$artesano->direccion?> </p>
 
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 g-2">   
+          <div class="col"> 
+            
+            <div class="card text-center" style="width: 30rem;">
+            <span class="border border-dark-subtle">
+
+              <div class="card-header">
+                <p class="fw-bold"> Perfil laboral</p>
                 
-                <p class=" text-center" > TRABAJOS REALIZADOS  </p>
+             </div>
+             <div class="card-header" >
+              <img src="/<?=$artesano->foto?>" class="card-img-top" alt = "bootstrap" windth="100%" height="225" >
+             </div>
+             <div class="card-body">
+              <h5 class="card-title"><?=$artesano->nombres?></h5>
+                <p class="fw-dark" >Nombre: <?=$artesano->nombres?> </p>
+                <p class="fw-dark" >Apellido: <?=$artesano->apellidos?> </p>
+                <p class="fw-dark" > Contacto: <?=$artesano->telefono?></p>
+                <p class="fw-dark"  > Correo Electrónico: <?=$artesano->correo?></p>
+                <p class="fw-dark" > Dirección: <?=$artesano->direccion?> </p>
+                <p class="fw-dark" > Calificación: <?=$artesano->calificacion?> </p>
+              
+              <a href="#" class="btn btn-primary">Evaluar</a>
+             </div>
+              <div class="card-footer text-body-secondary">
+               JUNTA PROVINCIAL DE DEFENSA DEL ARTESANO-BOLIVAR
+              </div>
+              </span>
+            </div>
+          </div>
 
-                <img src="/<?=$artesano->imagen1?>" alt = "bootstrap" windth="100%" height="225">
 
+          <div class="col"> 
+            <div class="card text-center" >
 
-                <div class="text-center">
-                  <div class="btn-group" >
-                      
-                      <a href='/empleador/artesanados' class="btn btn-outline-warning ">Evaluar</a>
-                  </div>
-                </div>
+            <span class="border border-dark-subtle">
+            <div class="card-header">
+                <p class="fw-bold"> Trabajos Realizados</p>
+                
+             </div>
 
+             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 g-2">   
 
+              <div class="col">
+              <div class="card-header">
+              <img src="/<?=$artesano->imagen1?>" class="card-img-top" alt = "bootstrap" windth="100%" height="225">
               </div>
             </div>
+
+            <div class="col">
+              <div class="card-header">
+              <img src="/<?=$artesano->imagen2?>" class="card-img-top" alt = "bootstrap" windth="100%" height="225">
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="card-header">
+              <img src="/<?=$artesano->imagen3?>" class="card-img-top" alt = "bootstrap" windth="100%" height="225">
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="card-header">
+              <img src="/<?=$artesano->imagen4?>" class="card-img-top" alt = "bootstrap" windth="100%" height="225">
+              </div>
+            </div>
+            </div>
+             
+              <div class="card-footer text-body-secondary">
+               JUNTA PROVINCIAL DE DEFENSA DEL ARTESANO-BOLIVAR
+              </div>
+            
+            </span>
+
           
-          <?php endforeach;?>
+        </div>
+
+
+
+      <?php endforeach;?>
+
   
           
   
