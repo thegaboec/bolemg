@@ -35,12 +35,19 @@
              </div>
              <div class="card-body">
               <h5 class="card-title"><?=$artesano->nombres?></h5>
-                <p class="fw-dark" >Nombre: <?=$artesano->nombres?> </p>
-                <p class="fw-dark" >Apellido: <?=$artesano->apellidos?> </p>
+              <ul class="list-group list-group-flush">
+                <p class="fw-dark" > 
+                <li class="list-group-item">Nombre: <?=$artesano->nombres?></li>
+                </p>
+                <p class="fw-dark" > 
+                <li class="list-group-item">Apellido: <?=$artesano->apellidos?></li>
+                </p>
                 <p class="fw-dark" > Contacto: <?=$artesano->telefono?></p>
                 <p class="fw-dark"  > Correo Electrónico: <?=$artesano->correo?></p>
                 <p class="fw-dark" > Dirección: <?=$artesano->direccion?> </p>
                 <p class="fw-dark" > Calificación: <?=$artesano->calificacion?> </p>
+
+                </ul>
               
               <a href="#" class="btn btn-primary">Evaluar</a>
              </div>
