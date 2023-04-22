@@ -4,10 +4,37 @@
 <title><?= $titulo?></title>
     <link rel="shortcut icon" href="/assets/img/delegar.png"  type="image/x-icon">
     <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
-  
+    <link rel="stylesheet" href="/assets/js/jquery.min.js">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    <script type="text/javascript">
+        function mostrarclave1(){
+                var cambio = document.getElementById("txtPassword");
+                if(cambio.type == "password"){
+                    cambio.type = "text";
+                    $('.icon').removeClass('fa fa-eye-slash').addClass('fa fa-eye');
+                }else{
+                    cambio.type = "password";
+                    $('.icon').removeClass('fa fa-eye').addClass('fa fa-eye-slash');
+                }
+        } 
+        function mostrarclave2(){
+                var cambio = document.getElementById("txt-Password");
+                if( cambio.type == "password"){
+                    cambio.type = "text";
+                    $('.icon').removeClass('fa fa-eye-slash').addClass('fa fa-eye');
+                }else{
+                    cambio.type = "password";
+                    $('.icon').removeClass('fa fa-eye').addClass('fa fa-eye-slash');
+                }
+        } 
+        
+     </script>
     
   </head>
 <body>
+
+        
     <!--Menu-->
     <header class="p-3 text-bg-dark">
         <div class="container">

@@ -16,40 +16,44 @@
     <link rel="stylesheet" href="/assets/js/popper.min.js">
     <link href="/assets/css/sign-in.css" rel="stylesheet">
 </head>
-<body>
+<body style="background-color:ligth ;">
     <!--Menu-->
+    <div class="" style="background-image: url(/assets/img/BOLEMG.png)">
+  /
 
-      <header class="p-3 bg-dark text-white">
-        <div class="container">
-        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-            <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-                <svg class="bi me-2" width="40" height="32" role="img" aria-label="JPDA"> <img src="assets/img/logo_jnda.png" width="100" height="55" ></use></svg>
+      <header class="p-3  text-white" style="background-color:aliceblue;" >
+        
+        <div class="shadow-sm p-8 mb-10 bg-white rounded d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 ">
+                <svg class="bi me-2" width="40" height="32" role="img" aria-label="JPDA"> <img src="/assets/img/JPDA.jpg" width="200" height="100" ></use></svg>
             </a>
-            
-            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                <li><a href="/inicio" class="nav-link px-2 text-white" >Inicio</a></li>
-                <li><a href="/artesanados" class="nav-link px-2 text-white">Artesanados</a></li>
-                <li><a href="/contactos" class="nav-link px-2 text-white">Contactos</a></li>
+          
+            <ul class="nav  mx-auto  col-lg-6  "   >
+           <li><strong><FONT FACE="arial"> <h5><a href="/inicio" class="nav-link px-8 " style="color:#0E4280" > Inicio</a></h5> </FONT></strong></li>
+           <li><strong><FONT FACE="arial"> <h5><a href="/institucion" class="nav-link px-8 " style="color:#0E4280" > Institución</a></h5> </FONT></strong></li>
+           <li><strong><FONT FACE="arial"> <h5><a href="/artesanados" class="nav-link px-8" style="color:#0E4280" > Artesanados</a></h5> </FONT></strong></li>
+           <li><strong><FONT FACE="arial"> <h5><a href="/publicaciones" class="nav-link px-8" style="color:#0E4280" > Publicaciones</a></h5> </FONT></strong></li>
+           <li><strong><FONT FACE="arial"> <h5><a href="/contactos" class="nav-link px-8" style="color:#0E4280" > Contactos</a></h5> </FONT></strong></li>
+               
             </ul>
                 
-        <div class="text-end">
-        <a href='/login' class="btn btn-outline-light me-2">Iniciar Sesión</a>
-        <a href='/registro' class="btn btn-warning">Registrarse</a>
+        <div class="text-left">
+        <strong>  <a href='/login' class="btn btn-outline-primary me-2" >Iniciar Sesión</a></strong>
+        <strong>  <a href='/registro' class="btn btn-primary " >Registrarse</a> </strong>
         </div>
 
 
         </div>
         </div>
     </header>
-     <!--Informacion
-        <div class="contenedor2">
-        <img src="assets/img/fondo1.jpg" alt = "bootstrap" windth="100" height="537">-->
-
+     
    <?=$contenido?>
      
-    
+   <div class="" style="background-image: url(/assets/img/BOLEMG.png)">
+  /
+ 
     <!--Pie de pagina-->   
-    <footer class="footer mt-auto py-3 bg-light text-center">
+    <footer class="footer mt-auto py-3 bg-light text-center ">
       <div class="container">
         <span class="text-muted">BOLEM Guaranda 2023</span>
       </div>
@@ -60,5 +64,7 @@
   
     <script src="assets/js/bootstrap.min.js"></script>
     <script src = "assets/js/pooper.min.js" ></script>
+
+    
 </body>
 </html>
