@@ -18,9 +18,25 @@
     </div>
 
     
-      <div class=" " >
-        <form class="needs-validation" novalidate action="" method="POST">
+      <div class=" py-5" >
+        <form class="needs-validation" novalidate action="" method="POST" enctype="multipart/form-data">
           <div class="row g-3">
+          <center>
+          <div class="form-group col-md-12">
+                    <div class=" col-md-4">
+                        <label for="trabajos">Foto</label>
+                        <br> 
+                        <div class="input-group">
+                            <label class="input-group-btn">
+                                <span class="">
+                                    <input accept=".jpg,.png,.jpeg,.gif" class="hidden" name="fotousuario" type="file" id="fotousuario">
+                                </span>
+                            </label>  
+                        </div>
+                    </div>
+                </div>
+          </center>
+
             <div class="col-sm-6">
               <label for="firstName" class="form-label">Nombres</label>
               <input type="text" class="form-control border border-primary" id="firstName" placeholder="" value="" required name="nombres">
@@ -39,12 +55,21 @@
 
             <div class="col-6">
                 <label for="cedula" class="form-label">Número de cédula</label>
-                <input type="number" class="form-control border border-primary" id="cédula" placeholder="Este item se asignará como usuario y contraseña" name="id">
+                <input type="text" class="form-control border border-primary" id="cédula" placeholder="Este item se asignará como usuario y contraseña" name="id">
                 <div class="invalid-feedback">
                   Ingrese un número de cédula válido.
                 </div>
               </div>
 
+              <div class="col-6">
+              <label for="email" class="form-label">Teléfono</label>
+              <input type="text" class="form-control border border-primary" id="email" placeholder="" name="telefono">
+              <div class="invalid-feedback">
+                Ingrese un telefono válido.
+              </div>
+            </div>
+
+            <center>
             <div class="col-6">
               <label for="email" class="form-label">Correo electrónico</label>
               <input type="email" class="form-control border border-primary" id="email" placeholder="nombre@ejemplo.com" name="email">
@@ -52,6 +77,7 @@
                 Ingrese una dirección de correo electrónico válida.
               </div>
             </div>
+            </center>
             <br>
             <div class="text-center">
                 <button class="col-sm-4 btn btn-primary btn-lg  " type="submit">Registrar</button>

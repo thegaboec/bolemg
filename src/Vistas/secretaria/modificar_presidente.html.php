@@ -1,16 +1,23 @@
-<div class="content-documentacion">
-    <div class="">
-        <form action="" method="post">
 
-        <table class="table text-center table-hover " >
-        <thead class="thead-light">
-                    <th>Cédula</th>
-                    <th>Nombre</th>
-                    <th>Apellidos</th>
-                    <th>Correo</th>
-                    <th>Estado</th>
-                    <th>Habilitar/Deshabilitar</th>
-                </thead>
+
+
+<div class="content-documentacion p-5">
+      
+<h2 class="fw-light thead-light text-dark text-center">Habilitar - Inhabilitar Presidentes </h2>
+    <br>
+    <form action="" method="post">
+
+<table class="table table-hover  table-bordered text-center  caption-top" >
+<thead class="table-primary ">
+    <tr class=" pt-5  ">
+            <th class="lead text-body-dark" ><strong>CEDULA</strong></th>
+            <th class= "lead text-body-dark"><strong>NOMBRES</strong></th>
+            <th class="lead text-body-dark"><strong>APELLIDOS</strong></th>
+            <th class=" lead text-body-dark"><strong>TELEFONO</strong></th>
+            <th class=" lead text-body-dark "><strong>CORREO</strong></th>
+            <th class=" lead text-body-dark"><strong>ESTADO</strong></th>
+            <th class=" lead text-body-dark"><strong>HABILITAR/INHABILITAR</strong></th></tr>
+        </thead>
                 <tbody>
                     <?php $count = 0;
                     foreach($presidentes as $personal): ?>
@@ -22,6 +29,7 @@
                                 <td><?= $personal->idusuarios ?? 'desconocido'; ?></td>
                                 <td><?= $personal->nombres ?? 'desconocido'; ?></td>
                                 <td><?= $personal->apellidos ?? 'desconocido'; ?></td>
+                                <td><?= $personal->telefono?? 'desconocido'; ?></td>
                                 <td><?= $personal->correo?? 'desconocido'; ?></td>
                                 <td><?= $personal->estado?? 'desconocido'; ?></td>
                                 <td>
@@ -32,7 +40,8 @@
                     <?php $count ++; endforeach; ?>
                 </tbody>
             </table>
-            <button style="display:block; margin: 0.5rem auto;" class="button-submit col-sm-2 btn btn-dark  btn-lg button-submit" type="submit">Guardar Cambios</button>                          
+            <br>
+            <button style="display:block; margin: 0.5rem auto;" class="button-submit col-sm-2 btn btn-primary  button-submit" type="submit">Guardar Cambios</button>                          
         </form>
     </div>
 </div>

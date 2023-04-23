@@ -29,7 +29,7 @@ class Login {
             Usuarios::PRESIDENTE => '/presidente/inicio',
             Usuarios::SECRETARIA => '/secretaria/inicio',
             Usuarios::ARTESANO => '/artesano/inicio',
-            Usuarios::EMPLEADOR => '/empleador'
+            Usuarios::EMPLEADOR => '/empleador/inicio'
         ];
 
         if($comprobacion){

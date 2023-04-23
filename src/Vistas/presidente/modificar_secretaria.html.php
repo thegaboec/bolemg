@@ -4,15 +4,16 @@
     <br>
         <form action="" method="post">
 
-        <table class="table  table-bordered border-primary text-center  caption-top" >
+        <table class="table table-hover  table-bordered text-center  caption-top" >
         <thead class="table-primary ">
             <tr class=" pt-5 border-primary ">
-                    <th class="border-primary lead text-body-dark" ><strong>CEDULA</strong></th>
-                    <th class="border-primary lead text-body-dark"><strong>NOMBRES</strong></th>
-                    <th class="border-primary lead text-body-dark"><strong>APELLIDOS</strong></th>
-                    <th class="border-primary lead text-body-dark "><strong>CORREO</strong></th>
-                    <th class="border-primary lead text-body-dark"><strong>ESTADO</strong></th>
-                    <th class="border-primary lead text-body-dark"><strong>HABILITAR/INHABILITAR</strong></th></tr>
+                    <th class=" lead text-body-dark" ><strong>CÉDULA</strong></th>
+                    <th class=" lead text-body-dark"><strong>NOMBRES</strong></th>
+                    <th class=" lead text-body-dark"><strong>APELLIDOS</strong></th>
+                    <th class=" lead text-body-dark"><strong>TELEFONO</strong></th>
+                    <th class=" lead text-body-dark "><strong>CORREO</strong></th>
+                    <th class=" lead text-body-dark"><strong>ESTADO</strong></th>
+                    <th class="primary lead text-body-dark"><strong>HABILITAR - INHABILITAR</strong></th></tr>
                 </thead>
                 <tbody>
                     <?php $count = 0;
@@ -25,6 +26,7 @@
                                 <td><?= $personal->idusuarios ?? 'desconocido'; ?></td>
                                 <td><?= $personal->nombres ?? 'desconocido'; ?></td>
                                 <td><?= $personal->apellidos ?? 'desconocido'; ?></td>
+                                <td><?= $personal->telefono?? 'desconocido'; ?></td>
                                 <td><?= $personal->correo?? 'desconocido'; ?></td>
                                 <td><?= $personal->estado?? 'desconocido'; ?></td>
                                 <td>

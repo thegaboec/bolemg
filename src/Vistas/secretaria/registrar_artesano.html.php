@@ -4,12 +4,12 @@
 use App\Modelos\Artesanados;
 
  if(isset($error)): ?>
-  <div class="mt-4">  <p class="bg-danger text-white p-4 text-center w-50 m-auto">
+<p class="bg-danger text-white p-4 text-center w-50 m-auto">
             <?= $error ?>
         </p>
 <?php endif; ?>    
 <?php if(isset($success)): ?>
-  <div class="mt-4">  <p class="bg-danger text-white p-4 text-center w-50 m-auto">
+    <p class="bg-success text-white p-4 text-center w-50 m-auto">
             <?= $success ?>
         </p>
 <?php endif; ?> 
@@ -39,7 +39,7 @@ use App\Modelos\Artesanados;
 
                 <div class="col-sm-6">
                     <label for="nombre_arte" class="form-label"><font style="vertical-align: inherit;">Nombres</font></font></label>
-                    <input type="text" class="form-control" id="nombre_arte" placeholder="Alex Fernando" value="" required="" name="nombres">
+                    <input type="text" class="form-control border border-primary" id="nombre_arte" placeholder="" value="" required="" name="nombres">
                     <div class="invalid-feedback">
                         Se requiere Nombres valido
                     </div>
@@ -47,7 +47,7 @@ use App\Modelos\Artesanados;
     
                 <div class="col-sm-6">
                     <label for="apellido_arte" class="form-label"><font style="vertical-align: inherit;">Apellidos</font></font></label>
-                    <input type="text" class="form-control" id="apellido_arte" placeholder="Sanchez  Velazco" value="" required="" name="apellidos">
+                    <input type="text" class="form-control border border-primary" id="apellido_arte" placeholder="" value="" required="" name="apellidos">
                     <div class="invalid-feedback">
                         Se requiere Apellidos valido 
                     </div>
@@ -55,7 +55,7 @@ use App\Modelos\Artesanados;
                
                 <div class="col-sm-6">
                     <label for="cedula" class="form-label text-left"><font style="vertical-align: inherit;">Cédula</font></font></label>
-                    <input type="number" class="form-control" id="cedula" placeholder="0202655878" value="" required="" name="idartesano">
+                    <input type="number" class="form-control border border-primary" id="cedula" placeholder="Este item se asignará como usuario y contraseña" value="" required="" name="idartesano">
                     <div class="invalid-feedback">
                         Se requiere una Cédula valida 
                     </div>
@@ -63,15 +63,15 @@ use App\Modelos\Artesanados;
                  
                 <div class="col-sm-6">
                     <label for="telefono" class="form-label"><font style="vertical-align: inherit;">Télefono</font></font></label>
-                    <input type="number" class="form-control" id="telefono" placeholder="0969874902" value="" required="" name="telefono">
+                    <input type="number" class="form-control border border-primary" id="telefono" placeholder="" value="" required="" name="telefono">
                     <div class="invalid-feedback">
                         Se requiere un Teléfono valido 
                     </div>
                 </div>
 
                 <div class="col-sm-6">
-                    <label for="artesanado" class="form-label">Artesanado</label>
-                    <select id="artesanado" class="form-select" name="artesanado">
+                    <label for="artesanado" class="form-label ">Artesanado</label>
+                    <select id="artesanado" class="form-select border border-primary" name="artesanado">
 
                     <?php foreach ($artesanados as $artesanado): ?>
                         <option value="<?=$artesanado->idartesanado?>"><?=$artesanado->categoria?></option>
@@ -81,18 +81,18 @@ use App\Modelos\Artesanados;
         
                 <div class="col-sm-6">
                     <label for="correo_electronico" class="form-label">Correo Electronico</label>
-                    <input type="email" class="form-control" id="correo_electronico" placeholder="juanito@gmail.com" name="correo">
+                    <input type="email" class="form-control border border-primary" id="correo_electronico" placeholder="Ejemplo@gmail.com" name="correo">
                 </div>
 
                 <div class="col-sm-6">
                     <label for="direccion" class="form-label">Dirección</label>
-                    <input type="text" class="form-control" id="direccion" placeholder="Panamericana Sur" name="direccion">
+                    <input type="text" class="form-control border border-primary" id="direccion" placeholder="" name="direccion">
                 </div>
 
                 <div class="form-group col-md-6">
                     <div class="col-6 ">
                         <label for="rol" class="form-label">Calificación: </label>
-                        <input type="number" class="form-control" id="cédula" name="calificacion">
+                        <input type="number" class="form-control border border-primary" id="cédula" name="calificacion">
                     </div>
                 </div>
 
@@ -159,7 +159,7 @@ use App\Modelos\Artesanados;
             </div>
             <br>
             <div class="text-center">
-                <button class="col-sm-2 btn btn-dark btn-lg  " type="submit">Registrar</button>
+                <button class="col-sm-2 btn btn-primary btn-lg  " type="submit">Registrar</button>
             </div>
 
             </form>

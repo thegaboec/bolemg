@@ -1,16 +1,18 @@
-<div class="content-documentacion">
+<div class="content-documentacion p-5">
+    
+    <h2 class="fw-light thead-light text-dark text-center">Habilitar - Inhabilitar Artesanados </h2>
+    <br>
     <div class="">
         <form action="" method="post">
 
-            <table class="table text-center table-hover " >
-
-                <thead class="thead-light">
-                    <th>ID</th>
-                    <th>Nombre</th>
-                    
-                    <th>Estado Actual</th>
-                    <th>Habilitar/Deshabilitar</th>
-                </thead>
+        <table class="table table-hover table-bordered  text-center  caption-top" >
+        <thead class="table-primary ">
+            <tr class=" pt-5 ">
+                    <th class=" lead text-body-dark"><strong>ID</strong></th>
+                    <th class=" lead text-body-dark"><strong>NOMBRE</strong></th>                   
+                    <th class="lead text-body-dark"><strong>ESTADO</strong></th>
+                    <th class=" lead text-body-dark"><strong>HABILITAR - INHABILITAR</strong></th></tr>
+                </thead >
                 <tbody>
                     <?php $count = 0;
                     foreach($artesanados as $artesanado): ?>
@@ -31,7 +33,8 @@
                     <?php $count ++; endforeach; ?>
                 </tbody>
             </table>
-            <button style="display:block; margin: 0.5rem auto;" class="col-sm-2 btn btn-dark  btn-lg button-submit " type="submit">Guardar Cambios</button>                          
+            <br>
+            <button style="display:block; margin: 0.5rem auto;" class="col-sm-2 btn btn-primary btn-lg button-submit " type="submit">Guardar Cambios</button>                          
         </form>
     </div>
 </div>

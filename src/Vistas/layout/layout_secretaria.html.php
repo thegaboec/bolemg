@@ -41,72 +41,77 @@
 </head>
 <body> 
    <!--Menu-->
+   <div class="" style="background-image: url(/assets/img/BOLEMG.png)">
+  /
 
-    <header class="p-3 bg-dark text-white">
-        <div class="container">
-        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-            <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-                <svg class="bi me-2" width="40" height="32" role="img" aria-label="JPDA"> <img src="/assets/img/logo_jnda.png" width="100" height="55" ></use></svg>
+  <header class="p-3  text-white" style="background-color:aliceblue;" >
+        
+        <div class="shadow-sm p-8 mb-10 bg-white rounded d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 ">
+                <svg class="bi me-2" width="40" height="32" role="img" aria-label="JPDA"> <img src="/assets/img/JPDA.jpg" width="200" height="100" ></use></svg>
             </a>
-            
-            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                 <li><a href="/secretaria/inicio" class="nav-link px-2 text-start active">Inicio</a></li>
-                 
-                 <li class="nav-item dropdown">
-                     <a class="nav-item nav-link dropdown-toggle " href="#" id="bd-versions" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: aliceblue;">
-                       Presidente
-                     </a>
-                     <div class="dropdown-menu dropdown-menu-right mr-md-0 " aria-labelledby="bd-versions">
-                       <a class="dropdown-item " href="/secretaria/registrar/presidente">Registrar</a>
-                       <a class="dropdown-item" href="/secretaria/modificar/presidente">Habilitar-Inhabilitar</a>
-                     </div>
-                 </li>
-                 
-                 <li class="nav-item dropdown">
-                     <a class="nav-item nav-link dropdown-toggle " href="#" id="bd-versions" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: aliceblue;">
-                       Artesanado
-                     </a>
-                     <div class="dropdown-menu dropdown-menu-right mr-md-0 " aria-labelledby="bd-versions">
-                       <a class="dropdown-item " href="/secretaria/registrar/artesanado">Registrar</a>
-                       <a class="dropdown-item" href="/secretaria/habilitar-deshabilitar/artesanado">Habilitar-Deshabilitar</a>
-                       <a class="dropdown-item" href="/secretaria/actualizar/artesanado">Actualizar</a>
-                     </div>
-                 </li>
- 
-                 <li class="nav-item dropdown ">
-                     <a class="nav-item nav-link dropdown-toggle " href="#" id="bd-versions" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: aliceblue;">
-                       Artesano
-                     </a>
-                     <div class="dropdown-menu dropdown-menu-right mr-md-0 " aria-labelledby="bd-versions">
-                       <a class="dropdown-item " href="/secretaria/registrar/artesano">Registrar</a>
-                       <a class="dropdown-item" href="/secretaria/habilitar-deshabilitar/artesano">Modificar-Inhabilitar</a>
-                     </div>
-                 </li>
-                 <li class="nav-item dropdown">
-                     <a class="nav-item nav-link dropdown-toggle " href="#" id="bd-versions" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: aliceblue;">
-                      Anuncios
-                     </a>
-                     <div class="dropdown-menu dropdown-menu-right mr-md-0 " aria-labelledby="bd-versions">
-                          <a class="dropdown-item " href="/secretaria/publicar/anuncio">Publicar</a>
-                          <a class="dropdown-item" href="/secretaria/listado/anuncio">Listado</a>
-                      </div>
-                 </li>
-                 <li><a href="/secretaria/cambio/clave" class="nav-link px-2 text-white">Cambiar Contraseña</a></li>
-                 
-           
-             </ul>  
+          
+            <ul class="nav  mx-auto  col-lg-8  "   >
+              <li><strong><FONT FACE="arial"> <h5><a href="/secretaria/inicio" class="nav-link px-8 " style="color:#0E4280" > Inicio</a></h5> </FONT></strong></li>
+              <li class="nav-item dropdown"><strong><FONT FACE="arial"> <h5> <a class="nav-item nav-link px-8" style="color:#0E4280" href="#" id="bd-versions" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: aliceblue;">
+                          Presidente </a>
+                        <div class="dropdown-menu dropdown-menu-right mr-md-0 " aria-labelledby="bd-versions">
+                        <strong><FONT FACE="arial"> <h5><a class="dropdown-item" style="color:#0E4280" href="/secretaria/registrar/presidente">Registrar</a></h5> </FONT></strong>
+                        <strong><FONT FACE="arial"> <h5><a class="dropdown-item" style="color:#0E4280" href="/secretaria/modificar/presidente">Habilitar-Inhabilitar</a></h5> </FONT></strong>
+                          
+                        </div>
+              </h5> </FONT></strong></li>
+              <li class="nav-item dropdown"><strong><FONT FACE="arial"> <h5> <a class="nav-item nav-link px-8" style="color:#0E4280" href="#" id="bd-versions" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: aliceblue;">
+                          Artesanados </a>
+                        <div class="dropdown-menu dropdown-menu-right mr-md-0 " aria-labelledby="bd-versions">
+                        <strong><FONT FACE="arial"> <h5><a class="dropdown-item" style="color:#0E4280" href="/secretaria/registrar/artesanado">Registrar</a></h5> </FONT></strong>
+                        <strong><FONT FACE="arial"> <h5><a class="dropdown-item" style="color:#0E4280" href="/secretaria/habilitar-deshabilitar/artesanado">Habilitar-Inhabilitar</a></h5> </FONT></strong>
+                        <a class="dropdown-item" href="/secretaria/actualizar/artesanado">Actualizar</a>
+                        </div>
+              </h5> </FONT></strong></li>
+              <li class="nav-item dropdown"><strong><FONT FACE="arial"> <h5> <a class="nav-item nav-link px-8" style="color:#0E4280" href="#" id="bd-versions" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: aliceblue;">
+                          Artesanos </a>
+                        <div class="dropdown-menu dropdown-menu-right mr-md-0 " aria-labelledby="bd-versions">
+                        <strong><FONT FACE="arial"> <h5><a class="dropdown-item" style="color:#0E4280" href="/secretaria/registrar/artesano">Registrar</a></h5> </FONT></strong>
+                        <strong><FONT FACE="arial"> <h5><a class="dropdown-item" style="color:#0E4280" href="/secretaria/habilitar-deshabilitar/artesano">Habilitar-Inhabilitar</a></h5> </FONT></strong>
+                          
+                        </div>
+              </h5> </FONT></strong></li>
+              <li class="nav-item dropdown"><strong><FONT FACE="arial"> <h5> <a class="nav-item nav-link px-8" style="color:#0E4280" href="#" id="bd-versions" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: aliceblue;">
+                          Publicaciones </a>
+                        <div class="dropdown-menu dropdown-menu-right mr-md-0 " aria-labelledby="bd-versions">
+                        <strong><FONT FACE="arial"> <h5><a class="dropdown-item" style="color:#0E4280" href="/secretaria/publicar/anuncio">Registrar</a></h5> </FONT></strong>
+                        <strong><FONT FACE="arial"> <h5><a class="dropdown-item" style="color:#0E4280" href="/secretaria/listado/anuncio">Habilitar-Inhabilitar</a></h5> </FONT></strong>
+                          
+                        </div>
+              </h5> </FONT></strong></li>
+              <li><strong><FONT FACE="arial"> <h5><a href="/secretaria/cambio/clave " class="nav-link px-8 "  style="color:#0E4280" > Cambiar Contraseña</a></h5> </FONT></strong></li>
                 
+            </ul>
         <div class="text-end">
-        <a href='/logout' class="btn btn-outline-danger me-2">Cerrar Sesión</a>
-            </div>
+       
+        <strong>  <a href='/logout' class="btn btn-outline-primary me-2" >Cerrar Seción</a></strong>
+        
+        </div>
+
+
         </div>
         </div>
     </header>
 
+<!--Contenido--> 
+
     <?=$contenido?>
 
-<!--Pie de pagina-->   
-<footer class="footer mt-auto py-3 bg-light text-center">
+    
+
+<!--Pie de pagina-->  
+ 
+<div class="" style="background-image: url(/assets/img/BOLEMG.png)">
+      /
+ 
+
+<footer class="footer  mt-auto py-3 bg-light text-center">
   <div class="container">
     <span class="text-muted">BOLEM Guaranda 2023</span>
   </div>

@@ -1,10 +1,10 @@
 <?php if(isset($error)): ?>
-  <div class="mt-4">  <p class="bg-danger text-white p-4 text-center w-50 m-auto">
+    <p class="bg-danger text-white p-4 text-center w-50 m-auto">
             <?= $error ?>
         </p>
 <?php endif; ?>    
 <?php if(isset($success)): ?>
-  <div class="mt-4">  <p class="bg-success text-white p-4 text-center w-50 m-auto">
+    <p class="bg-success text-white p-4 text-center w-50 m-auto">
             <?= $success ?>
         </p>
 <?php endif; ?> 
@@ -14,7 +14,7 @@
 <div class="container">
 
     <center>
-        <img src="/assets/img/publicar.png" class= class="bi me-2" width="300" height="170" alt="Responsive image">
+        <img src="/assets/img/publicar.jpg" class= class="bi me-2" width="200" height="170" alt="Responsive image">
         
         <div class="py-5">
            
@@ -24,7 +24,7 @@
             <div class="">
                 <div class="col-sm-4">
                   <label for="anuncio" class="form-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Titulo de la Publicación</font></label>
-                  <input type="text" name="titulo" class="form-control" id="anuncio" placeholder="" value="" required="">
+                  <input type="text" name="titulo" class="form-control border border-primary" id="anuncio" placeholder="" value="" required="">
                   <div class="invalid-feedback">
                         Se requiere ingresar una publicación
                   </div>
@@ -33,13 +33,13 @@
 
                 <div class="col-sm-4 ">
                     <label for="publicacion" class="form-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Publicación</font></font></label>
-                    <textarea class="form-control" name="publicacion" aria-label="With textarea"></textarea>
+                    <textarea class="form-control border border-primary" name="publicacion" aria-label="With textarea"></textarea>
                 </div>
                 <br>
 
                 <div class="col-sm-4">
                     <label for="fecha_publ" class="form-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Fecha de Publicación</font></font></label>
-                    <input type="date" name="fecha" class="form-control" id="fecha_publ" placeholder="" value="" required="">
+                    <input type="date" name="fecha" class="form-control border border-primary" id="fecha_publ" placeholder="" value="" required="">
                     <div class="invalid-feedback">
                           Se requiere ingresar una publicación 
                     </div>
@@ -64,7 +64,7 @@
     
             <br>
           <div class="text-center">
-              <button class="col-sm-2 btn btn-dark btn-lg  " type="submit">Registrar</button>
+              <button class="col-sm-2 btn btn-primary btn-lg  " type="submit">Registrar</button>
           </div>
          </form>
         </div>

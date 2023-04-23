@@ -32,6 +32,18 @@ class RegistrarEmpleador{
     }
 
     public function add(){
+        
+        if(empty($_FILES['fotousuario']['name'])){
+            return $this->registroE(
+                ['error' => 'Error no ingreso ninguna imagen']
+            );
+        }
+
+        $tmp = $_FILES['fotousuario']['tmp_name'];
+        $name = $_FILES['fotousuario']['name'];
+        $DirecionImage = './assets/fotosempleador/';
+        $outputImage = $DirecionImage . $name;
+        
 
         $data=[
 
@@ -41,13 +53,19 @@ class RegistrarEmpleador{
             'correo'=> $_POST['correo'],
             'clave'=> password_hash($_POST['idusuarios'],PASSWORD_DEFAULT),
             'rol'=> Usuarios::EMPLEADOR,
-            'estado'=> Usuarios::ESTADO_ACTIVO
+            'estado'=> Usuarios::ESTADO_ACTIVO,
+            'telefono' => trim($_POST['telefono']),
+            'fotousuario' => trim($outputImage)
+
 
         ];
 
        
 
         try {
+            if(!move_uploaded_file($tmp,$outputImage)){ // mueve la imagen guardada en el espacio temporal hacia la carpeta img permanentemente
+               
+            }
             $this->empleador->insert($data);
 
             return $this->registroE(['success'=>"Se registro correctamente"]);

@@ -1,12 +1,12 @@
-<?php if(isset($error)): ?>
-  <div class="mt-4">  <p class=" text-center error bg-danger text-white p-4 text-center w-50 m-auto">
+<?php if(isset($error)): ?> 
+  <div class="alert alert-danger text-center" role="alert">
             <?= $error ?>
-        </p>
+</div>
 <?php endif; ?>    
 <?php if(isset($exito)): ?>
-  <div class="mt-4">  <p class=" text-center error bg-danger text-white p-4 text-center w-50 m-auto">
+  <div class="alert alert-success text-center" role="alert">
             <?= $exito ?>
-        </p>
+</div>
 <?php endif; ?> 
 
 
@@ -20,11 +20,28 @@
 
     
       <div class="py-5  ">
-        <form class="needs-validation" novalidate action="" method="POST">
+        <form class="needs-validation" novalidate action="" method="POST" enctype="multipart/form-data">
           <div class="row g-3">
+
+          <center>
+          <div class="form-group col-md-12">
+                    <div class=" col-md-4">
+                        <label for="trabajos">Foto</label>
+                        <br> 
+                        <div class="input-group">
+                            <label class="input-group-btn">
+                                <span class="">
+                                    <input accept=".jpg,.png,.jpeg,.gif" class="hidden" name="fotousuario" type="file" id="fotousuario">
+                                </span>
+                            </label>  
+                        </div>
+                    </div>
+                </div>
+          </center>
+
             <div class="col-sm-6">
               <label for="firstName" class="form-label">Nombres</label>
-              <input type="text" class="form-control" id="firstName" placeholder="" value="" required name="nombres">
+              <input type="text" class="form-control border border-primary" id="firstName" placeholder="" value="" required name="nombres">
               <div class="invalid-feedback">
                 Se requiere un nombre válido
               </div>
@@ -33,7 +50,7 @@
 
             <div class="col-sm-6">
               <label for="lastName" class="form-label">Apellidos</label>
-              <input type="text" class="form-control" id="lastName" placeholder="" value="" required name="apellidos">
+              <input type="text" class="form-control border border-primary" id="lastName" placeholder="" value="" required name="apellidos">
               <div class="invalid-feedback">
                 Se requiere un apellido válido
               </div>
@@ -41,32 +58,34 @@
 
             <div class="col-6">
                 <label for="cedula" class="form-label">Número de cédula</label>
-                <input type="number" class="form-control" id="cédula" placeholder="Este item se asignará como usuario y contraseña" name="id">
+                <input type="text" class="form-control border border-primary" id="cédula" placeholder="Este item se asignará como usuario y contraseña" name="id">
                 <div class="invalid-feedback">
                   Ingrese un número de cédula válido.
                 </div>
               </div>
 
+              <div class="col-6">
+              <label for="email" class="form-label">Teléfono</label>
+              <input type="text" class="form-control border border-primary" id="email" placeholder="" name="telefono">
+              <div class="invalid-feedback">
+                Ingrese un telefono válido.
+              </div>
+            </div>
+            <center>
             <div class="col-6">
               <label for="email" class="form-label">Correo electrónico</label>
-              <input type="email" class="form-control" id="email" placeholder="nombre@ejemplo.com" name="email">
+              <input type="email" class="form-control border border-primary" id="email" placeholder="nombre@ejemplo.com" name="email">
               <div class="invalid-feedback">
                 Ingrese una dirección de correo electrónico válida.
               </div>
-            </div>
-
-            <div class="col-6">
-              <label for="rol" class="form-label">Rol: </label>
-              <label id="rol"  class="ms-TextField-field fw-bold">Presidente</label>
-
-            </div>
-            
-
+            </div></center>
+            <br>
 
             <div class="text-center">
-                <button class="col-sm-4 btn btn-dark btn-lg  " type="submit">Registrar</button>
+                <button class="col-sm-4 btn btn-primary btn-lg  " type="submit">Registrar</button>
             </div>
           
         </form>
       </div>
+    </div>
     </div>

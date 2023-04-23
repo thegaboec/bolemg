@@ -1,16 +1,16 @@
-<div class="content-documentacion">
-    <div class="">
-        <form action="" method="post">
-
-            <table class="table text-center table-hover " >
-
-                <thead class="thead-light">
-                    <th>Fecha</th>
-                    <th>Titulo</th>
-                    <th>Anuncio</th>
+<div class="content-documentacion p-5">
     
-                    <th>Estado</th>
-                    <th>Habilitar/Deshabilitar</th>
+    <h2 class="fw-light thead-light text-dark text-center">Habilitar - Inhabilitar Publicaciones</h2>
+    <br>
+        <form action="" method="post">
+        <table class=" p-5 table table-hover table-bordered  text-center  caption-top" >
+        <thead class="p-5 table-primary ">
+            <tr class=" pt-5 border-primary ">
+                    <th class=" lead text-body-dark"><strong>FECHA</strong></th>
+                    <th class=" lead text-body-dark"><strong>TITULO</strong></th>
+                    <th class=" lead text-body-dark"><strong>PUBLICACIÓN</strong></th>
+                    <th class=" lead text-body-dark"><strong>ESTADO</strong></th>
+                    <th class=" lead text-body-dark"><strong>HABILITAR - INHABILITAR</strong></th></tr>
                 </thead>
                 <tbody>
                     <?php $count = 0;
@@ -35,7 +35,8 @@
                     <?php $count ++; endforeach; ?>
                 </tbody>
             </table>
-            <button style="display:block; margin: 0.5rem auto;" class="col-sm-2 btn btn-dark  btn-lg button-submit " type="submit">Guardar Cambios</button>                          
+            <br>
+            <button style="display:block; margin: 0.5rem auto;" class="col-sm-2 btn btn-primary btn-lg button-submit " type="submit">Guardar Cambios</button>                          
         </form>
     </div>
 </div>

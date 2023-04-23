@@ -369,11 +369,23 @@ class RutasAplicacion{
                         "accion"=>'perfilLaboral'
                     ],
                 ],
+                'artesano/cambio/clave' =>[
+                    'GET' => [
+                        'controlador' => $nuevaClave,
+                        'accion' => 'cambiosClave'
+                    ],
+                    'POST' => [
+                        'controlador' => $nuevaClave,
+                        'accion' => 'saveCambioClave'
+                    ],
+                    'login' => true
+                    
+                ],
 
 //Empleador
 
 
-                'empleador' =>[
+                'empleador/inicio' =>[
                     "GET"=>[
                         "controlador"=> $inicioEmpleador,
                         "accion"=>'index'
@@ -413,6 +425,18 @@ class RutasAplicacion{
                     'rol' => Usuarios::EMPLEADOR //rol
                 ],
 
+                'empleador/cambio/clave' =>[
+                    'GET' => [
+                        'controlador' => $nuevaClave,
+                        'accion' => 'cambClave'
+                    ],
+                    'POST' => [
+                        'controlador' => $nuevaClave,
+                        'accion' => 'saveCambioClave'
+                    ],
+                    'login' => true
+                    
+                ],
 
 
 //Salir 

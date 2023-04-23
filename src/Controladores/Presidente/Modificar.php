@@ -38,9 +38,6 @@ class Modificar{
                 
             }
         }
-        
-       
-
         $error = '';
         foreach($dataSecretaria as $personal){
             $person = $this->secretaria->selectFromColumn('idusuarios',$personal['idusuarios'])[0];

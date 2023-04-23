@@ -66,10 +66,6 @@ class RegistrarArtesano{
 
         //Imagenes de trabajos 
 
-        
-
-        
-
         $data=[
             'idartesano' => $_POST['idartesano'],
             'foto' => trim($outputImage),

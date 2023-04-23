@@ -28,6 +28,24 @@ class Clave{
         ];
     }
 
+    public function cambClave($variables = []){
+        return [
+            'titulo' => 'Cambio de clave',
+            'template' => 'empleador/cambioClave.html.php',
+            'variables' => $variables
+        ];
+    }
+
+
+    public function cambiosClave($variables = []){
+        return [
+            'titulo' => 'Cambio de clave',
+            'template' => 'artesano/cambioClave.html.php',
+            'variables' => $variables
+        ];
+    }
+
+
   
 
     public function saveCambioClave(){

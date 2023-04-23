@@ -8,28 +8,38 @@ class RegistrarPresidente{
 
     private $funciones;
 
-    public function index(){
+    public function index($variables=[]){
 
         return[
 
             'titulo'=>'Agregar Presidente',
 
-            'template'=>'secretaria/agregar_presidente.html.php'
+            'template'=>'secretaria/agregar_presidente.html.php',
+            'variables'=> $variables
         ];
 
     }
 
 
-    public function __construct(
-
-        Usuarios $funciones
-    )
+    public function __construct( Usuarios $funciones  )
     {
         $this->funciones=$funciones;
     }
-    public function agregar5(){}
+
     
     public function add(){
+
+        if(empty($_FILES['fotousuario']['name'])){
+            return $this->index(
+                ['error' => 'Error no ingreso ninguna imagen']
+            );
+        }
+
+        $tmp = $_FILES['fotousuario']['tmp_name'];
+        $name = $_FILES['fotousuario']['name'];
+        $DirecionImage = './assets/fotospresidentes/';
+        $outputImage = $DirecionImage . $name;
+        
 
         $data = [
             'idusuarios' => $_POST['id'],
@@ -38,34 +48,20 @@ class RegistrarPresidente{
            'correo' => $_POST['email'],
             'clave' => password_hash($_POST['id'],PASSWORD_DEFAULT),
             'estado' => Usuarios::ESTADO_ACTIVO,
-            'rol' => Usuarios::PRESIDENTE
+            'rol' => Usuarios::PRESIDENTE,
+            'telefono' => trim($_POST['telefono']),
+            'fotousuario' => trim($outputImage)
         ];
 
         
 
-        try {
+        try { 
+            if(!move_uploaded_file($tmp,$outputImage)){ // mueve la imagen guardada en el espacio temporal hacia la carpeta img permanentemente
+            }
             $this->funciones->insert($data);
-
-        return [
-            'titulo'=>'Agregar Presidente',
-
-            'template'=>'secretaria/agregar_presidente.html.php',
-            'variables' => [
-                'exito' => 'Se registro la información correctamente'
-            ]
-        ];
-
-
+            return $this->index(['exito'=>"Se registro correctamente "]);
         } catch (\PDOException $e) {
-            //throw $th;
-            return [
-                'titulo'=>'Agregar Presidente',
-    
-                'template'=>'secretaria/agregar_presidente.html.php',
-                'variables' => [
-                    'error' => 'Los campos no fueron llenados correctamente'
-                ]
-            ];
+            return $this->index(['error'=>"No se pudo registrar"]);
         }
 
     }

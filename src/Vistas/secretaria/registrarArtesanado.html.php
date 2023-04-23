@@ -1,12 +1,12 @@
 <?php if(isset($error)): ?>
-  <div class="mt-4">  <p class="bg-danger text-white p-4 text-center w-50 m-auto">
+  <div class="alert alert-danger text-center" role="alert">
             <?= $error ?>
-        </p>
+</div>
 <?php endif; ?>    
 <?php if(isset($success)): ?>
-  <div class="mt-4">  <p class="bg-danger text-white p-4 text-center w-50 m-auto">
+  <div class="alert alert-success text-center" role="alert">
             <?= $success ?>
-        </p>
+</div>
 <?php endif; ?> 
 
 
@@ -24,7 +24,7 @@
 
            <div class="col-sm-6">
              <label for="id_ar" class="form-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ID del Artesanando</font></font></label>
-             <input name="idartesanado" type="text" class="form-control" id="id_ar" placeholder="" value="" required="">
+             <input name="idartesanado" type="text" class="form-control border border-primary" id="id_ar" placeholder="" value="" required="">
              <div class="invalid-feedback">
                Se requiere un ID valido
              </div>
@@ -32,14 +32,14 @@
 
            <div class="col-sm-6">
              <label for="lastName" class="form-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nombre del Artesanado</font></font></label>
-             <input name="categoria" type="text" class="form-control" id="lastName" placeholder="" value="" required="">
+             <input name="categoria" type="text" class="form-control border border-primary" id="lastName" placeholder="" value="" required="">
              <div class="invalid-feedback">
                Se requiere un Nombre valido 
              </div>
            </div>
            
 
-           <div class="form-group col-md-6">
+           <div class="form-group col-md-12">
                     <div class=" col-md-6">
                         <label for="trabajos">Foto</label>
                         <br> 
@@ -58,7 +58,7 @@
 
          <br>
          <div class="text-center">
-             <button class="col-sm-2 btn btn-dark btn-lg  "  name="btnreegistrara" type="submit">Registrar</button>
+             <button class="col-sm-2 btn btn-primary btn-lg  "  name="btnreegistrara" type="submit">Registrar</button>
          </div>
 
 

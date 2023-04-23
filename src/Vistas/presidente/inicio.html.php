@@ -4,7 +4,7 @@
               <img src="/assets/img/BOLEMG.png"  width="480" height="300" class="" ></center></div>
       <div class="row py-lg-5" style="background-color:#F3F5F8">
       <div class="col-lg-6 col-md-6 mx-5">
-        <h1 class="fw-light">¡Bienvenido a BOLEMG !</h1>
+        <h1 class="fw-light"><strong>¡Bienvenido a BOLEMG!</strong></h1>
         <h2 class="fw-light">Usted ha ingresado como usuario Presidente</h2>
         <p class="lead text-body-secondary">En este apartado usted podra tener una vista rapida de todas las funcionalidades a las  podra acceder dentro del sistema, cada una tendra con una pequeña descripción de que se trata.                                                     <p>
         </p
