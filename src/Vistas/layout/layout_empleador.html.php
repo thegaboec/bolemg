@@ -8,9 +8,10 @@
     <link rel="shortcut icon" href="/assets/img/JNDA.png"  type="image/x-icon">
     <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="/assets/js/popper.min.js">
+    <link rel="stylesheet" href="/assets/css/util.css">
    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="stylesheet" href="/assets/js/jquery.min.js">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -52,7 +53,7 @@
                 <svg class="bi me-2" width="40" height="32" role="img" aria-label="JPDA"> <img src="/assets/img/JPDA.jpg" width="200" height="100" ></use></svg>
             </a>
           
-            <ul class="nav  mx-auto  col-lg-4  "   >
+            <ul class="nav  mx-auto  col-lg-6  "   >
               <li><strong><FONT FACE="arial"> <h5><a href="/empleador/inicio" class="nav-link px-8 " style="color:#0E4280" > Inicio</a></h5> </FONT></strong></li>
               <li><strong><FONT FACE="arial"> <h5><a href="/empleador/visualizar/artesanados " class="nav-link px-8 "  style="color:#0E4280" > Artesanados</a></h5> </FONT></strong></li>
               <li><strong><FONT FACE="arial"> <h5><a href="/empleador/cambio/clave " class="nav-link px-8 "  style="color:#0E4280" > Cambiar Contraseña</a></h5> </FONT></strong></li>

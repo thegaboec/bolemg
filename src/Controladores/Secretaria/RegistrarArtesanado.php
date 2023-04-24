@@ -46,7 +46,7 @@ class RegistrarArtesanado{
         $add =[
             'idartesanado' => trim($_POST['idartesanado']),
             'categoria' => trim($_POST['categoria']), 
-            'url_foto' => trim($outputImage), 
+            'url_foto' => ltrim($outputImage,'.'), 
             'estado' => Artesanados::ESTADO_ACTIVO
         ];
 

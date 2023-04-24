@@ -11,4 +11,6 @@ class InicioArtesano {
             'template' => 'artesano/inicioArtesano.html.php'
         ];
     }
+
+    
 }

@@ -55,7 +55,7 @@ class Secretaria{
             'estado' => Usuarios::ESTADO_ACTIVO,
             'rol' => Usuarios::SECRETARIA,
             'telefono' => trim($_POST['telefono']),
-            'fotousuario' => trim($outputImage)
+            'fotousuario' => ltrim($outputImage,'.')
         ];
 
         try {

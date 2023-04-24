@@ -18,8 +18,8 @@
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
         <?php foreach ($artesanados as $artesanado): ?>
           <div class="col">
-            <div class="card shadow-sm">
-              <img src="/<?=$artesanado->url_foto?>" alt = "bootstrap" windth="100%" height="225">
+            <div class="card shadow-sm ">
+              <img src="<?=$artesanado->url_foto?>" class=" img__perfil" alt = "bootstrap" windth="100%" height="225">
              
               <div class="card-body">
                 <p class=" text-center" ><?=$artesanado->categoria?> </p>

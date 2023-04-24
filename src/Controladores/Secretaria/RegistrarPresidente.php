@@ -50,7 +50,7 @@ class RegistrarPresidente{
             'estado' => Usuarios::ESTADO_ACTIVO,
             'rol' => Usuarios::PRESIDENTE,
             'telefono' => trim($_POST['telefono']),
-            'fotousuario' => trim($outputImage)
+            'fotousuario' => ltrim($outputImage,'.')
         ];
 
         

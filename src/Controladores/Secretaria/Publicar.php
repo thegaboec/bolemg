@@ -38,7 +38,7 @@ class Publicar{
             'titulo' => ($_POST['titulo']),
             'publicacion' => ($_POST['publicacion']), 
             'fecha' => ($_POST['fecha']),
-            'foto_publicacion' => trim($outputImage),
+            'foto_publicacion' => ltrim($outputImage,'.'),
             'estado' => Publicaciones::ESTADO_ACTIVO
             
         ];

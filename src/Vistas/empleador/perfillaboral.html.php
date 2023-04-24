@@ -1,4 +1,18 @@
 
+<?php
+
+
+
+ if(isset($error)): ?>
+<p class="bg-danger text-white p-4 text-center w-50 m-auto">
+            <?= $error ?>
+        </p>
+<?php endif; ?>    
+<?php if(isset($success)): ?>
+    <p class="bg-success text-white p-4 text-center w-50 m-auto">
+            <?= $success ?>
+        </p>
+<?php endif; ?> 
 <main>
 
     <section class="py-12 text-center container">
@@ -31,21 +45,35 @@
                 
              </div>
              <div class="card-header" >
-              <img src="/<?=$artesano->foto?>" class="card-img-top" alt = "bootstrap" windth="100%" height="225" >
+              <img src="<?=$artesano->foto?>" class="img__perfil" alt = "bootstrap" windth="100%" height="225" >
              </div>
              <div class="card-body">
               <h5 class="card-title"><?=$artesano->nombres?></h5>
               <ul class="list-group list-group-flush">
+
                 <p class="fw-dark" > 
                 <li class="list-group-item">Nombre: <?=$artesano->nombres?></li>
                 </p>
+
                 <p class="fw-dark" > 
                 <li class="list-group-item">Apellido: <?=$artesano->apellidos?></li>
                 </p>
-                <p class="fw-dark" > Contacto: <?=$artesano->telefono?></p>
-                <p class="fw-dark"  > Correo Electrónico: <?=$artesano->correo?></p>
-                <p class="fw-dark" > Dirección: <?=$artesano->direccion?> </p>
-                <p class="fw-dark" > Calificación: <?=$artesano->calificacion?> </p>
+
+                <p class="fw-dark" >
+                <li class="list-group-item"> Contacto: <?=$artesano->telefono?></li>
+                </p>
+
+                <p class="fw-dark">
+                <li class="list-group-item">Correo Electrónico: <?=$artesano->correo?></li>
+                </p>
+
+                <p class="fw-dark" > 
+                <li class="list-group-item"> Dirección: <?=$artesano->direccion?> </li>
+              </p>
+
+                <p class="fw-dark" >
+                <li class="list-group-item"> Calificación: <?=$artesano->calificacion?></li>
+               </p>
 
                 </ul>
               
@@ -72,25 +100,25 @@
 
               <div class="col">
               <div class="card-header">
-              <img src="/<?=$artesano->imagen1?>" class="card-img-top" alt = "bootstrap" windth="100%" height="225">
+              <img src="<?=$artesano->imagen1?>" class="card-img-top" alt = "bootstrap" windth="100%" height="225">
               </div>
             </div>
 
             <div class="col">
               <div class="card-header">
-              <img src="/<?=$artesano->imagen2?>" class="card-img-top" alt = "bootstrap" windth="100%" height="225">
+              <img src="<?=$artesano->imagen2?>" class="card-img-top" alt = "bootstrap" windth="100%" height="225">
               </div>
             </div>
 
             <div class="col">
               <div class="card-header">
-              <img src="/<?=$artesano->imagen3?>" class="card-img-top" alt = "bootstrap" windth="100%" height="225">
+              <img src="<?=$artesano->imagen3?>" class="card-img-top" alt = "bootstrap" windth="100%" height="225">
               </div>
             </div>
 
             <div class="col">
               <div class="card-header">
-              <img src="/<?=$artesano->imagen4?>" class="card-img-top" alt = "bootstrap" windth="100%" height="225">
+              <img src="<?=$artesano->imagen4?>" class="card-img-top" alt = "bootstrap" windth="100%" height="225">
               </div>
             </div>
             </div>

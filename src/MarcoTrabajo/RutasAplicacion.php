@@ -62,7 +62,7 @@ class RutasAplicacion{
         $modificarArtesanado = new ModificarArtesanado ($this->artesanados);
         $actualizarArtesanado = new ActualizarArtesanado ($this-> artesanados);
         $publicar = new Publicar ($this->publicaciones);
-        $perfilLaboral = new Perfil;
+        $perfilLaboral = new Perfil($this->artesanos,$this->autenttificacion);
         $inicioArtesano = new InicioArtesano;
         $iniciarSession = new Login($this->autenttificacion);
         $nuevaClave = new Clave($this ->usuarios, $this->autenttificacion);
@@ -366,8 +366,14 @@ class RutasAplicacion{
                 'artesano/perfil' =>[
                     "GET"=>[
                         "controlador"=> $perfilLaboral,
-                        "accion"=>'perfilLaboral'
+                        "accion"=>'desplegar'
                     ],
+                    "POST"=>[
+                        "controlador"=>$perfilLaboral,
+                        "accion"=>'actualizar'
+                    ],
+                    'login' => true, // loguedo
+                    'rol' => Usuarios::ARTESANO //rol
                 ],
                 'artesano/cambio/clave' =>[
                     'GET' => [

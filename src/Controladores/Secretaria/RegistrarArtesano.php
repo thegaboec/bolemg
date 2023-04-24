@@ -47,8 +47,10 @@ class RegistrarArtesano{
         //Imagen de foto
         $tmp = $_FILES['foto']['tmp_name'];
         $name = $_FILES['foto']['name'];
+
         $tmp1 = $_FILES['imagen1']['tmp_name'];
         $name1 = $_FILES['imagen1']['name'];
+
         $tmp2 = $_FILES['imagen2']['tmp_name'];
         $name2 = $_FILES['imagen2']['name'];
         $tmp3 = $_FILES['imagen3']['tmp_name'];
@@ -68,7 +70,7 @@ class RegistrarArtesano{
 
         $data=[
             'idartesano' => $_POST['idartesano'],
-            'foto' => trim($outputImage),
+            'foto' => ltrim($outputImage,'.'),
             'nombres' => $_POST['nombres'],
             'apellidos' => $_POST['apellidos'],
             'telefono' => $_POST['telefono'],
@@ -79,10 +81,10 @@ class RegistrarArtesano{
             'calificacion' => $_POST['calificacion'],
             'clave' => password_hash($_POST['idartesano'],PASSWORD_DEFAULT),
             'estado' => Artesanos::ESTADO_ACTIVO,
-            'imagen1' => trim($outputImage1),
-            'imagen2' => trim($outputImage2),
-            'imagen3' => trim($outputImage3),
-            'imagen4' => trim($outputImage4)
+            'imagen1' => ltrim($outputImage1,'.'),
+            'imagen2' => ltrim($outputImage2,'.'),
+            'imagen3' => ltrim($outputImage3,'.'),
+            'imagen4' => ltrim($outputImage4,'.')
         
         ];
         

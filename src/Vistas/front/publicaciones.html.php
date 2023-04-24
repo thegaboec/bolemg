@@ -19,7 +19,7 @@
         <?php foreach ($publicaciones as $publicacion): ?>
           <div class="col">
             <div class="card shadow-sm">
-              <img src="/<?=$publicacion->foto_publicacion?>" alt = "bootstrap" windth="100%" height="225">
+              <img src="<?=$publicacion->foto_publicacion?>" alt = "bootstrap" windth="100%" height="225">
              
               <div class="card-body">
                 <p class=" text-center" ><?=$valordebusqueda=$publicacion->titulo?> </p>
