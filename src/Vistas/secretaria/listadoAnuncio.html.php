@@ -28,7 +28,7 @@
                                 
                                 <td>
                                     <input class="text-center" type="checkbox" name="publicacion<?= $count;?>[estado]" id="">
-                                    <input type="hidden" name="publicacion<?= $count;?>[idpublicacion]" value="<?= $publicacion->idpublicacion;?>">
+                                    <input type="hidden" name="publicacion<?= $count;?>[idpublicaciones]" value="<?= $publicacion->idpublicaciones;?>">
                                 </td>
 
                             </tr>
