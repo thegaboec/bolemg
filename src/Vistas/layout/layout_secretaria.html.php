@@ -67,7 +67,8 @@
                         <div class="dropdown-menu dropdown-menu-right mr-md-0 " aria-labelledby="bd-versions">
                         <strong><FONT FACE="arial"> <h5><a class="dropdown-item" style="color:#0E4280" href="/secretaria/registrar/artesanado">Registrar</a></h5> </FONT></strong>
                         <strong><FONT FACE="arial"> <h5><a class="dropdown-item" style="color:#0E4280" href="/secretaria/habilitar-deshabilitar/artesanado">Habilitar-Inhabilitar</a></h5> </FONT></strong>
-                        <a class="dropdown-item" href="/secretaria/actualizar/artesanado">Actualizar</a>
+                        <strong><FONT FACE="arial"> <h5><a class="dropdown-item" style="color:#0E4280" href="/secretaria/listado/artesanado">Listado</a></h5> </FONT></strong>
+                       
                         </div>
               </h5> </FONT></strong></li>
               <li class="nav-item dropdown"><strong><FONT FACE="arial"> <h5> <a class="nav-item nav-link px-8" style="color:#0E4280" href="#" id="bd-versions" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: aliceblue;">
@@ -75,6 +76,7 @@
                         <div class="dropdown-menu dropdown-menu-right mr-md-0 " aria-labelledby="bd-versions">
                         <strong><FONT FACE="arial"> <h5><a class="dropdown-item" style="color:#0E4280" href="/secretaria/registrar/artesano">Registrar</a></h5> </FONT></strong>
                         <strong><FONT FACE="arial"> <h5><a class="dropdown-item" style="color:#0E4280" href="/secretaria/habilitar-deshabilitar/artesano">Habilitar-Inhabilitar</a></h5> </FONT></strong>
+                        <strong><FONT FACE="arial"> <h5><a class="dropdown-item" style="color:#0E4280" href="/secretaria/listado/artesano">Listado</a></h5> </FONT></strong>
                           
                         </div>
               </h5> </FONT></strong></li>
@@ -83,6 +85,7 @@
                         <div class="dropdown-menu dropdown-menu-right mr-md-0 " aria-labelledby="bd-versions">
                         <strong><FONT FACE="arial"> <h5><a class="dropdown-item" style="color:#0E4280" href="/secretaria/publicar/anuncio">Registrar</a></h5> </FONT></strong>
                         <strong><FONT FACE="arial"> <h5><a class="dropdown-item" style="color:#0E4280" href="/secretaria/listado/anuncio">Habilitar-Inhabilitar</a></h5> </FONT></strong>
+                        <strong><FONT FACE="arial"> <h5><a class="dropdown-item" style="color:#0E4280" href="/secretaria/listado/publicaciones">Listado</a></h5> </FONT></strong>
                           
                         </div>
               </h5> </FONT></strong></li>

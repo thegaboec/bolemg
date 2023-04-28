@@ -60,6 +60,11 @@ class Perfil{
             'direccion'=>$_POST['direccion'],
             'telefono'=>$_POST['telefono'],
             'correo'=>$_POST['correo'],
+            'descripcion1'=>$_POST['descripcion1'],
+            'descripcion2'=>$_POST['descripcion2'],
+            'descripcion3'=>$_POST['descripcion3'],
+            'descripcion4'=>$_POST['descripcion4']
+            
             /*'imagen1' => ltrim($outputImage1,'.'),
             'imagen2' => ltrim($outputImage2,'.'),
             'imagen3' => ltrim($outputImage3,'.'),

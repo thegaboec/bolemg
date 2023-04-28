@@ -100,24 +100,36 @@
 
               <div class="col">
               <div class="card-header">
+              <p class="fw-dark" >
+                <li class="list-group-item"> Descripción: <?=$artesano->descripcion1?></li>
+               </p>
               <img src="<?=$artesano->imagen1?>" class="card-img-top" alt = "bootstrap" windth="100%" height="225">
               </div>
             </div>
 
             <div class="col">
               <div class="card-header">
+              <p class="fw-dark" >
+                <li class="list-group-item"> Descripción: <?=$artesano->descripcion2?></li>
+               </p>
               <img src="<?=$artesano->imagen2?>" class="card-img-top" alt = "bootstrap" windth="100%" height="225">
               </div>
             </div>
 
             <div class="col">
               <div class="card-header">
+              <p class="fw-dark" >
+                <li class="list-group-item"> Descripción: <?=$artesano->descripcion3?></li>
+               </p>
               <img src="<?=$artesano->imagen3?>" class="card-img-top" alt = "bootstrap" windth="100%" height="225">
               </div>
             </div>
 
             <div class="col">
               <div class="card-header">
+              <p class="fw-dark" >
+                <li class="list-group-item"> Descripción: <?=$artesano->descripcion4?></li>
+               </p>
               <img src="<?=$artesano->imagen4?>" class="card-img-top" alt = "bootstrap" windth="100%" height="225">
               </div>
             </div>

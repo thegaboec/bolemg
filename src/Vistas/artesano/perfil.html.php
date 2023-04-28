@@ -92,6 +92,10 @@
 
               <div class="col">
               <div class="card-header">
+              <p class="fw-dark" >
+                <li class="list-group-item">Descripcion:
+                <input type="text" name="descripcion1" value="<?=$perfil->descripcion1?>"></li>
+                </p>
               <img src="<?=$perfil->imagen1?>" class="card-img-top" alt = "bootstrap" windth="100%" height="225">
               <input accept=".jpg,.png,.jpeg,.gif" class="hidden" name="imagen1" type="file" id="trabajos">
               </div>
@@ -99,6 +103,10 @@
 
             <div class="col">
               <div class="card-header">
+              <p class="fw-dark" >
+                <li class="list-group-item">Descripcion:
+                <input type="text" name="descripcion2" value="<?=$perfil->descripcion2?>"></li>
+                </p>
               <img src="<?=$perfil->imagen2?>" class="card-img-top" alt = "bootstrap" windth="100%" height="225">
               <input accept=".jpg,.png,.jpeg,.gif" class="hidden" name="imagen2" type="file" id="trabajos">
               </div>
@@ -106,6 +114,10 @@
 
             <div class="col">
               <div class="card-header">
+              <p class="fw-dark" >
+                <li class="list-group-item">Descripcion:
+                <input type="text" name="descripcion3" value="<?=$perfil->descripcion3?>"></li>
+                </p>
               <img src="<?=$perfil->imagen3?>" class="card-img-top" alt = "bootstrap" windth="100%" height="225">
               <input accept=".jpg,.png,.jpeg,.gif" class="hidden" name="imagen3" type="file" id="trabajos">
               </div>
@@ -113,6 +125,10 @@
 
             <div class="col">
               <div class="card-header">
+              <p class="fw-dark" >
+                <li class="list-group-item">Descripcion:
+                <input type="text" name="descripcion4" value="<?=$perfil->descripcion4?>"></li>
+                </p>
               <img src="<?=$perfil->imagen4?>" class="card-img-top" alt = "bootstrap" windth="100%" height="225">
               <input accept=".jpg,.png,.jpeg,.gif" class="hidden" name="imagen4" type="file" id="trabajos">
               </div>

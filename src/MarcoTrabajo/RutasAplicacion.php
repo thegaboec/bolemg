@@ -12,17 +12,19 @@ use App\Controladores\Secretaria\RegistrarPresidente;
 use App\Controladores\Secretaria\ModificarPresidente;
 use App\Controladores\Presidente\Inicio as PresidenteInicio;
 use App\Controladores\Presidente\Modificar;
-use App\Controladores\Secretaria\ActualizarArtesanado;
 use App\Controladores\Secretaria\InicioSecretaria;
 use App\Controladores\Secretaria\ModificarArtesanado;
 use App\Controladores\Secretaria\ModificarArtesano;
 use App\Controladores\Secretaria\Publicar;
 use App\Controladores\Secretaria\RegistrarArtesanado;
 use App\Controladores\Secretaria\RegistrarArtesano;
+use App\Controladores\Secretaria\ListadoArtesanos;
 use App\Controladores\Web\Login;
 use App\Controladores\Empleador\InicioEmpleador as EmpleadorInicio;
 use App\Controladores\Empleador\ListaArtesanos;
 use App\Controladores\Empleador\VerArtesanados;
+use App\Controladores\Secretaria\ListadoArtesanados;
+use App\Controladores\Secretaria\ListadoPublicaciones;
 use App\Controladores\Web\RegistrarEmpleador;
 use App\Modelos\Artesanos;
 use App\Modelos\Usuarios;
@@ -58,10 +60,12 @@ class RutasAplicacion{
         $inicioSecretaria = new InicioSecretaria;
         $registrarArtesano= new RegistrarArtesano($this ->artesanos);
         $modificarArtesano = new ModificarArtesano($this->artesanos);
+        $listadoArtesanos= new ListadoArtesanos($this->artesanos);
         $registrarArtesanado = new RegistrarArtesanado ($this-> artesanados);
         $modificarArtesanado = new ModificarArtesanado ($this->artesanados);
-        $actualizarArtesanado = new ActualizarArtesanado ($this-> artesanados);
+        $listadoArtesanados= new ListadoArtesanados($this->artesanados);
         $publicar = new Publicar ($this->publicaciones);
+        $listadoPublicaciones=new ListadoPublicaciones($this->publicaciones);
         $perfilLaboral = new Perfil($this->artesanos,$this->autenttificacion);
         $inicioArtesano = new InicioArtesano;
         $iniciarSession = new Login($this->autenttificacion);
@@ -277,6 +281,18 @@ class RutasAplicacion{
                     
                 ],
 
+                'secretaria/listado/artesano' =>[
+                    "GET"=>[
+                        "controlador"=> $listadoArtesanos,
+                        "accion"=>'listar'
+                    ],
+                      
+                    'login' => true, // loguedo
+                    'rol' => Usuarios::SECRETARIA //rol
+            
+                    
+                ],
+
                 
                 'secretaria/registrar/artesanado' =>[
                     "GET"=>[
@@ -306,22 +322,19 @@ class RutasAplicacion{
                     'rol' => Usuarios::SECRETARIA //rol
             
                 ],
-                'secretaria/actualizar/artesanado' =>[
-                    'GET' => [
-                        'controlador' => $actualizarArtesanado,
-                        'accion' => 'view'
+
+                'secretaria/listado/artesanado' =>[
+                    "GET"=>[
+                        "controlador"=> $listadoArtesanados,
+                        "accion"=>'listar'
                     ],
-                    'login' => true,
-                    'permission' =>Usuarios::SECRETARIA
+                      
+                    'login' => true, // loguedo
+                    'rol' => Usuarios::SECRETARIA //rol
+            
+                    
                 ],
-                'secretaria/editar/artesanado' =>[
-                    'GET' => [
-                        'controlador' => $actualizarArtesanado,
-                        'accion' => 'edit'
-                    ],
-                    'login' => true,
-                    'permission' =>Usuarios::SECRETARIA
-                ],
+
 
                 'secretaria/publicar/anuncio' =>[
                     "GET"=>[
@@ -351,6 +364,18 @@ class RutasAplicacion{
                     'login' => true, // loguedo
                     'rol' => Usuarios::SECRETARIA //rol
             
+                ],
+
+                'secretaria/listado/publicaciones' =>[
+                    "GET"=>[
+                        "controlador"=> $listadoPublicaciones,
+                        "accion"=>'listar'
+                    ],
+                      
+                    'login' => true, // loguedo
+                    'rol' => Usuarios::SECRETARIA //rol
+            
+                    
                 ],
 
                 
