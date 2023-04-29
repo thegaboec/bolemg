@@ -94,7 +94,7 @@
             </ul>
         <div class="text-end">
        
-        <strong>  <a href='/logout' class="btn btn-outline-primary me-2" >Cerrar Seción</a></strong>
+        <strong>  <a href='/logout' class="btn btn-outline-primary me-2" >Cerrar Sesión</a></strong>
         
         </div>
 

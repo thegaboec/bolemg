@@ -23,7 +23,7 @@
          <div class="row g-3 col-md-6">
 
            <div class="col-sm-6">
-             <label for="id_ar" class="form-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ID del Artesanando</font></font></label>
+             <label for="id_ar" class="form-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ID del Artesanado</font></font></label>
              <input name="idartesanado" type="text" class="form-control border border-primary" id="id_ar" placeholder="" value="" required="">
              <div class="invalid-feedback">
                Se requiere un ID valido
@@ -34,7 +34,7 @@
              <label for="lastName" class="form-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nombre del Artesanado</font></font></label>
              <input name="categoria" type="text" class="form-control border border-primary" id="lastName" placeholder="" value="" required="">
              <div class="invalid-feedback">
-               Se requiere un Nombre valido 
+               Se requiere un nombre valido 
              </div>
            </div>
            

@@ -5,7 +5,7 @@
       <div class="row py-lg-5">
         <div class="col-lg-6 col-md-8 mx-auto">
           <h1 class="fw-light">JUNTA PROVINCIAL DE DEFENSA DEL ARTESANO</h1>
-          <p class="lead text-muted">Promueve el desarrollo de los artesanos visitando cada una de las categorias disponibles en el siguiente apartado</p>
+          <p class="lead text-muted">Promueve el desarrollo de los artesanos visitando cada una de las categorías disponibles en el siguiente apartado</p>
           
          
         </div>

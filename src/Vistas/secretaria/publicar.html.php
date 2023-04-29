@@ -23,7 +23,7 @@
             <form action="" method="post" enctype="multipart/form-data">
             <div class="">
                 <div class="col-sm-4">
-                  <label for="anuncio" class="form-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Titulo de la Publicación</font></label>
+                  <label for="anuncio" class="form-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Titulo de la publicación</font></label>
                   <input type="text" name="titulo" class="form-control border border-primary" id="anuncio" placeholder="" value="" required="">
                   <div class="invalid-feedback">
                         Se requiere ingresar una publicación
@@ -38,14 +38,14 @@
                 <br>
 
                 <div class="col-sm-4">
-                    <label for="fecha_publ" class="form-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Fecha de Publicación</font></font></label>
+                    <label for="fecha_publ" class="form-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Fecha de publicación</font></font></label>
                     <input type="date" name="fecha" class="form-control border border-primary" id="fecha_publ" placeholder="" value="" required="">
                     <div class="invalid-feedback">
                           Se requiere ingresar una publicación 
                     </div>
                   </div>
                   <br>
-                  <label for="img_publ">Imagen de la Publicación</label>
+                  <label for="img_publ">Imagen de la publicación</label>
                 <div class="col-sm-4">
                     <div class=" ">
                         

@@ -4,10 +4,10 @@
               <img src="/assets/img/BOLEMG.png"  width="480" height="300" class="" ></center></div>
       <div class="row py-lg-5" style="background-color:#F3F5F8">
       <div class="col-lg-8 col-md-8 mx-5">
-        <h1 class="fw-light">Si buscas Artesanos acreditados en diferentes areas ¡BOLEMG es tu mejor opción!</h1>
+        <h1 class="fw-light">Si buscas Artesanos acreditados en diferentes áreas ¡BOLEMG es tu mejor opción!</h1>
         <p class="lead text-body-secondary">BOLEMG busca brindarle la mejor ayuda para la contratación 
             de personal totalmente calificado para su Empresa, Institución u Hogar. Los Artesanados y Artesanos que se
-             fomentan en esta pagina estan validados por la Junta Provincial de Defensa del Artesano de Bolívar <p>
+            fomentan en esta pagina estan validados por la Junta Provincial de Defensa del Artesano de Bolívar <p>
         </p>
         
       </div>
@@ -16,10 +16,11 @@
     </div>
     <br>
     <center>
+
       <div class=" pt-5 col-md-12 py-lg-5 rounded-2 p-3 mb-2 bg-primary-subtle text-dark">
       
       <div class="col-lg-6 col-md-8 mx-auto" style="color:#F3F5F8">
-        <h1 class="fw-light text-dark">¿Quienes Somos?</h1>
+        <h1 class="fw-light text-dark">¿Quiénes Somos?</h1>
         <p class="lead text-dark " ">Revisa el apartado INSTITUCIÓN</p>
         <p class="lead  text-dark" ">Y conoce nuestros compromiso con la sociedad y los Artesanos afiliados a nuestra Junta. Además, revisa la  Misión y Visión que tenemos al 2030 que nos identifica como Institución <p>
         </p>
@@ -39,7 +40,7 @@
       <div class="p-5 col-md-6">
         <div class="h-100 p-5 bg-light border rounded-3">
           <h2 class="fw-light">Publicaciones</h2>
-          <p class="lead ">No te quedes sin estar actualizado constantemente. Enterate de todas las novedades de la Junta Provicial de Defensa del Artesano, semana a semana subiremos  todas las nuevas publicaciones o novedade de nuestra institucions como: Cursos, Inscripciones, Casas Abiertas, entre otros.<p>
+          <p class="lead ">No te quedes sin estar actualizado constantemente. Entérate de todas las novedades de la Junta Provicial de Defensa del Artesano, semana a semana subiremos  todas las nuevas publicaciones o novedade de nuestra instituciones como: Cursos, Inscripciones, Casas Abiertas, entre otros.<p>
           </div>
       </div>
     </div></center>
@@ -49,8 +50,8 @@
       <div class="row py-lg-5" style="background-color:#F3F5F8">
       <div class="col-lg-6 col-md-8 mx-5">
         <h1 class="fw-light" >¡Registrate Ya!</h1>
-        <p class="lead text-body-secondary" >Registrate y podras acceder a más funcionabilidades en nuestro sistema BOLEMG, como: Vizualizar los Artesanos afiliados a la Junta, Consultar el Perfil laboral de cada Artesano, 
-          asi como una calificación realizada por parte de otros Empleadores de los servicios prestados y imagenes de los trabajos realizados  </p>
+        <p class="lead text-body-secondary" >Registrate y podrás acceder a más funcionabilidades en nuestro sistema BOLEMG, como: Vizualizar los Artesanos afiliados a la Junta, Consultar el Perfil laboral de cada Artesano, 
+          así como una calificación realizada por parte de otros Empleadores de los servicios prestados y imagenes de los trabajos realizados  </p>
         
       </div>
 

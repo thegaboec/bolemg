@@ -41,7 +41,7 @@ use App\Modelos\Artesanados;
                     <label for="nombre_arte" class="form-label"><font style="vertical-align: inherit;">Nombres</font></font></label>
                     <input type="text" class="form-control border border-primary" id="nombre_arte" placeholder="" value="" required="" name="nombres">
                     <div class="invalid-feedback">
-                        Se requiere Nombres valido
+                        Se requiere nombres válidos
                     </div>
                 </div>
     
@@ -49,7 +49,7 @@ use App\Modelos\Artesanados;
                     <label for="apellido_arte" class="form-label"><font style="vertical-align: inherit;">Apellidos</font></font></label>
                     <input type="text" class="form-control border border-primary" id="apellido_arte" placeholder="" value="" required="" name="apellidos">
                     <div class="invalid-feedback">
-                        Se requiere Apellidos valido 
+                        Se requiere apellidos válidos
                     </div>
                 </div>
                
@@ -57,7 +57,7 @@ use App\Modelos\Artesanados;
                     <label for="cedula" class="form-label text-left"><font style="vertical-align: inherit;">Cédula</font></font></label>
                     <input type="number" class="form-control border border-primary" id="cedula" placeholder="Este item se asignará como usuario y contraseña" value="" required="" name="idartesano">
                     <div class="invalid-feedback">
-                        Se requiere una Cédula valida 
+                        Se requiere una cédula válida
                     </div>
                 </div>
                  
@@ -65,7 +65,7 @@ use App\Modelos\Artesanados;
                     <label for="telefono" class="form-label"><font style="vertical-align: inherit;">Télefono</font></font></label>
                     <input type="number" class="form-control border border-primary" id="telefono" placeholder="" value="" required="" name="telefono">
                     <div class="invalid-feedback">
-                        Se requiere un Teléfono valido 
+                        Se requiere un teléfono válido 
                     </div>
                 </div>
 
@@ -80,7 +80,7 @@ use App\Modelos\Artesanados;
                 </div>
         
                 <div class="col-sm-6">
-                    <label for="correo_electronico" class="form-label">Correo Electronico</label>
+                    <label for="correo_electronico" class="form-label">Correo electrónico</label>
                     <input type="email" class="form-control border border-primary" id="correo_electronico" placeholder="Ejemplo@gmail.com" name="correo">
                 </div>
 

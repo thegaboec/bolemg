@@ -2,10 +2,10 @@
       <div class=" pt-5 col-md-12 py-lg-5 rounded-2 p-3 mb-2  text-dark" style="background-color:#F3F5F8">
       
       <div class="col-lg-6 col-md-8 mx-auto" style="color:#F3F5F8">
-        <h1 class="fw-light text-dark">¿Quienes Somos?</h1>
+        <h1 class="fw-light text-dark">¿Quiénes Somos?</h1>
         <p class="lead  text-dark" ">La Junta Nacional de Defensa del Artesano es una institución  que lidera el fortalecimiento,
-             profecionalización y desarrollo del sector artesanal, mediante el impulso de una politica, la formacion, la investigación y
-              la presentación de servicios a los artesanos. </p>
+            profesionalización y desarrollo del sector artesanal, mediante el impulso de una política, la formación, la investigación y
+            la presentación de servicios a los artesanos. </p>
       </div>
       
     </div>
@@ -55,9 +55,9 @@
       <div class="col-lg-6 col-md-8 mx-5">
 
         <p class="lead text-body-secondary"><em>
-                            "La misión de JNDA es reconocer la calidad de Maestro de Taller, operario, aprendiz y taller artesanal; promover la calificación Artesanal 
-                            como medio para acogerse a los beneficios Tributarios, Laborales, Sociales establecidos en el ordenamiento jurídico vigente a través de un
-                            servicio que fortalezca la actividad artesanal y motive la calidad eficiente y ágil de los artesanos del país."</em></p>
+                  "La misión de JNDA es reconocer la calidad de Maestro de Taller, operario, aprendiz y taller artesanal; promover la calificación Artesanal 
+                  como medio para acogerse a los beneficios Tributarios, Laborales, Sociales establecidos en el ordenamiento jurídico vigente a través de un
+                  servicio que fortalezca la actividad artesanal y motive la calidad eficiente y ágil de los artesanos del país."</em></p>
         
       </div>
       
@@ -72,9 +72,9 @@
       <div class="row py-lg-5" style="background-color:#F3F5F8">
       <div class="col-lg-6 col-md-8 mx-5">
         <p class="lead text-body-secondary" ><em>
-                           "Vemos a la Junta Nacional de Defensa del Artesano como una institución pública especializada que implementa y coordina una política artesanal 
-                            que se aplica en todo el Estado y la Sociedad. Se cuenta con un sistema integral de formación y desarrollo profesional que incorpora innovación,
-                           h 3  ciencia y tecnología para la formación y capacitación de los artesanos y artesanas, así como la calificación de sus talleres artesanales."</p></em>
+                "Vemos a la Junta Nacional de Defensa del Artesano como una institución pública especializada que implementa y coordina una política artesanal 
+                que se aplica en todo el Estado y la Sociedad. Se cuenta con un sistema integral de formación y desarrollo profesional que incorpora innovación,
+                ciencia y tecnología para la formación y capacitación de los artesanos y artesanas, así como la calificación de sus talleres artesanales."</p></em>
 
       </div>
 

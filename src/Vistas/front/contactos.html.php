@@ -28,7 +28,7 @@
 
     <div class="bg-primary-subtle me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
       <div class="my-3 p-3">
-        <h5 class="display-6">Correo Electronico</h5>
+        <h5 class="display-6">Correo electrónico</h5>
         <p class="lead">emy.granja@artesanos.gob.ec</p>
       </div>
       <img class="d-block mx-auto" src="/assets/img/correo.png" alt = "bootstrap"  style="width: 40%; height: 150px; border-radius: 21px 21px 0 0;"></div>

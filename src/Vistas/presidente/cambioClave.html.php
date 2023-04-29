@@ -53,7 +53,7 @@
          <div class="row align-items-center">
 
              <div class="col-auto">
-               <label for="txt-Password" class="col-form-label">Repita Nueva Contraseña</label>
+               <label for="txt-Password" class="col-form-label">Repita nueva Contraseña</label>
              </div>
              <div class="input-group">
                <input type="password" name="repitpass" id="txt-Password" class="form-control border border-primary" aria-describedby="passwordHelpInline">

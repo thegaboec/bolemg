@@ -84,7 +84,7 @@ class Publicar{
         }
         $error = '';
         foreach($dataPublicaciones as $publicaciones){
-            $publi = $this->publicaciones->selectFromColumn('idpublicacion',$publicaciones['idpublicacion'])[0];
+            $publi = $this->publicaciones->selectFromColumn('idpublicaciones',$publicaciones['idpublicaciones'])[0];
             $estado = '';
             if($publi->estado === 'activo'){
                 $estado = 'inactivo';
@@ -94,7 +94,7 @@ class Publicar{
 
             $dataFinalPublicaciones = [
                 'estado' => $estado,
-                'idpublicacion' => $publicaciones['idpublicacion']
+                'idpublicaciones' => $publicaciones['idpublicaciones']
             ];
 
             try{
