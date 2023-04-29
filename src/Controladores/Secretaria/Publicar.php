@@ -75,6 +75,7 @@ class Publicar{
  
 
     public function publica(){
+       
         $dataPublicaciones = [];
         foreach($_POST as $publicaciones){
             if(isset($publicaciones['estado'])){
@@ -84,9 +85,9 @@ class Publicar{
         }
         $error = '';
         foreach($dataPublicaciones as $publicaciones){
-            $publi = $this->publicaciones->selectFromColumn('idpublicaciones',$publicaciones['idpublicaciones'])[0];
+            $pub = $this->publicaciones->selectFromColumn('idpublicaciones',$publicaciones['idpublicaciones'])[0];
             $estado = '';
-            if($publi->estado === 'activo'){
+            if($pub->estado === 'activo'){
                 $estado = 'inactivo';
             }else{
                 $estado = 'activo';
