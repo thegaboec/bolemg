@@ -68,7 +68,7 @@
               <label for="email" class="form-label">Teléfono</label>
               <input type="text" class="form-control border border-primary" id="email" placeholder="" name="telefono">
               <div class="invalid-feedback">
-                Ingrese un telefono válido.
+                Ingrese un teléfono válido.
               </div>
             </div>
             <center>
