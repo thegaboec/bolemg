@@ -51,7 +51,7 @@ class RutasAplicacion{
 
     public function getRoutes(){
        
-        $inicio = new Inicio();
+        $inicio = new Inicio($this->usuarios);
         $inicioPresidente = new PresidenteInicio;
         $agregarSecretaria= new Secretaria($this ->usuarios);
         $modificarSecretaria= new Modificar($this ->usuarios);

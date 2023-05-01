@@ -1,7 +1,7 @@
-  <center>
-      <div class=" pt-5 col-md-12 py-lg-5 rounded-2 p-3 mb-2  text-dark" style="background-color:#F3F5F8">
+<center>
+      <div class=" pt-5 col-md-12  rounded-2 p-3 mb-2  text-dark " style="background-color:#F3F5F8" >
       
-      <div class="col-lg-6 col-md-8 mx-auto" style="color:#F3F5F8">
+      <div class="col-lg-6 col-md-8 mx-auto " style="color:#F3F5F8">
         <h1 class="fw-light text-dark">¿Quiénes Somos?</h1>
         <p class="lead  text-dark" ">La Junta Nacional de Defensa del Artesano es una institución  que lidera el fortalecimiento,
             profesionalización y desarrollo del sector artesanal, mediante el impulso de una política, la formación, la investigación y
@@ -13,7 +13,7 @@
 
    <div class="container">
           <div class="row justify-content-center">
-              <div class="col-sm-10">
+              <div class="col-sm-9">
                   <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                       <div class="carousel-inner">
                           <div class="carousel-item active">
@@ -49,9 +49,10 @@
 
 
 <br>
+
      <div class=" p-5 rounded float-end">
               <img src="/assets/img/mision.png"  width="480" height="300" class="" ></center></div>
-      <div class="row py-lg-5" style="background-color:#F3F5F8">
+      <div class="row py-lg-5 bg-primary-subtle" >
       <div class="col-lg-6 col-md-8 mx-5">
 
         <p class="lead text-body-secondary"><em>
@@ -69,7 +70,7 @@
     <br>
     <div class=" p-5  rounded float-start">
               <img src="/assets/img/vision.png"  width="480" height="300" class="" ></center></div>
-      <div class="row py-lg-5" style="background-color:#F3F5F8">
+      <div class="row py-lg-5  " style="background-color:#F3F5F8">
       <div class="col-lg-6 col-md-8 mx-5">
         <p class="lead text-body-secondary" ><em>
                 "Vemos a la Junta Nacional de Defensa del Artesano como una institución pública especializada que implementa y coordina una política artesanal 
@@ -85,4 +86,54 @@
     <br>
 
 
+    <center>
+      <div class=" pt-5 col-md-12 py-lg-12 rounded-2 p-3 mb-2  text-dark " >
+      <h1 class="fw-light text-dark">Autoridades </h1>
+          <p class="lead  text-dark" >Conoce las autoridades de la Junta Provincial de Defensa del Artesano </p>   
+    </div>
+   </center>
+<center>
+
+   <div class="row justify-content-center">
+    
+
+   <?php foreach ($usuarios as $usuario): ?>
+  <div class="p-5 col-sm-4 mb-3 mb-sm-0">
+    <div class="card">
+      
+    
+      <h4 class="fw-light text-dark"><strong> Presidente</strong></h4>
+      <div class="card-header" >
+               <img src="<?=$usuario->fotousuario?>" class="img" alt = "" windth="100%" height="225">    
+      </div>
+       <div class="card-body">
+        <h5 class="card-title lead  text-dark">Nombres:<?=$usuario->nombres?></h5>
+        <h5 class="card-title lead  text-dark">Apellidos:<?=$usuario->apellidos?> </h5>
+        <h5 class="card-title lead  text-dark">Teléfono:<?=$usuario->telefono?> </h5>
+        <h5 class="card-title lead  text-dark">Correo:<?=$usuario->correo?> </h5>
+        </div>
+    </div>
+  </div>
+  <?php endforeach;?>
+
+
+  <?php foreach ($usuarios1 as $usuario1): ?>
+  <div class="p-5 col-sm-4 mb-3 mb-sm-0">
+    <div class="card">
   
+      <h4 class="fw-light text-dark"> <strong> Secretaria</strong></h4>
+      <div class="card-header" >
+               <img src="<?=$usuario1->fotousuario?>" class="img" alt = "" windth="100%" height="225">    
+      </div>
+       <div class="card-body">
+       <h5 class="card-title lead  text-dark">Nombres:<?=$usuario1->nombres?></h5>
+        <h5 class="card-title lead  text-dark">Apellidos:<?=$usuario1->apellidos?> </h5>
+        <h5 class="card-title lead  text-dark">Teléfono:<?=$usuario1->telefono?> </h5>
+        <h5 class="card-title lead  text-dark">Correo:<?=$usuario1->correo?> </h5>
+        </div>
+    </div>
+  </div>
+  <?php endforeach;?>
+</div>
+</center>
+    <br>

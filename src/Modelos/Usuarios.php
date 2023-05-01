@@ -35,5 +35,28 @@ class Usuarios extends DatabaseTable{
 
         return false;
     }
+    
+    public function desplegarus(){
+
+        $consulta1='SELECT *FROM usuarios WHERE estado =:estado'. ' AND rol =:rol';
+
+       $result1=$this->runQuery($consulta1,['estado'=>self::ESTADO_ACTIVO,'rol'=> self::PRESIDENTE]);
+
+       return $result1->fetchAll(\PDO::FETCH_CLASS,\stdClass::class);
+
+
+    }
+
+
+    public function desplegarse(){
+
+        $consulta2='SELECT *FROM usuarios WHERE estado =:estado'. ' AND rol =:rol';
+
+       $result2=$this->runQuery($consulta2,['estado'=>self::ESTADO_ACTIVO,'rol'=> self::SECRETARIA]);
+
+       return $result2->fetchAll(\PDO::FETCH_CLASS,\stdClass::class);
+
+
+    }
  
 }

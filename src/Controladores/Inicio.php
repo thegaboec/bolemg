@@ -10,17 +10,20 @@ class Inicio {
 
     private Artesanados $artesanados;
     private Publicaciones $publicaciones;
+    private Usuarios $usuarios;
 
 
     public function __construct()
     {
         $this->artesanados= new Artesanados;
         $this->publicaciones = new Publicaciones;
+        $this->usuarios = new Usuarios;
     }
 
-    public function start(){
-        
+    
 
+    public function start(){
+       
         return [
 
             'template'=>'front/inicio.html.php',
@@ -62,10 +65,18 @@ class Inicio {
 
     
     public function institucion(){
+        
+        $usuarios=$this->usuarios->desplegarus();
+        $usuarios1=$this->usuarios->desplegarse();
+
+
         return[
 
             'template'=>'front/institucion.html.php',
-            'titulo'=>'Institucion'
+            'titulo'=>'Institucion',
+            'variables'=>[
+                'usuarios'=>$usuarios, 'usuarios1'=>$usuarios1
+            ]
         ];
 
 
