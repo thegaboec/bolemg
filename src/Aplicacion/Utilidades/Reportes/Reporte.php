@@ -11,7 +11,7 @@ class Reporte{
     public function generarReporte($datos ){
 
         $css=file_get_contents('./assets/css/bootstrap.min.css');
-        $name="ejemplo.pdf";
+        $name="Reporte de artesanos.pdf";
         
         $html=file_get_contents('./src/Vistas/layout/reporte.html');
         $html=preg_replace('/.style{}/',$css,$html);
