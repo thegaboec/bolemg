@@ -77,7 +77,43 @@
 
                 </ul>
               
-              <a href="#" class="btn btn-primary">Evaluar</a>
+              <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Evaluarl
+</button>
+
+<!-- Modal -->
+
+<form action="" method="post">
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Evalue el desempeño del artesano</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        
+
+      
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Calificacion</label>
+    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="puntuacion">
+    <div id="emailHelp" class="form-text">Evalúe el desempeño del artesano en una escala del 1-10</div>
+  </div>
+
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <button type="submit" class="btn btn-primary">Guardar cambios</button>
+
+      </div>
+    </div>
+  </div>
+</div>
+</form>
+
              </div>
               <div class="card-footer text-body-secondary">
                JUNTA PROVINCIAL DE DEFENSA DEL ARTESANO-BOLIVAR

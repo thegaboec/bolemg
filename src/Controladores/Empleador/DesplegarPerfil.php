@@ -39,4 +39,30 @@ class DesplegarPerfil{
 
     }
 
+    public function calificacion(){
+        $idartesano= $_GET['idartesano'];
+        $artesanos=$this->artesanos->desplegarPerfil($idartesano );
+        $calificacion=(floatval($artesanos[0]->calificacion)+floatval($_POST['puntuacion']))/2;
+        $calificacion=round($calificacion,2);
+        $artesanos[0]->calificacion=$calificacion;
+
+        $data=[
+            'idartesano'=>$idartesano,
+            'calificacion'=>$calificacion
+
+        ];
+
+        $this->artesanos->update($data);
+        
+        return[
+            'template'=>'empleador/perfillaboral.html.php',
+            'titulo'=>'Perfil Laboral',
+            'variables'=>[
+                'artesanos'=>$artesanos
+            ]
+
+        ];
+
+    }
+
 }

@@ -55,8 +55,11 @@ use App\Modelos\Artesanados;
                
                 <div class="col-sm-6">
                     <label for="cedula" class="form-label text-left"><font style="vertical-align: inherit;">Cédula</font></font></label>
-                    <input type="number" class="form-control border border-primary" id="cedula" placeholder="Este item se asignará como usuario y contraseña" value="" required="" name="idartesano">
-                    <div class="invalid-feedback">
+                    <input type="text" class="form-control border border-primary" id="cedula" placeholder="Este item se asignará como usuario y contraseña" 
+                     name="idartesano" aria-describedby="validacion" required>
+                    
+
+                    <div id="validacion" class="invalid-feedback">
                         Se requiere una cédula válida
                     </div>
                 </div>
@@ -166,3 +169,7 @@ use App\Modelos\Artesanados;
         </div>
     </center>
 </div>  
+<script src="/assets/js/main.js">
+
+
+</script>

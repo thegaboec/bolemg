@@ -20,7 +20,7 @@
 <body style="background-color:ligth ;">
     <!--Menu-->
     <div class="" style="background-image: url(/assets/img/BOLEMG.png)">
-  /
+    <span style="opacity:0;">/ </span>
 
       <header class="p-3  text-white" style="background-color:aliceblue;" >
         
@@ -51,7 +51,7 @@
    <?=$contenido?>
      
    <div class="" style="background-image: url(/assets/img/BOLEMG.png)">
-  /
+  <span style="opacity:0;">/ </span>
  
     <!--Pie de pagina-->   
     <footer class="footer mt-auto py-3 bg-light text-center ">

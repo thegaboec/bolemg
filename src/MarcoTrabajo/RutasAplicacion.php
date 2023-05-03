@@ -75,6 +75,7 @@ class RutasAplicacion{
         $listaArtesanos= new ListaArtesanos($this->artesanos);
         $desplegarPerfil= new DesplegarPerfil($this->artesanos);
         $registroEmpleador= new RegistrarEmpleador($this->usuarios);
+        
 
       
         return [
@@ -293,6 +294,18 @@ class RutasAplicacion{
                     
                 ],
 
+                'secretaria/reporte/artesano' =>[
+                    "GET"=>[
+                        "controlador"=> $listadoArtesanos,
+                        "accion"=>'imprimir'
+                    ],
+                      
+                    'login' => true, // loguedo
+                    'rol' => Usuarios::SECRETARIA //rol
+            
+                    
+                ],
+
                 
                 'secretaria/registrar/artesanado' =>[
                     "GET"=>[
@@ -451,10 +464,15 @@ class RutasAplicacion{
                         "controlador"=> $desplegarPerfil,
                         "accion"=>'desplegar'
                     ],
+                    "POST"=>[
+                        "controlador"=> $desplegarPerfil,
+                        "accion"=>'calificacion'
+                    ],
 
                     'login' => true, // loguedo
                     'rol' => Usuarios::EMPLEADOR //rol
                 ],
+
 
                 'empleador/cambio/clave' =>[
                     'GET' => [

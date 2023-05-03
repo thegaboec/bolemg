@@ -1,11 +1,10 @@
-<script src= "https://code.jquery.com/jquery-1.12.4.min.js"  integridad= "sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="  crossorigin= "anónimo" ></script>  
-   <script src= "https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.min.js" ></script>  
+
 <div class="content-documentacion p-5">
-    
     <h2 class="fw-light thead-light text-dark text-center">Listado de  Artesanos </h2>
     <br>
     <div class="">
-        <form action="" method="post">
+
+        <form action="" method="">
 
         <table class="table table-hover text-center  caption-top" >
         <thead class="table-primary ">
@@ -36,7 +35,9 @@
                 </tbody>
             </table>
             <br>
-            <button style="display:block; margin: 0.5rem auto;" class="button-submit col-sm-2 btn btn-primary  btn-lg button-submit" type="submit">Imprimir</button>                          
         </form>
+        <a href="/secretaria/reporte/artesano" style="display:block; margin: 0.5rem auto;" class="button-submit col-sm-2 btn btn-primary  btn-lg button-submit" >Imprimir</a>                          
+
     </div>
+</div>
 </div>
