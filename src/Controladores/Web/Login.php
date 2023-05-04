@@ -28,7 +28,7 @@ class Login {
             exit();
         }
         return [
-            'titulo' => 'Login',
+            'titulo' => 'Iniciar Sesión',
             
             'template' => 'front/login.html.php'
         ];
