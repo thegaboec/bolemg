@@ -39,8 +39,12 @@
             </ul>
                 
         <div class="text-left">
+          <?php if(isset($_SESSION['usuario'])):?>
+        <strong><a href='/logout' class="btn btn-outline-primary me-2" >Cerrar Sesión</a></strong>
+        <?php else:?>
         <strong>  <a href='/login' class="btn btn-outline-primary me-2" >Iniciar Sesión</a></strong>
         <strong>  <a href='/registro' class="btn btn-primary " >Registrarse</a> </strong>
+        <?php endif?>
         </div>
 
 

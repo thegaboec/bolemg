@@ -55,8 +55,9 @@
 
             <div class="col-6">
                 <label for="cedula" class="form-label">Número de cédula</label>
-                <input type="text" class="form-control border border-primary" id="cédula" placeholder="Este item se asignará como usuario y contraseña" name="id">
-                <div class="invalid-feedback">
+                <input type="text" class="form-control border border-primary" id="cedula" placeholder="Este item se asignará como usuario y contraseña"
+                 name="id" aria-describedby="validacion" required >
+                <div id="validacion" class="invalid-feedback">
                   Ingrese un número de cédula válido.
                 </div>
               </div>
@@ -91,3 +92,7 @@
   
 </div>
 <br>
+<script src="/assets/js/main.js">
+
+
+</script>

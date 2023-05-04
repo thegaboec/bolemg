@@ -347,6 +347,17 @@ class RutasAplicacion{
             
                     
                 ],
+                'secretaria/reporte/artesanados' =>[
+                    "GET"=>[
+                        "controlador"=> $listadoArtesanados,
+                        "accion"=>'imprimir'
+                    ],
+                      
+                    'login' => true, // loguedo
+                    'rol' => Usuarios::SECRETARIA //rol
+            
+                    
+                ],
 
 
                 'secretaria/publicar/anuncio' =>[
@@ -383,6 +394,17 @@ class RutasAplicacion{
                     "GET"=>[
                         "controlador"=> $listadoPublicaciones,
                         "accion"=>'listar'
+                    ],
+                      
+                    'login' => true, // loguedo
+                    'rol' => Usuarios::SECRETARIA //rol
+            
+                    
+                ],
+                'secretaria/reporte/publicaciones' =>[
+                    "GET"=>[
+                        "controlador"=> $listadoPublicaciones,
+                        "accion"=>'imprimir'
                     ],
                       
                     'login' => true, // loguedo

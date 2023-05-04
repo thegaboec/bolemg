@@ -20,6 +20,20 @@ class RegistrarEmpleador{
 
     public function registroE($variables=[]){
 
+        $redireccion=[
+            Usuarios::ARTESANO=>'/artesano/inicio',
+            Usuarios::SECRETARIA=>'/secretaria/inicio',
+            Usuarios::PRESIDENTE=>'/presidente/inicio',
+            Usuarios::EMPLEADOR=>'/empleador/inicio'
+        ];
+
+        if(isset($_SESSION['usuario'])){
+            $rol=$_SESSION['rol'];
+            $direccion=$redireccion[$rol];
+            header('location: '.$direccion);
+            exit();
+        }
+
         return[
             'titulo'=> 'Registro',
             'template'=>'front/registro_empleador.html.php',

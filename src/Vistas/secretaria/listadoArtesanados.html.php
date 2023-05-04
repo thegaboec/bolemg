@@ -31,7 +31,7 @@
                 </tbody>
             </table>
             <br>
-            <button style="display:block; margin: 0.5rem auto;" class="col-sm-2 btn btn-primary btn-lg button-submit " type="submit">Imprimir</button>                          
+            <a href="/secretaria/reporte/artesanados" style="display:block; margin: 0.5rem auto;" class="col-sm-2 btn btn-primary btn-lg button-submit " type="submit">Imprimir</a>                          
         </form>
     </div>
 </div>

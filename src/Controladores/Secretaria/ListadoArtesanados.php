@@ -1,6 +1,7 @@
 <?php
 namespace App\Controladores\Secretaria;
 
+use App\Aplicacion\Utilidades\Reportes\Reporteart;
 use App\Modelos\Artesanados;
 
 class ListadoArtesanados{
@@ -26,5 +27,17 @@ class ListadoArtesanados{
             'variables'=>['artesanados'=> $artesanados]
 
         ];
+    }
+
+    public function  imprimir(){
+
+        $artesanados=$this->artesanados->select();
+        $reporte= new Reporteart();
+        $reporte->generarReporte($artesanados);
+
+        exit;
+
+
+
     }
 }

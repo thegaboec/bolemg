@@ -1,6 +1,8 @@
 <?php
 namespace App\Controladores\Secretaria;
 
+use App\Aplicacion\Utilidades\Reportes\Reporte;
+use App\Aplicacion\Utilidades\Reportes\Reportepubli;
 use App\Modelos\Publicaciones;
 
 class ListadoPublicaciones{
@@ -28,5 +30,17 @@ class ListadoPublicaciones{
         ];
 
         
+    }
+
+    public function  imprimir(){
+
+        $publicaciones = $this->publicaciones->select();
+        $reporte= new Reportepubli();
+        $reporte->generarReporte($publicaciones);
+
+        exit;
+
+
+
     }
 }
