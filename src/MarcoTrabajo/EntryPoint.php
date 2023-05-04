@@ -27,19 +27,19 @@ class EntryPoint{
        // restriciones de la ruta
         //1. login
         if(!isset($rutas[$this->ruta])){
-          header('location: /contactos');
+          header('location: /error');
         }
         if(!isset($rutas[$this->ruta][$this->metodo])){
-          header('location: /contactos');
+          header('location: /error');
         }
        if(isset($rutas[$this->ruta]['login']) && !$this->rutasAplicaciones->aut()->estaLoguedo()){
-            header('location: /contactos');
+            header('location: /error');
        }
 
        //2. rol
        
        if(isset($rutas[$this->ruta]['rol']) && !$this->rutasAplicaciones->tieneRol($rutas[$this->ruta]['rol'])){
-            header('location: /contactos');
+            header('location: /error');
        }
 
        $result=$controlador->$accion();

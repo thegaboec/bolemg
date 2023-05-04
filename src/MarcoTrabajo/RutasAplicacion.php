@@ -519,6 +519,15 @@ class RutasAplicacion{
                     ]
                     ],
 
+//Error
+
+                'error'=>[
+                    "GET"=>[
+                        "controlador"=> $inicio,
+                        "accion"=>'error'
+                    ],
+                ],
+
 
         ];
 

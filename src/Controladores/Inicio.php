@@ -63,6 +63,17 @@ class Inicio {
 
     }
 
+    public function error(){
+        return[
+
+            'template'=>'front/error.html.php',
+            'titulo'=>'Error encontrado'
+        ];
+
+
+
+    }
+
     
     public function institucion(){
         
