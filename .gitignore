@@ -1,6 +1,5 @@
 #Se va a ignorar la carpeta vendor porque eso se carga con el composer de cada computadora
 vendor/
-composer.lock
 .env
 pruebas.php
 
