@@ -1,11 +1,11 @@
 <?php
 require __DIR__.'/vendor/autoload.php';
+require __DIR__.'/config/database.php';
 
 use App\MarcoTrabajo\{EntryPoint,RutasAplicacion};
 use Symfony\Component\Dotenv\Dotenv;
 
-$env=new Dotenv();
-$env->load(__DIR__.'/.env');
+
 
 $ruta= ltrim(strtok($_SERVER["REQUEST_URI"],'?'),'/');
 try {

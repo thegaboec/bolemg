@@ -34,8 +34,9 @@ class Inicio  {
     public function listarArtesanados(){
         $this->artesanados= new Artesanados;
 
-        $artesanados=$this->artesanados->selectFromColumn('estado',Artesanados::ESTADO_ACTIVO);
-  
+        $artesanados= Artesanados::where('estado',Artesanados::ESTADO_ACTIVO)->get();
+
+    
         return[
 
             'template'=>'front/artesanadospublicos.html.php',

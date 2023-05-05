@@ -3,12 +3,16 @@
 namespace App\Modelos;
 
 use App\Modelos\Conexion\ConexionDB;
+use Illuminate\Database\Eloquent\Model;
 
-class DatabaseTable extends ConexionDB{
+class DatabaseTable extends Model{
+
+    
     protected $table;
-    private $primaryKey;
+    protected $primaryKey;
     private $className;
     private $arguments;
+    private $pdo;
 
     public function __construct(
         string $table,
@@ -17,15 +21,16 @@ class DatabaseTable extends ConexionDB{
         array $arguments = []
     )
     {
-        parent::__construct();
+        
         $this->table = $table;
         $this->primaryKey= $primaryKey;
         $this->className= $className;
         $this->arguments= $arguments;
+        $this->pdo= new ConexionDB();
     }
     
     protected function runQuery($query, $params =[]){
-        $result = $this->prepare($query);
+        $result = $this->pdo->prepare($query);
         $result->execute($params);
         return $result;
     }
@@ -114,7 +119,7 @@ class DatabaseTable extends ConexionDB{
        // var_dump($this->className);
         return $result->fetchAll();
     }
-    public function update($params)
+    public function updateModel($params)
     {
         $params = $this->inserDate($params);
         $query = 'UPDATE ' . $this->table . ' SET ';
