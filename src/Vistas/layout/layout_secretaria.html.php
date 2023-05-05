@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= $titulo?></title>
-    <link rel="shortcut icon" href="/assets/img/JNDA.png"  type="image/x-icon">
+    <link rel="shortcut icon" href="/assets/img/JPDA.jpg"  type="image/x-icon">
     <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="/assets/js/popper.min.js">
     <link rel="stylesheet" href="/assets/css/util.css">

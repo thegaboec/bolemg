@@ -5,27 +5,38 @@
 
 
 <?php endif; ?>
+<br>
 
-<main class="form-signin w-100 m-auto">
-
-  <form method="post" action="">
-    <img class="mb-4" src="/assets/img/JPDA.jpg" alt="" width="200" height="57">
-    <h1 class="h3 mb-3 fw-normal">Iniciar Sesion</h1>
+<form method="post" action="">
+<div class="container ">
+<div class="row justify-content-center">
+ 
+  <div class="p-5 col-sm-8 mb-3 mb-sm-0">
+    <div class="">
+      
+      <img class="mb-4" src="/assets/img/BOLSA DE EMPLEO GUARANDA.png" alt="" width="700" height="390">
    
-
-    <div class="form-floating">
-      <input type="" class="form-control" id="floatingInput"  name="usuario">
-      <label for="floatingInput">Usuario</label>
     </div>
-    <br>
-    <div class="form-floating">
-      <input type="password" class="form-control" id="floatingPassword"  name="password">
-      <label for="floatingPassword">Contraseña</label>
-    </div>
+  </div>
 
-    <br><br>   
 
+     <div class="py-5 col-4">
+    <div class="">
+      <h1 class="fw-light text-dark text-center"><strong> Iniciar Sesión</strong></h1>
     
-    <button class="w-100 btn btn-lg btn-primary" type="submit">Iniciar</button>
-  </form>
-</main>
+      <br> <br>
+      <div class="form-floating">
+        <input type="" class="form-control  border border-primary" id="floatingInput" placeholder="Usuario" name="usuario">
+        <label class ="lead  text-dark " for="floatingInput">Usuario</label>
+      </div>
+      <br>
+      <div class="form-floating">
+        <input type="password" class="form-control border border-primary" id="floatingPassword" placeholder="Contraseña" name="password">
+        <label class ="lead  text-dark "  for="floatingPassword">Contraseña</label>
+      </div>
+
+    <br>
+      <button class="w-100 btn btn-lg btn-primary lead" type="submit">Iniciar</button>
+
+</div></div></diV></diV>
+</form>
