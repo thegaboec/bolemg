@@ -15,9 +15,7 @@ class Inicio  {
 
     public function __construct()
     {
-        $this->artesanados= new Artesanados;
-        $this->publicaciones = new Publicaciones;
-        $this->usuarios = new Usuarios;
+        
     }
 
     
@@ -34,7 +32,7 @@ class Inicio  {
     }
 
     public function listarArtesanados(){
-
+        $this->artesanados= new Artesanados;
 
         $artesanados=$this->artesanados->selectFromColumn('estado',Artesanados::ESTADO_ACTIVO);
   
@@ -77,6 +75,8 @@ class Inicio  {
     
     public function institucion(){
         
+        
+        $this->usuarios = new Usuarios;
         $usuarios=$this->usuarios->desplegarus();
         $usuarios1=$this->usuarios->desplegarse();
 
@@ -95,6 +95,10 @@ class Inicio  {
     }
     
     public function publicaG(){
+
+      
+        $this->publicaciones = new Publicaciones;
+        
         $publicaciones=$this->publicaciones->selectFromColumn('estado',Publicaciones::ESTADO_ACTIVO);
   
         return[
@@ -108,6 +112,10 @@ class Inicio  {
     }
 
     public function listarpublica(){
+
+        
+        $this->publicaciones = new Publicaciones;
+       
 
         $idpublicaciones= $_GET['idpublicaciones'];
 
