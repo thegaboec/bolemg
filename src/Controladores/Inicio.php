@@ -6,7 +6,7 @@ use App\Modelos\Artesanados;
 use App\Modelos\Usuarios;
 use App\Modelos\Publicaciones;
 
-class Inicio {
+class Inicio  {
 
     private Artesanados $artesanados;
     private Publicaciones $publicaciones;
