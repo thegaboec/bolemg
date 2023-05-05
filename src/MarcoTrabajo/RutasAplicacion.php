@@ -432,8 +432,8 @@ class RutasAplicacion{
                         "controlador"=>$perfilLaboral,
                         "accion"=>'actualizar'
                     ],
-                    'login' => true, // loguedo
-                    'rol' => Usuarios::ARTESANO //rol
+                    //'login' => true, // loguedo
+                    //'rol' => Usuarios::ARTESANO //rol
                 ],
                 'artesano/cambio/clave' =>[
                     'GET' => [

@@ -1,155 +1,126 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Modelos;
 
-use App\Modelos\Conexion\ConexionDB;
+use App\Aplicacion\Utilidades\DB;
 use Illuminate\Database\Eloquent\Model;
 
-class DatabaseTable extends Model{
-
-    
+/**
+ * Esta clase abstracta tiene todos los metodos base
+ * para consultar,insertar,actualizar y eliminar que
+ * usa el DB propio de Eloquent ORM
+ * para todo modelo que herede de esta clase
+ *
+ * @author Dorian Armijos
+ * @link <https://github.com/Doriandj9>
+ */
+abstract class DatabaseTable extends Model
+{
     protected $table;
-    protected $primaryKey;
-    private $className;
-    private $arguments;
-    private $pdo;
-
-    public function __construct(
-        string $table,
-        string $primaryKey,
-        $className = '\stdClass',
-        array $arguments = []
-    )
+    private $primaryKeyTable;
+    public function __construct(string $table, string $primaryKey)
     {
-        
+        parent::__construct();
         $this->table = $table;
-        $this->primaryKey= $primaryKey;
-        $this->className= $className;
-        $this->arguments= $arguments;
-        $this->pdo= new ConexionDB();
-    }
-    
-    protected function runQuery($query, $params =[]){
-        $result = $this->pdo->prepare($query);
-        $result->execute($params);
-        return $result;
-    }
-    
-    private function inserDate($params)
-    {
-        foreach ($params as $key => $value) {
-            if ($key instanceof \DateTime) {
-                $params[$key] = $value->format('Y-m-d H:i:s');
-            }
-        }
-
-        return $params;
+        $this->primaryKeyTable = $primaryKey;
     }
     /**
-     * @param array<string,string> $params
+     * Esta funcion realiza la consulta en SQL para insertar datos
+     *
+     * @param array $parametros son los parametros a ingresar
+     *
+     * @return bool
      */
-    public function insert(array $params): void
+    public function insert(array $parametros): bool
     {
-        $params = $this->inserDate($params);
+        $resultado =DB::table($this->table)
+        ->insert($parametros);
 
-        $query = 'INSERT INTO ' . $this->table . ' (';
-
-        foreach ($params as $key => $value) {
-            $query .= '' . $key . ' ,';
-        }
-
-        $query = rtrim($query, ',');
-
-        $query .= ') VALUES (';
-        foreach ($params as $key => $value) {
-            $query .= ':' . $key . ',';
-        }
-
-        $query = rtrim($query, ',');
-
-        $query .= ')';
-
-       $this->runQuery($query,$params);
+        return$resultado;
     }
+    /**
+     * esta funcion obtiene todos los datos de esa tabla
+     *
+     * @param bool $orden determina si la busqueda se le aplique la clausula ORDER BY
+     * @param string $columna es la columna por la cual se va a ordenar la busqueda
+     * @param string $forma es si es ASC o DESC acendente o desendente
+     * @param array $columnas son las columnas que deseen que retorne
+     *
+     * @return \Illuminate\Support\Collection
+     */
+    public function select(
+        bool $orden = false,
+        string $columna = null,
+        string $forma = 'asc',
+        array $columnas = ['*']
+    ): \Illuminate\Support\Collection {
+        $resultado = DB::table($this->table)
+        ->select();
+        if ($orden && $columna !== null) {
+            $resultado = $resultado
+            ->orderBy($columna, $forma);
+        }
 
-    public function selectFromColumn($column, $restrict)
+        return $resultado->get($columnas);
+    }
+    /**
+     * Lo mismo que select solo que por columnas
+     *
+     * @param string $columna es la comulna por la cual se buscara
+     * @param string|int $valor es el valor que buscara en la columna
+     * @param array $columnas son las columnas que deseen que retorne
+     *
+     * @return \Illuminate\Support\Collection
+     */
+    public function selectFromColumn(
+        string $columna,
+        string|int $valor,
+        array $columnas = ['*']
+    ): \Illuminate\Support\Collection {
+        $resultado = DB::table($this->table)
+        ->select()
+        ->where($columna, '=', $valor)
+        ->get($columnas);
+        return $resultado;
+    }
+    /**
+     * Esta funcion actualiza los datos de esa tabla
+     *
+     * @param string|int $primariKey la clave primaria
+     * @param array $parametros son los parametros actualizar
+     *
+     * @return bool
+     */
+    public function updateValues(string|int $primaryKey, array $parametros): bool
     {
-
-        $query = 'SELECT * FROM ' . $this->table . ' WHERE ' . $column . '= :' . $this->primaryKey;
-        $params = [$this->primaryKey => $restrict];
-        $result = $this->runQuery($query, $params);
-        return $result->fetchAll(\PDO::FETCH_CLASS, $this->className, $this->arguments);
+        $resultado = DB::table($this->table)
+        ->where($this->primaryKeyTable, '=', $primaryKey)
+        ->update($parametros);// el metodo update regresa 1 o 0 que corresponde a true o false
+        if ($resultado) {// Si es 1 verdadero regrese true caso contrario false
+            return true;
+        } else {
+            return false;
+        }
     }
-    public function select($limit = null, $offset = null, $orderBy = false, $column = null)
+    /**
+     * Esta funcion elimana un dato
+     *
+     * @param string|int $primaryKey es el primarykey de ese dato
+     * 
+     * @return bool
+     */
+    public function deleteRaw(string|int $primaryKey): bool
     {
-        $query = 'SELECT * FROM ' . $this->table . ' ';
+        $resultado = DB::table($this->table)
+        ->where($this->primaryKeyTable, '=', $primaryKey)
+        ->delete($primaryKey); // el metodo update regresa 1 o 0 que corresponde a true o false
 
-        if ($orderBy == true && $column != null) {
-            $query .= ' ORDER BY ' . $column . ' ASC ';
+        if ($resultado) { // Si es 1 verdadero regrese true caso contrario false
+            return true;
+        } else {
+            return false;
         }
-
-        if ($limit != null) {
-            $query .= 'LIMIT ' . $limit;
-        }
-
-        if ($offset != null) {
-            $query .= ' OFFSET ' . $offset;
-        }
-
-        $result = $this->runQuery($query);
-        return $result->fetchAll(\PDO::FETCH_CLASS, $this->className, $this->arguments);
-    }
-    public function selectArray($limit = null, $offset = null, $orderBy = false, $column = null)
-    {
-        $query = 'SELECT * FROM ' . $this->table . ' ';
-
-        if ($orderBy == true && $column != null) {
-            $query .= ' ORDER BY ' . $column . ' ASC ';
-        }
-
-        if ($limit != null) {
-            $query .= 'LIMIT ' . $limit;
-        }
-
-        if ($offset != null) {
-            $query .= ' OFFSET ' . $offset;
-        }
-
-        $result = $this->runQuery($query);
-       // var_dump($this->className);
-        return $result->fetchAll();
-    }
-    public function updateModel($params)
-    {
-        $params = $this->inserDate($params);
-        $query = 'UPDATE ' . $this->table . ' SET ';
-        foreach ($params as $key => $value) {
-            $query .= '' . $key . '=:' . $key . ',';
-        }
-
-        $query = rtrim($query, ',');
-
-        $query .= ' WHERE ' . $this->primaryKey . ' = :' . $this->primaryKey;
-        $this->runQuery($query, $params);
-    }
-
-    public function lastInsert($column){
-        $last = $this->lastInsertId();
-        echo $last;
-       // return $this->selectFromColumn($column,$last);
-    }
-
-    public function insertUltimate($params){
-        $className = new $this->className(...$this->arguments);
-        $this->insert($params);
-        $id = $this->lastInsertId();
-        $className->{$this->primaryKey} = $id;
-        foreach($params as $key => $propietes){
-            if (!empty($propietes)){
-                $className->$key = $propietes;
-            }
-            
-        }
-        return $className;
     }
 }

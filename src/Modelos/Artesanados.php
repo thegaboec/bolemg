@@ -4,7 +4,7 @@ namespace App\Modelos;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Artesanados extends Model {
+class Artesanados extends DatabaseTable {
     public const PRESIDENTE = 'Presidente';
     public const SECRETARIA = 'Secretaria';
     public const ARTESANO = 'Artesano';
@@ -18,10 +18,10 @@ class Artesanados extends Model {
     private $modelArtesanado;
  
 
-   /* public function __construct()
+   public function __construct()
     {
         parent::__construct('artesanados','idartesanado','App\Modelos\Artesanados',[]);
-    }*/
+    }
 
     
 

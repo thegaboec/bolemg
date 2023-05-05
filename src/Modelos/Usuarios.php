@@ -12,10 +12,10 @@ class Usuarios extends DatabaseTable{
     public const ESTADO_INIACTIVO = 'inactivo';
 
     public $idusuarios;
-    public $nombre;
+    public $nombres;
     public $rol;
-    public $apellido;
-    public $email;
+    public $apellidos;
+    public $correo;
     public $estado;
     public $clave;
     public $fotousuario;
@@ -23,7 +23,7 @@ class Usuarios extends DatabaseTable{
 
     public function __construct()
     {
-       parent::__construct( 'usuarios','idusuarios','App\Modelos\Usuarios',['usuarios','idusuarios']    );
+       parent::__construct( 'usuarios','idusuarios');
        
     }
 

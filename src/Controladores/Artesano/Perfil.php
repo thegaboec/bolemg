@@ -33,8 +33,8 @@ class Perfil{
         $variables['perfil']=$perfil;
        
 
-        //var_dump($artesanos);
-        //die;
+        var_dump($perfil);
+        die;
 
         return[
             'template'=>'artesano/perfil.html.php',

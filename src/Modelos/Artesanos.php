@@ -8,11 +8,32 @@ class Artesanos extends DatabaseTable{
     public const ESTADO_ACTIVO = 'activo';
     public const ESTADO_INIACTIVO = 'inactivo';
 
-    public $rol;
+    
+
+                public $idartesano;
+                public $nombres; 
+                public $apellidos; 
+                public $correo ;
+                public $clave ;
+                public $telefono; 
+                public $rol;
+                public $estado;
+                public $foto ;
+                public $idartesanado; 
+                public $direccion ;
+                public $imagen1 ;
+                public $imagen2 ;
+                public $imagen3  ;
+                public $imagen4  ;
+                public $calificacion; 
+                public $descripcion1 ; 
+                public $descripcion2 ;
+                public $descripcion3 ;
+                public $descripcion4 ;
 
     public function __construct()
     {
-        parent::__construct('artesanos','idartesano','App\Modelos\Artesanos',['artesano','idartesano']  );
+        parent::__construct('artesanos','idartesano');
     }
 
     public function tieneRol($rol){
