@@ -105,5 +105,21 @@ class Usuarios extends DatabaseTable{
  
         return true;
     }
+
+    public function metodoChuckSelect($column,$value){
+        $result =Usuarios::runChunck(function($page,$count,$column,$value){
+            $pages =($page - 1) * $count;
+            $count = $count * $page;
+            $estado=Usuarios::ESTADO_ACTIVO;
+            $result=$this->query(
+            "SELECT * FROM usuarios where $column = '$value' LIMIT $count OFFSET $pages"
+           );
+          
+           return $result->fetchAll(\PDO::FETCH_CLASS,\stdClass::class);
+
+        },[$column,$value]);
+
+        return $result;
+    }  
  
 }

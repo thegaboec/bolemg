@@ -27,7 +27,7 @@ class ModificarPresidente{
     }
 
     public function removePresidente(){
-        $presidentes =  $this->presidentes->selectFromColumn('rol',Usuarios::PRESIDENTE);
+        $presidentes =  $this->presidentes->metodoChuckSelect('rol',Usuarios::PRESIDENTE);
         return [
             'titulo' => 'Habilitar - Deshabilitar Presidentes',
             'template' => 'secretaria/modificar_presidente.html.php',
