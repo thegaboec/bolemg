@@ -26,6 +26,7 @@ class DatabaseTable extends ConexionDB{
     
     protected function runQuery($query, $params =[]){
         $result = $this->prepare($query);
+        
         $result->execute($params);
         return $result;
     }

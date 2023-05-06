@@ -21,7 +21,7 @@ class Artesanados extends DatabaseTable {
         parent::__construct('artesanados','idartesanado','App\Modelos\Artesanados',['artesanados','idartesanado']);
     }
 
-    private function chunk($count, callable $callback)
+    private function chunk($count, callable $callback,$column,$restrict)
     {
         $page = 1;
  
@@ -29,7 +29,7 @@ class Artesanados extends DatabaseTable {
             // We'll execute the query for the given page and get the results. If there are
             // no results we can just break and return from here. When there are results
             // we will call the callback with the current chunk of these results here.
-            $results = $this->querySelectEvidencias($page, $count);
+            $results = $this->queryArtesanos($page, $count,$column,$restrict);
             $countResults = count($results);
  
             if ($countResults == 0) {
@@ -51,24 +51,26 @@ class Artesanados extends DatabaseTable {
         return true;
     }
 
-    private function querySelectEvidencias($page,$count): array
+    private function queryArtesanos($page,$count,$column,$restrict): array
     {
-     $pages = ($page - 1) * $count;
+     $pages =(($page - 1) * $count) + 1;
      $count = $count * $page;
-     $query = 'SELECT * FROM artesanados  limit ? offset ?';
-     $parasm = [$count, $pages];
-     $result = $this->runQuery($query,$parasm);
-     return $result->fetchAll();
+     $query = 'SELECT * FROM artesanados LIMIT :limit OFFSET :offset '; 
+    $qres = $this->query("SELECT * FROM artesanados LIMIT $count OFFSET $page " );
+    $qres->execute();
+
+     return $qres->fetchAll(\PDO::FETCH_CLASS,\stdClass::class);
     }
 
-    public function select($limit = null, $offset = null, $orderBy = false, $column = null)
+    public function selectFromColumn($column, $restrict)
+   
     {
         $this->results = [];
         $this->chunk(9,function($evidencias) {
             foreach($evidencias as $evidencia) {
                 array_push($this->results,$evidencia);
             }
-        });
+        },$column,$restrict);
         
         return $this->results;
 
