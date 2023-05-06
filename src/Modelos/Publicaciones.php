@@ -52,4 +52,20 @@ class Publicaciones extends DatabaseTable{
         
     }
 
+    public function metodoChuckSelect(){
+        $result =Usuarios::runChunck(function($page,$count){
+            $pages =($page - 1) * $count;
+            $count = $count * $page;
+            $estado=Usuarios::ESTADO_ACTIVO;
+            $result=$this->query(
+            "SELECT * FROM publicaciones  LIMIT $count OFFSET $pages"
+           );
+          
+           return $result->fetchAll(\PDO::FETCH_CLASS,\stdClass::class);
+        });
+
+        return $result;
+    }  
+
+
 }

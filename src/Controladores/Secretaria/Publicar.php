@@ -64,7 +64,7 @@ class Publicar{
 
     public function listadoPublicacion(){
   
-        $publicaciones = $this->publicaciones->select();
+        $publicaciones = $this->publicaciones->metodoChuckSelect();
      
             return [
                 'titulo' => 'Listado de Anuncios',

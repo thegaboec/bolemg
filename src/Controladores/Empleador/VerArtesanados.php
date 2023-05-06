@@ -19,7 +19,7 @@ class VerArtesanados{
 
     public function listarArtesanados(){
 
-        $artesanados=$this->artesanados->selectFromColumn('estado',Artesanados::ESTADO_ACTIVO);
+        $artesanados=$this->artesanados->metodoChuck();
   
         return[
 

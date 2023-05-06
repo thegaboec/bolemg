@@ -14,7 +14,7 @@ class ModificarArtesanado{
 
     public function darbajaArt(){
   
-        $artesanados = $this->artesanados->select();
+        $artesanados = $this->artesanados->metodoChuckSelect();
      
             return [
                 'titulo' => 'Modificar - Inhabilitar Artesanado',

@@ -20,7 +20,7 @@ class ListadoPublicaciones{
 
     public function listar(){
 
-        $publicaciones=$this->publicaciones->select();
+        $publicaciones=$this->publicaciones->metodoChuckSelect();
 
         return[
 
@@ -34,7 +34,7 @@ class ListadoPublicaciones{
 
     public function  imprimir(){
 
-        $publicaciones = $this->publicaciones->select();
+        $publicaciones = $this->publicaciones->metodoChuckSelect();
         $reporte= new Reportepubli();
         $reporte->generarReporte($publicaciones);
 
