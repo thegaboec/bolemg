@@ -19,7 +19,7 @@ class ListaArtesanos{
 
         $idartesanado= $_GET['idartesanado'];
 
-        $artesanos=$this->artesanos->verArtesanado($idartesanado );
+        $artesanos=$this->artesanos->metodoChunk($idartesanado );
         
         //var_dump($artesanos);
         //die;

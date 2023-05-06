@@ -32,4 +32,24 @@ class Publicaciones extends DatabaseTable{
 
     }
 
+    public function metodoChunk(/*Si necesito para consultas con argumentos*/){
+
+        //este metodo me va a recibir los argumentos que necesita la consulta para funcionar
+
+            $result =Usuarios::runChunck(function($page,$count){
+            $pages =($page - 1) * $count;
+            $count = $count * $page;
+            $estado=Usuarios::ESTADO_ACTIVO;
+            $result=$this->query(
+            "SELECT * FROM publicaciones WHERE estado ='$estado'  LIMIT $count OFFSET $pages"
+           );
+          
+           return $result->fetchAll(\PDO::FETCH_CLASS,\stdClass::class);
+        });
+
+        return $result;
+
+        
+    }
+
 }
