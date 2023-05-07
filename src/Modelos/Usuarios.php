@@ -69,9 +69,7 @@ class Usuarios extends DatabaseTable{
                 array_push($results,$resultado);
                 
             }
-            if($count!==count($resultados)){
-                return false;
-            }
+            
         },$consulta,$params);
         
         return $results;
@@ -106,6 +104,10 @@ class Usuarios extends DatabaseTable{
             unset($results);
  
             $page++;
+
+            if($countResults!==$count){
+                return false;
+            }
 
         } while ($countResults !== 0);
  
