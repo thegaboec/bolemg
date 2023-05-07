@@ -104,7 +104,7 @@ class Usuarios extends DatabaseTable{
             unset($results);
  
             $page++;
-        } while ($countResults == $count);
+        } while ($countResults !== 0);
  
         return true;
     }
