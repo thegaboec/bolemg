@@ -63,11 +63,14 @@ class Usuarios extends DatabaseTable{
     public static function runChunck( $consulta,$params=[]){
         $results = [];
 
-        self::chunk(9,function($resultados )use (&$results) {
+        self::chunk(9,function($resultados,$page,$count )use (&$results) {
             foreach($resultados as $resultado) {
                 
                 array_push($results,$resultado);
                 
+            }
+            if($count!==count($resultados)){
+                return false;
             }
         },$consulta,$params);
         
@@ -96,13 +99,14 @@ class Usuarios extends DatabaseTable{
             // On each chunk result set, we will pass them to the callback and then let the
             // developer take care of everything within the callback, which allows us to
             // keep the memory low for spinning through large result sets for working.
-            if ($callback($results, $page) === false) {
+            if ($callback($results, $page,$count) === false) {
                 return false;
             }
  
             unset($results);
  
             $page++;
+
         } while ($countResults !== 0);
  
         return true;
