@@ -78,12 +78,11 @@ class Usuarios extends DatabaseTable{
 
     public static function chunk($count, callable $callback, $consulta,$params)
     {
-        $counter=1;
+        
         $page = 1;
         
         do {
-            var_dump($counter);
-            $counter++;
+            
             // We'll execute the query for the given page and get the results. If there are
             // no results we can just break and return from here. When there are results
             // we will call the callback with the current chunk of these results here.
@@ -122,7 +121,7 @@ class Usuarios extends DatabaseTable{
 
         },[$column,$value]);
 
-        die;
+        
         return $result;
     }  
  

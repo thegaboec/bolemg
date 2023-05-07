@@ -35,7 +35,7 @@ class Artesanados extends DatabaseTable {
            return $result->fetchAll(\PDO::FETCH_CLASS,\stdClass::class);
         });
 
-        die;
+        
 
         return $result;
     }  
