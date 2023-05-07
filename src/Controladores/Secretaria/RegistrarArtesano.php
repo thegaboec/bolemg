@@ -23,7 +23,7 @@ class RegistrarArtesano{
 
     public function registrarA($variables=[]){
 
-        $artesanados=$this->artesanados->metodoChuckSelect();
+        $artesanados=$this->artesanados->metodoChuck();
         $variables['artesanados']=$artesanados;
 
         return [
