@@ -28,8 +28,6 @@ class Artesanados extends DatabaseTable {
             $pages =($page - 1) * $count;
             $count = $count * $page;
             $estado=Usuarios::ESTADO_ACTIVO;
-            var_dump($pages,$count);
-            
             $result=$this->query(
             "SELECT * FROM artesanados WHERE estado ='$estado'  LIMIT $count OFFSET $pages"
            );
