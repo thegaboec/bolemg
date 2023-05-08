@@ -63,9 +63,9 @@ class Usuarios extends DatabaseTable{
     public static function runChunck( $consulta,$params=[]){
         $results = [];
 
-        self::chunk(9,function($resultados,$page,$count )use (&$results) {
+        self::chunk(1,function($resultados,$page,$count )use (&$results) {
 
-            var_dump($page);
+           
             foreach($resultados as $resultado) {
                 
                 array_push($results,$resultado);
@@ -74,7 +74,7 @@ class Usuarios extends DatabaseTable{
             
         },$consulta,$params);
 
-        die;
+       
         
         return $results;
 
@@ -113,7 +113,7 @@ class Usuarios extends DatabaseTable{
                 return false;
             }
 
-        } while ($countResults !== 0);
+        } while ($countResults == $count);
  
         return true;
     }

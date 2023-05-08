@@ -3,4 +3,5 @@ vendor/
 composer.lock
 .env
 pruebas.php
+.vscode/
 
