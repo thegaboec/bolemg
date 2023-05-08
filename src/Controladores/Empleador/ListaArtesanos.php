@@ -19,7 +19,7 @@ class ListaArtesanos{
 
         $idartesanado= $_GET['idartesanado'];
 
-        $artesanos=$this->artesanos->metodoChunk($idartesanado );
+        $artesanos=$this->artesanos->selectFromColumnsPaginacion('idartesanado', $idartesanado);
         
         //var_dump($artesanos);
         //die;

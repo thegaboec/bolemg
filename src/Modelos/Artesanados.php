@@ -23,39 +23,10 @@ class Artesanados extends DatabaseTable {
 
   
 
-    public function metodoChuck(){
-        $result =Usuarios::runChunck(function($page,$count){
-            $pages =($page - 1) * $count;
-            $count = $count * $page;
-            $estado=Usuarios::ESTADO_ACTIVO;
-            $result=$this->query(
-            "SELECT * FROM artesanados WHERE estado ='$estado'  LIMIT $count OFFSET $pages"
-           );
-          
-           return $result->fetchAll(\PDO::FETCH_CLASS,\stdClass::class);
-        });
-
-        
-
-        return $result;
-    }  
     
-    public function metodoChuckSelect(){
-        $result =Usuarios::runChunck(function($page,$count){
-            $pages =($page - 1) * $count;
-           // $count = $count * $page;
-            $estado=Usuarios::ESTADO_ACTIVO;
-            $result=$this->query(
-            "SELECT * FROM artesanados  LIMIT $count OFFSET $pages"
-           );
-          
-           return $result->fetchAll(\PDO::FETCH_CLASS,\stdClass::class);
-        });
-
-        return $result;
-    } 
     
-    public function paginacion($limit){
+    public function selectPaginacion($limit = 9, $offset = null, $orderBy = false, $column = null)
+    {
         $queyCount = 'SELECT COUNT(idartesanado) as count FROM artesanados';
         $count = $this->runQuery($queyCount);
         $count=$count->fetch();
@@ -75,5 +46,59 @@ class Artesanados extends DatabaseTable {
         return $resultados;
 
     }
+
+
+    public function selectFromColumnPaginacion($column, $restrict, $limit = 9)
+   
+   
+    {
+        $queyCount = 'SELECT COUNT(idartesanado) as count FROM artesanados';
+        $count = $this->runQuery($queyCount);
+        $count=$count->fetch();
+        
+        $pagination = ceil(intval($count['count'])/$limit);
+        $resultados = [];
+        for($i =0; $i <= $pagination; $i++){
+            $offset= $i * $limit;
+            $results = $this->query("SELECT *  FROM artesanados where $column=$restrict limit $limit offset $offset");
+            foreach($results->fetchAll(\PDO::FETCH_CLASS,\stdClass::class) as $resultado){
+                array_push($resultados, $resultado);
+            }
+
+            unset($results);
+        }
+
+        return $resultados;
+
+    }
+
+    /*public function paginacion2($limit, array $comlumnsAndValues = [[]]){
+        $queyCount = 'SELECT COUNT(idartesanado) as count FROM artesanados';
+        $count = $this->runQuery($queyCount);
+        $count=$count->fetch();
+        
+        $pagination = ceil(intval($count['count'])/$limit);
+        $resultados = [];
+        $queryInter = "where";
+        $igual = '=';
+        foreach($comlumnsAndValues as $cv){
+            list($column, $value) = $cv;
+            $queryInter .= " $column $igual '$value' AND ";
+        }
+        $queryInter = rtrim($queryInter,"AND");
+
+        for($i =0; $i <= $pagination; $i++){
+            $offset= $i * $limit;
+            $results = $this->query("SELECT *  FROM artesanados $queryInter limit $limit offset $offset");
+            foreach($results->fetchAll(\PDO::FETCH_CLASS,\stdClass::class) as $resultado){
+                array_push($resultados, $resultado);
+            }
+
+            unset($results);
+        }
+
+        return $resultados;
+
+    }*/
 
 }

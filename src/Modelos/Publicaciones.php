@@ -32,40 +32,53 @@ class Publicaciones extends DatabaseTable{
 
     }
 
-    public function metodoChunk(/*Si necesito para consultas con argumentos*/){
-
-        //este metodo me va a recibir los argumentos que necesita la consulta para funcionar
-
-            $result =Usuarios::runChunck(function($page,$count){
-            $pages =($page - 1) * $count;
-            $count = $count * $page;
-            $estado=Usuarios::ESTADO_ACTIVO;
-            $result=$this->query(
-            "SELECT * FROM publicaciones WHERE estado ='$estado'  LIMIT $count OFFSET $pages"
-           );
-          
-           return $result->fetchAll(\PDO::FETCH_CLASS,\stdClass::class);
-        });
-
-        return $result;
-
+    
+    public function selectPaginacion($limit = 9, $offset = null, $orderBy = false, $column = null)
+    {
+        $queyCount = 'SELECT COUNT(idpublicaciones) as count FROM publicaciones';
+        $count = $this->runQuery($queyCount);
+        $count=$count->fetch();
         
+        $pagination = ceil(intval($count['count'])/$limit);
+        $resultados = [];
+        for($i =0; $i <= $pagination; $i++){
+            $offset= $i * $limit;
+            $results = $this->query("SELECT *  FROM publicaciones limit $limit offset $offset");
+            foreach($results->fetchAll(\PDO::FETCH_CLASS,\stdClass::class) as $resultado){
+                array_push($resultados, $resultado);
+            }
+
+            unset($results);
+        }
+
+        return $resultados;
+
     }
 
-    public function metodoChuckSelect(){
-        $result =Usuarios::runChunck(function($page,$count){
-            $pages =($page - 1) * $count;
-            $count = $count * $page;
-            $estado=Usuarios::ESTADO_ACTIVO;
-            $result=$this->query(
-            "SELECT * FROM publicaciones  LIMIT $count OFFSET $pages"
-           );
-          
-           return $result->fetchAll(\PDO::FETCH_CLASS,\stdClass::class);
-        });
 
-        return $result;
-    }  
+    public function selectFromColumnPaginacion($column, $restrict, $limit = 9)
+   
+   
+    {
+        $queyCount = 'SELECT COUNT(idpublicaciones) as count FROM publicaciones';
+        $count = $this->runQuery($queyCount);
+        $count=$count->fetch();
+        
+        $pagination = ceil(intval($count['count'])/$limit);
+        $resultados = [];
+        for($i =0; $i <= $pagination; $i++){
+            $offset= $i * $limit;
+            $results = $this->query("SELECT *  FROM publicaciones where $column=$restrict limit $limit offset $offset");
+            foreach($results->fetchAll(\PDO::FETCH_CLASS,\stdClass::class) as $resultado){
+                array_push($resultados, $resultado);
+            }
+
+            unset($results);
+        }
+
+        return $resultados;
+
+    }
 
 
 }

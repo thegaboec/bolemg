@@ -36,7 +36,7 @@ class Inicio  {
     public function listarArtesanados(){
 
 
-        $artesanados=$this->artesanados->paginacion(9);
+        $artesanados=$this->artesanados->selectFromColumnPaginacion('estado',Artesanados::ESTADO_ACTIVO,9);
   
         return[
 
@@ -95,7 +95,7 @@ class Inicio  {
     }
     
     public function publicaG(){
-        $publicaciones=$this->publicaciones->metodoChunk();
+        $publicaciones=$this->publicaciones->selectFromColumnPaginacion('estado',Publicaciones::ESTADO_ACTIVO,9);
   
         return[
 

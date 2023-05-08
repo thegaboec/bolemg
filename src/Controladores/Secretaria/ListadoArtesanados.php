@@ -19,7 +19,7 @@ class ListadoArtesanados{
 
     public function listar(){
 
-        $artesanados=$this->artesanados->metodoChuckSelect();
+        $artesanados=$this->artesanados->selectPaginacion();
 
         return[
             'titulo'=>'Listado de Artesanados',
@@ -31,7 +31,7 @@ class ListadoArtesanados{
 
     public function  imprimir(){
 
-        $artesanados=$this->artesanados->metodoChuckSelect();
+        $artesanados=$this->artesanados->selectPaginacion();
         $reporte= new Reporteart();
         $reporte->generarReporte($artesanados);
 

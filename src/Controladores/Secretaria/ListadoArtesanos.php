@@ -21,7 +21,7 @@ class ListadoArtesanos{
     public function listar(){
 
         
-        $artesanos = $this->artesanos->metodoChuckSelect();
+        $artesanos = $this->artesanos->selectPaginacion();
        
         return [
 
@@ -35,7 +35,7 @@ class ListadoArtesanos{
 
     public function  imprimir(){
 
-        $artesanos = $this->artesanos->metodoChuckSelect();
+        $artesanos = $this->artesanos->selectPaginacion();
         $reporte= new Reporte();
         $reporte->generarReporte($artesanos);
 

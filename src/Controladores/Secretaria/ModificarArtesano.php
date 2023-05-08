@@ -13,7 +13,7 @@ class ModificarArtesano{
     }
 
     public function modificarA(){
-        $artesanos = $this->artesanos->metodoChuckSelect();
+        $artesanos = $this->artesanos->selectPaginacion();
         return [
             'titulo' => 'Modificar - Inhabilitar Artesano',
             'template' => 'secretaria/modificarArtesano.html.php',

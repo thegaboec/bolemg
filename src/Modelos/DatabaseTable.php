@@ -68,7 +68,7 @@ class DatabaseTable extends ConexionDB{
        $this->runQuery($query,$params);
     }
 
-    public function selectFromColumn($column, $restrict)
+    public function selectFromColumn($column, $restrict,$limit=null)
     {
 
         $query = 'SELECT * FROM ' . $this->table . ' WHERE ' . $column . '= :' . $this->primaryKey;
