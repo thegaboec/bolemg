@@ -119,7 +119,7 @@ class Artesanos extends DatabaseTable{
         for($i =0; $i <= $pagination; $i++){
             $offset= $i * $limit;
             
-            $results = $this->query("SELECT *  FROM artesanos where $column=$restrict and estado ='$estado'limit $limit offset $offset");
+            $results = $this->query("SELECT *  FROM artesanos where $column='$restrict' and estado ='$estado'limit $limit offset $offset");
             foreach($results->fetchAll(\PDO::FETCH_CLASS,\stdClass::class) as $resultado){
                 array_push($resultados, $resultado);
             }
