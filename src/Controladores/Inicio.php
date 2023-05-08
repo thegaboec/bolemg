@@ -36,7 +36,7 @@ class Inicio  {
     public function listarArtesanados(){
 
 
-        $artesanados=$this->artesanados->metodoChuck();
+        $artesanados=$this->artesanados->paginacion(9);
   
         return[
 

@@ -43,7 +43,7 @@ class Artesanados extends DatabaseTable {
     public function metodoChuckSelect(){
         $result =Usuarios::runChunck(function($page,$count){
             $pages =($page - 1) * $count;
-            $count = $count * $page;
+           // $count = $count * $page;
             $estado=Usuarios::ESTADO_ACTIVO;
             $result=$this->query(
             "SELECT * FROM artesanados  LIMIT $count OFFSET $pages"
@@ -53,6 +53,27 @@ class Artesanados extends DatabaseTable {
         });
 
         return $result;
-    }  
+    } 
+    
+    public function paginacion($limit){
+        $queyCount = 'SELECT COUNT(idartesanado) as count FROM artesanados';
+        $count = $this->runQuery($queyCount);
+        $count=$count->fetch();
+        
+        $pagination = ceil(intval($count['count'])/$limit);
+        $resultados = [];
+        for($i =0; $i <= $pagination; $i++){
+            $offset= $i * $limit;
+            $results = $this->query("SELECT *  FROM artesanados limit $limit offset $offset");
+            foreach($results->fetchAll(\PDO::FETCH_CLASS,\stdClass::class) as $resultado){
+                array_push($resultados, $resultado);
+            }
+
+            unset($results);
+        }
+
+        return $resultados;
+
+    }
 
 }

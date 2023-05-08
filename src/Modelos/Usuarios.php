@@ -62,8 +62,8 @@ class Usuarios extends DatabaseTable{
 
     public static function runChunck( $consulta,$params=[]){
         $results = [];
-
-        self::chunk(1,function($resultados,$page,$count )use (&$results) {
+        
+        self::chunk(9,function($resultados,$page,$count )use (&$results) {
 
            
             foreach($resultados as $resultado) {
@@ -74,7 +74,18 @@ class Usuarios extends DatabaseTable{
             
         },$consulta,$params);
 
-       
+       $signal = $results[0];
+
+       foreach($results as $index => $result){
+        if($index === 0){
+            continue;
+        }
+        if($signal->idartesanado === $result->idartesanado){
+            unset($results[$index]);
+        }
+        $signal = $result;
+
+       }
         
         return $results;
 
@@ -109,11 +120,9 @@ class Usuarios extends DatabaseTable{
  
             $page++;
 
-            if($countResults!==$count){
-                return false;
-            }
+            
 
-        } while ($countResults == $count);
+        } while ($countResults === $count);
  
         return true;
     }
@@ -121,7 +130,7 @@ class Usuarios extends DatabaseTable{
     public function metodoChuckSelect($column,$value){
         $result =Usuarios::runChunck(function($page,$count,$column,$value){
             $pages =($page - 1) * $count;
-            $count = $count * $page;
+           // $count = $count * $page;
             $estado=Usuarios::ESTADO_ACTIVO;
             $result=$this->query(
             "SELECT * FROM usuarios where $column = '$value' LIMIT $count OFFSET $pages"
